@@ -1,0 +1,36 @@
+#carouselExampleInterval {
+  width: 64%;
+  margin-right: 20px;
+}
+section {
+  width: 87%;
+  margin: 30px auto;
+}
+#BANNER_SECTION {
+  display: flex;
+  justify-content: center;
+  margin: auto 5px !important;
+}
+#bannerside {
+  width: 21%;
+}
+#getcredit {
+  width: 87%;
+  padding: 5px;
+  margin: 30px auto;
+}
+#seciton-heads {
+  font-size: 34px;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+}
+#shopbyroom {
+  display: flex;
+}
+#shopbyroom > div {
+  width: 25%;
+  margin: 5px;
+}
+#shopbyroom > div > img {
+  margin-bottom: 10px;
+}
