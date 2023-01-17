@@ -1,8 +1,24 @@
 let closetop1 = document.getElementById("close-top1");
 let topfirst = document.getElementById("top1");
 var navbar = document.getElementById("stickynav");
+let popover = document.getElementById("popover");
+let username = document.getElementById("username");
+let user = localStorage.getItem("user") || "";
+username.innerText = user;
 var sticky = navbar.offsetTop;
 
+window.addEventListener("load", () => {
+  if (user === "") {
+    setTimeout(() => {
+      popover.style.display = "block";
+      popover.style.opacity = "1";
+    }, 3000);
+    setTimeout(() => {
+      popover.style.display = "none";
+      popover.style.opacity = "0";
+    }, 7000);
+  }
+});
 closetop1.addEventListener("click", () => {
   topfirst.style.opacity = "0.0";
   topfirst.style.transform = "translateX(-50px)";

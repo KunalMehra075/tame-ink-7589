@@ -1,0 +1,208 @@
+/* div,
+section {
+  border: 1px solid black;
+} */
+#cartsect {
+  width: 100%;
+}
+
+.yourproducts {
+  margin: 10px;
+  margin-left: 100px;
+  font-size: 30px;
+  font-weight: lighter;
+}
+.EmptyCart {
+  padding: 3px 5px;
+  cursor: pointer;
+  border: 0px;
+  border-bottom: 0.5px solid rgb(255, 0, 0);
+  font-size: 16px;
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+  background-color: white;
+}
+.checkoutpage {
+  background-color: white;
+  margin: auto;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 85%;
+  height: auto;
+  display: flex;
+  padding: 10px;
+}
+.checkoutpage > div {
+  margin: 5px;
+}
+.showproducts {
+  width: 69%;
+}
+.product-card {
+  margin: 4px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  padding: 5px;
+  height: auto;
+  display: flex;
+  justify-content: left;
+}
+.product-card > div > img {
+  width: 110px;
+  margin: 7px;
+}
+.product-card > div:nth-child(2) {
+  width: 82%;
+  padding: 10px;
+  position: relative;
+}
+.cardbuttons {
+  cursor: pointer;
+  width: 95%;
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-around;
+}
+#quantity {
+  width: 20px;
+  text-align: center;
+}
+.removeNview {
+  cursor: pointer;
+  margin: 8px;
+  font-weight: 700;
+  width: 45%;
+  font-size: 18px;
+  border: 0.5px solid gainsboro;
+  background-color: white;
+  color: #ff3c27;
+  padding: 10px;
+}
+.removeNview:hover {
+  border: 0.5px solid #f71c04;
+}
+.plusminus {
+  cursor: pointer;
+  border-radius: 100px;
+  font-size: 10px;
+  border: 0px;
+  background-color: rgb(250, 238, 216);
+  color: white;
+  padding: 6px 5px;
+}
+.plusminus:hover {
+  background-color: rgb(255, 247, 162);
+}
+.checkoutsection {
+  width: 30%;
+}
+.checkout-subs {
+  margin: 4px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  padding: 10px;
+  height: auto;
+}
+#pincode {
+  margin: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 0px;
+  background-color: rgb(243, 240, 241);
+}
+#checkbutton {
+  cursor: pointer;
+  background-color: #ff3c27;
+  border-radius: 4px;
+  border: 0px;
+  color: white;
+  font-size: 17px;
+}
+#delievery-input,
+#checkbutton {
+  padding: 7px 10px;
+}
+#delievery-input {
+  width: 50% !important;
+}
+#offersub {
+  padding: 5px;
+  display: flex;
+  justify-content: left;
+}
+#offerimg {
+  width: 100px;
+  margin: 10px;
+}
+.totals {
+  font-size: 17px;
+  font-weight: bold;
+}
+#totals > div {
+  display: flex;
+  justify-content: space-between;
+}
+.Total {
+  font-size: 21px;
+}
+#Checkout {
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  color: white;
+  border: 0px;
+  border-radius: 2px;
+  background-color: #ef402c;
+  font-size: 20px;
+  font-weight: bold;
+}
+#Checkout:hover {
+  background-color: rgb(255, 0, 0);
+}
+hr {
+  margin: 10px 0px;
+}
+/*? ----------------------------Medium Screen Sizes -------------------------------- */
+@media all and (min-width: 810px) and (max-width: 1280px) {
+  * {
+    font-size: 14px;
+  }
+  .yourproducts {
+    margin: auto;
+    margin-left: 10px;
+  }
+  .checkoutpage {
+    width: 95%;
+    flex-direction: column-reverse;
+  }
+  .checkoutsection,
+  .showproducts {
+    width: 97%;
+  }
+  .removeNview {
+    font-size: 10px;
+    padding: 2px;
+    margin: 2px;
+    font-weight: lighter;
+  }
+}
+/*? ----------------------------Small Screen Sizes -------------------------------- */
+@media all and (min-width: 320px) and (max-width: 809px) {
+  .yourproducts {
+    margin: auto;
+    margin-left: 10px;
+  }
+  .checkoutpage {
+    width: 95%;
+    flex-direction: column-reverse;
+  }
+  .checkoutsection,
+  .showproducts {
+    width: 97%;
+  }
+  .removeNview {
+    font-size: 10px;
+    padding: 2px;
+    margin: 2px;
+  }
+}
