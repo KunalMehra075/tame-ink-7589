@@ -25,6 +25,9 @@
     />
   </head>
   <body>
+    <!--!--------------------------------------------- <Essentials> ----------------------------------------------->
+<!-- Prelaoder,offcanvas -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <!--?--------------------------------------------- Header ----------------------------------------------->
     <header>
       <nav id="top1" class="topfirst">
@@ -98,11 +101,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <div></div>
-              <div class="megasearch">
+              <div class="megasearch autocomplete">
                 <input
+                type="text"
+                name="myCountry"
+                  
                   id="megasearch"
                   class="form-control me-2"
-                  type="search"
                   placeholder="Search for Decorations "
                   aria-label="Search"
                 />
@@ -119,7 +124,8 @@
                   <img width="40px" src="./Images/icons/help-icon.svg" alt="" />
                 </div>
                 <div>
-                  <img width="40px" src="./Images/icons/icon.svg" alt="" />
+                  <img width="40px"  src="./Images/icons/icon.svg" alt="" />
+                
                 </div>
                 <div>
                   <img width="40px" src="./Images/icons/heart.svg" alt="" />
@@ -134,31 +140,627 @@
         <nav id="megalistheads">
           <ul class="nav justify-content-center mx-5">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Furniture</a>
+              <a class="nav-link active" id="furbutton" data-dropdown-button1>Furniture</a>
+              <div id="furmenu" class="main-mega-menu" data-visible="X" data-area >
+                <div class="menu-box" data-dropdown>
+                  <a
+                    ><p><b>Sofas</b></p></a
+                  >
+                  <a><p>3 Seater Sofas</p></a>
+                  <a><p>2 Seater Sofas</p></a>
+                  <a><p>1 Seater Sofas</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Sofa Sets</b></p></a
+                  >
+                  <a><p>LHS Sectionals</p></a>
+                  <a><p>RHS Sectionals</p></a>
+                  <a><p>Corner Sofas</p></a>
+                  <a><p>Chaise Loungers</p></a>
+                  <a><p>Sofa Cum Beds</p></a>
+                  <a><p>Futons</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Recliners</b></p></a
+                  >
+                  <a><p>1 Seater</p></a>
+                  <a><p>2 Seater</p></a>
+                  <a><p>3 Seater</p></a>
+                  <a><p>Recliner Sets</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Futons</b></p></a
+                  >
+                  <a><p>Recliners</p></a>
+                  <a><p>1 Seater</p></a>
+                  <a><p>2 Seater</p></a>
+                  <a><p>3 Seater</p></a>
+                  <a><p>Recliner Sets</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Sofa Chairs</b></p></a
+                  >
+                  <a><p>Wing Chairs</p></a>
+                  <a><p>Lounge Chairs</p></a>
+                  <a><p>Slipper Chairs</p></a>
+                  <a><p>Barrel Chairs</p></a>
+                  <a><p>Office Chairs</p></a>
+                  <a><p>Ergonomic Chairs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Executive Chairs</b></p></a
+                  >
+                  <a><p>Training Chairs</p></a>
+                  <a><p>Guest Chairs</p></a>
+                  <a><p>Cantilever Chairs</p></a>
+                  <a><p>Gaming Chairs</p></a>
+                  <a><p>Bean Bags</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Chairs</b></p></a
+                  >
+                  <a><p>Arm Chairs</p></a>
+                  <a><p>Rocking Chairs</p></a>
+                  <a><p>Folding Chairs</p></a>
+                  <a><p>Iconic Chairs</p></a>
+                  <a><p>Cafe Chairs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Seating</b></p></a
+                  >
+                  <a><p>Settees</p></a>
+                  <a><p>Benches</p></a>
+                  <a><p>Ottomans</p></a>
+                  <a><p>Pouffes</p></a>
+                  <a><p>Recamiers</p></a>
+                  <a><p>Foot Stools</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Seating Stools</b></p></a
+                  >
+                  <a><p>Centre Tables</p></a>
+                  <a><p>Coffee Tables</p></a>
+                  <a><p>Coffee Table Sets</p></a>
+                  <a><p>End Tables</p></a>
+                  <a><p>Nest of Tables</p></a>
+                  <a><p>C Shaped Tables</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>TV & Media Units</b></p></a
+                  >
+                  <a><p>TV Consoles</p></a>
+                  <a><p>TV Shelves</p></a>
+                  <a><p>TV Units</p></a>
+                  <a><p>Shoe Racks</p></a>
+                  <a><p>Shoe Cabinets</p></a>
+                  <a><p>Open Shoe Racks</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Shoe Rack & Seat</b></p></a
+                  >
+                  <a><p>Tilt Out Racks</p></a>
+                  <a><p>Dining Sets</p></a>
+                  <a><p>4 Seater Sets</p></a>
+                  <a><p>6 Seater Sets</p></a>
+                  <a><p>8 Seater Sets</p></a>
+                  <a><p>2 Seater Sets</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Dining Chairs</b></p></a
+                  >
+                  <a><p>Dining Tables</p></a>
+                  <a><p>Console Tables</p></a>
+                  <a><p>Bar Furniture</p></a>
+                  <a><p>Bar Cabinets</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Bar Trolleys</b></p></a
+                  >
+                  <a><p>Bar Stools</p></a>
+                  <a><p>Bar Table Sets</p></a>
+                  <a><p>Wine Racks</p></a>
+                  <a><p>Beds</p></a>
+                  <a><p>Queen Size Beds</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>King Size Beds</b></p></a
+                  >
+                  <a><p>Single Beds</p></a>
+                  <a><p>Poster Bed</p></a>
+                  <a><p>Folding Beds</p></a>
+                  <a><p>Bedside Tables</p></a>
+                  <a><p>Night Stands</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Bedside Chests</b></p></a
+                  >
+                  <a><p>Bedside Cabinets</p></a>
+                  <a><p>Dressing Tables</p></a>
+                  <a><p>Dressers</p></a>
+                  <a><p>Dressing Cabinets</p></a>
+                  <a><p>Dressing Consoles</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Dressing Units</b></p></a
+                  >
+                  <a><p>Wardrobes</p></a>
+                  <a><p>1 Door</p></a>
+                  <a><p>2 Door</p></a>
+                  <a><p>3 Door</p></a>
+                  <a><p>4 Door</p></a>
+                  <a><p>4+ Door</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Sliding Door</b></p></a
+                  >
+                  <a><p>Cabinetry</p></a>
+                  <a><p>Sideboards</p></a>
+                  <a><p>Chest of Drawers</p></a>
+                  <a><p>Plastic Cabinets</p></a>
+                  <a><p>Book Shelves</p></a>
+                  <a><p>Book Cases</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Kitchen Cabinets</b></p></a
+                  >
+                  <a><p>Office Cabinets</p></a>
+                  <a><p>Trunks</p></a>
+                  <a><p>Study Tables</p></a>
+                  <a><p>Writing Tables</p></a>
+                  <a><p>Computer Tables</p></a>
+                  <a><p>Hutch Desks</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Foldable Tables</b></p></a
+                  >
+                  <a><p>Wall Mounted</p></a>
+                  <a><p>Portable Tables</p></a>
+                  <a><p>Office Tables</p></a>
+                  <a><p>Outdoor</p></a>
+                  <a><p>Swings</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Hammocks</b></p></a
+                  >
+                  <a><p>Tables</p></a>
+                  <a><p>Table & Chair Sets</p></a>
+                  <a><p>Seating</p></a>
+                  <a><p>Plastic Chairs</p></a>
+                  <a><p>Kids & Teens</p></a>
+                  <a><p>Cribs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Beds</b></p></a
+                  >
+                  <a><p>Bunk Beds</p></a>
+                  <a><p>Study</p></a>
+                  <a><p>Wardrobes</p></a>
+                  <a><p>Book Shelves</p></a>
+                  <a><p>Storage</p></a>
+                  <a><p>Seating</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Bean Bags</b></p></a
+                  >
+                  <a><p>Furniture Care</p></a>
+                  <a><p>Furniture Care Kit</p></a>
+                  <a><p>Sofa Spa</p></a>
+                  <a><p>Chair Spa</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Hammocks</b></p></a
+                  >
+                  <a><p>Tables</p></a>
+                  <a><p>Table & Chair Sets</p></a>
+                  <a><p>Seating</p></a>
+                  <a><p>Plastic Chairs</p></a>
+                  <a><p>Kids & Teens</p></a>
+                  <a><p>Cribs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Hambeds </b></p></a
+                  >
+                  <a><p>Bunk Beds</p></a>
+                  <a><p>Study</p></a>
+                  <a><p>Wardrobes</p></a>
+                  <a><p>Book Shelves</p></a>
+                  <a><p>Storage</p></a>
+                  <a><p>Seating</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Bean Bags</b></p></a
+                  >
+                  <a><p>Furniture Care</p></a>
+                  <a><p>Furniture Care Kit</p></a>
+                  <a><p>Sofa Spa</p></a>
+                  <a><p>Chair Spa</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Builloks</b></p></a
+                  >
+                  <a><p>Tables</p></a>
+                  <a><p>Table & Chair Sets</p></a>
+                  <a><p>Seating</p></a>
+                  <a><p>Plastic Chairs</p></a>
+                  <a><p>Kids & Teens</p></a>
+                  <a><p>Cribs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Roasters</b></p></a
+                  >
+                  <a><p>Bunk Beds</p></a>
+                  <a><p>Study</p></a>
+                  <a><p>Wardrobes</p></a>
+                  <a><p>Book Shelves</p></a>
+                  <a><p>Storage</p></a>
+                  <a><p>Seating</p></a>
+                </div>
+              </div>
+              <div id="petsmenu" class="main-mega-menu" data-visible="X" data-dropdown>
+                <div id="petsmenulist" >
+                  <div class="menu-box"><b><p>Dog Furniture</p></b></div>
+                      <div class="menu-box"><b><p>Dog Beds</p></b></div>
+                      <div class="menu-box"><b><p>Dog House</p></b></div>
+                      <div class="menu-box"><b><p>Cat Furniture</p></b></div>
+                      <div class="menu-box"><b><p>Cat Beds</p></b></div>
+                      <div class="menu-box"><b><p>Cat Trees & Condos</p></b></div>
+                      <div class="menu-box"><b><p>Bird Houses & Feeders</p></b></div>
+                      <div class="menu-box"><b><p>Crates & Carriers</p></b></div>
+                      <div class="menu-box"><b><p>Pet Furnishings</p></b></div>
+                      <div class="menu-box"><b><p>Mats</p></b></div>
+                      <div class="menu-box"><b><p>Cushions</p></b></div>
+                      <div class="menu-box"><b><p>Blankets</p></b></div>
+                      <div class="menu-box"><b><p>Pet Toys</p></b></div>
+                      <div class="menu-box"><b><p>Plush Toys</p></b></div>
+                      <div class="menu-box"><b><p>Chew Toys</p></b></div>
+                      <div class="menu-box"><b><p>Interactive Toys</p></b></div>
+                      <div class="menu-box"><b><p>Rope Toys</p></b></div>
+                      <div class="menu-box"><b><p>Rubber Toys</p></b></div>
+                      <div class="menu-box"><b><p>Pet Grooming</p></b></div>
+                      <div class="menu-box"><b><p>Shampoos</p></b></div>
+                      <div class="menu-box"><b><p>Brushes & Combos</p></b></div>
+                      <div class="menu-box"><b><p>Towels & Wipes</p></b></div>
+                      <div class="menu-box"><b><p>Dental Solutions</p></b></div>
+                      <div class="menu-box"><b><p>Perfumes</p></b></div>
+                      <div class="menu-box"><b><p>Litter & Supplies</p></b></div>
+                      <div class="menu-box"><b><p>Scoop & Trays</p></b></div>
+                </div>
+                <div class="petsimg flex">
+                  <div><img src="Images/index/megamenupet1.webp" alt=""></div>
+                  <div><img src="Images/index/megamenupet2.webp" alt=""></div>
+                  <div><img src="Images/index/megamenupet3.webp" alt=""></div>
+                </div>
+              </div>
+              <div id="lampsmenu" class="main-mega-menu" data-visible="X" data-dropdown>
+                <div id="petsmenulist" >
+                  <div class="menu-box"><b><p>Dog Furniture</p></b></div>
+                      <div class="menu-box"><b><p>Dog Beds</p></b></div>
+                      <div class="menu-box"><b><p>Dog House</p></b></div>
+                      <div class="menu-box"><b><p>Cat Furniture</p></b></div>
+                      <div class="menu-box"><b><p>Cat Beds</p></b></div>
+                      <div class="menu-box"><b><p>Cat Trees & Condos</p></b></div>
+                      <div class="menu-box"><b><p>Bird Houses & Feeders</p></b></div>
+                      <div class="menu-box"><b><p>Crates & Carriers</p></b></div>
+                      <div class="menu-box"><b><p>Pet Furnishings</p></b></div>
+                      <div class="menu-box"><b><p>Mats</p></b></div>
+                      <div class="menu-box"><b><p>Cushions</p></b></div>
+                      <div class="menu-box"><b><p>Blankets</p></b></div>
+                      <div class="menu-box"><b><p>Pet Toys</p></b></div>
+                      <div class="menu-box"><b><p>Plush Toys</p></b></div>
+                      <div class="menu-box"><b><p>Chew Toys</p></b></div>
+                      <div class="menu-box"><b><p>Interactive Toys</p></b></div>
+                      <div class="menu-box"><b><p>Rope Toys</p></b></div>
+                      <div class="menu-box"><b><p>Rubber Toys</p></b></div>
+                      <div class="menu-box"><b><p>Pet Grooming</p></b></div>
+                      <div class="menu-box"><b><p>Shampoos</p></b></div>
+                      <div class="menu-box"><b><p>Brushes & Combos</p></b></div>
+                      <div class="menu-box"><b><p>Towels & Wipes</p></b></div>
+                      <div class="menu-box"><b><p>Dental Solutions</p></b></div>
+                      <div class="menu-box"><b><p>Perfumes</p></b></div>
+                      <div class="menu-box"><b><p>Litter & Supplies</p></b></div>
+                      <div class="menu-box"><b><p>Scoop & Trays</p></b></div>
+                </div>
+                <div class="petsimg flex">
+                  <div><img src="Images/index/lamp.jpg1.webp" alt=""></div>
+                  <div><img src="Images/index/lamp2.webp" alt=""></div>
+                  <div><img src="Images/index/lamp4.webp" alt=""></div>
+                  <div><img src="Images/index/lamp3.jpg" alt=""></div>
+                </div>
+              </div>
+              <div id="decormenu" class="main-mega-menu" data-visible="X" data-dropdown>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Vases</b></p></a
+                  >
+                  <a><p>Figurines</p></a>
+                  <a><p>Collectibles</p></a>
+                  <a><p>Showpieces</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Photo Frames</b></p></a
+                  >
+                  <a><p>Single</p></a>
+                  <a><p>Collage</p></a>
+                  <a><p>Clip Type</p></a>
+                  <a><p>Table Top</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Room Partitions</b></p></a
+                  >
+                  <a><p>Folding Dividers</p></a>
+                  <a><p>Hanging Dividers</p></a>
+                  <a><p>Table Organizers</p></a>
+                  <a><p>Table Clocks</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Decorative Boxes</b></p></a
+                  >
+                  <a><p>Desk Organizers</p></a>
+                  <a><p>Magazine Racks</p></a>
+                  <a><p>Pen Stands</p></a>
+                  <a><p>Bookends</p></a>
+                  <a><p>Festive Decor</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Torans</b></p></a
+                  >
+                  <a><p>Rangoli</p></a>
+                  <a><p>Christmas Decorations</p></a>
+                  <a><p>Spiritual</p></a>
+                  <a><p>Mandirs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Pooja Shelves</b></p></a
+                  >
+                  <a><p>Religious Idols</p></a>
+                  <a><p>Religious Frames</p></a>
+                  <a><p>Chowkies</p></a>
+                  <a><p>Feng Shui</p></a>
+                  <a><p>Prayer Essential</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Bells</b></p></a
+                  >
+                  <a><p>Diyas</p></a>
+                  <a><p>Haldi Kumkum Box</p></a>
+                  <a><p>Incense Holders</p></a>
+                  <a><p>Pooja Metalware</p></a>
+                  <a><p>Prayer Mats</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Beds</b></p></a
+                  >
+                  <a><p>Bunk Beds</p></a>
+                  <a><p>Study</p></a>
+                  <a><p>Wardrobes</p></a>
+                  <a><p>Book Shelves</p></a>
+                  <a><p>Storage</p></a>
+                  <a><p>Seating</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Bean Bags</b></p></a
+                  >
+                  <a><p>Furniture Care</p></a>
+                  <a><p>Furniture Care Kit</p></a>
+                  <a><p>Sofa Spa</p></a>
+                  <a><p>Chair Spa</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Hammocks</b></p></a
+                  >
+                  <a><p>Tables</p></a>
+                  <a><p>Table & Chair Sets</p></a>
+                  <a><p>Seating</p></a>
+                  <a><p>Plastic Chairs</p></a>
+                  <a><p>Kids & Teens</p></a>
+                  <a><p>Cribs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Hambeds </b></p></a
+                  >
+                  <a><p>Bunk Beds</p></a>
+                  <a><p>Study</p></a>
+                  <a><p>Wardrobes</p></a>
+                  <a><p>Book Shelves</p></a>
+                  <a><p>Storage</p></a>
+                  <a><p>Seating</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Bean Bags</b></p></a
+                  >
+                  <a><p>Furniture Care</p></a>
+                  <a><p>Furniture Care Kit</p></a>
+                  <a><p>Sofa Spa</p></a>
+                  <a><p>Chair Spa</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Builloks</b></p></a
+                  >
+                  <a><p>Tables</p></a>
+                  <a><p>Table & Chair Sets</p></a>
+                  <a><p>Seating</p></a>
+                  <a><p>Plastic Chairs</p></a>
+                  <a><p>Kids & Teens</p></a>
+                  <a><p>Cribs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Roasters</b></p></a
+                  >
+                  <a><p>Bunk Beds</p></a>
+                  <a><p>Study</p></a>
+                  <a><p>Wardrobes</p></a>
+                  <a><p>Book Shelves</p></a>
+                  <a><p>Storage</p></a>
+                  <a><p>Seating</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Candles</b></p></a
+                  >
+                  <a><p>Decorative</p></a>
+                  <a><p>Scented</p></a>
+                  <a><p>Tea Lights</p></a>
+                  <a><p>Home Fragrances</p></a>
+                  <a><p>Candle Stands</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Candle Holders</b></p></a
+                  >
+                  <a><p>Tea Light Holders</p></a>
+                  <a><p>Pots & Planters</p></a>
+                  <a><p>Desk Pots</p></a>
+                  <a><p>Planters</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Planter Stands</b></p></a
+                  >
+                  <a><p>Natural Plants</p></a>
+                  <a><p>Indoor</p></a>
+                  <a><p>Flowering</p></a>
+                  <a><p>Succulents</p></a>
+                  <a><p>Bonsai</p></a>
+                  <a><p>Plant Bundles</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Low Maintenance</b></p></a
+                  >
+                  <a><p>Artificial Plants</p></a>
+                  <a><p>Artificial Plants</p></a>
+                  <a><p>Artificial Flowers</p></a>
+                  <a><p>Artificial Grass</p></a>
+                  <a><p>Garden Décor</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Gardening Tools</b></p></a
+                  >
+                  <a><p>Indoor Fountains</p></a>
+                  <a><p>Kids Decor</p></a>
+                  <a><p>Wall Shelves</p></a>
+                  <a><p>Book Ends</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Metal Wall Art</b></p></a
+                  >
+                  <a><p>Wooden Wall Art</p></a>
+                  <a><p>Jharokhas</p></a>
+                  <a><p>Wall Plates</p></a>
+                  <a><p>Wall Masks</p></a>
+                  <a><p>Animal Busts</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Ethnic Art</b></p></a
+                  >
+                  <a><p>Shelves & Cabinets</p></a>
+                  <a><p>Wall Cabinets</p></a>
+                  <a><p>Wall Shelves</p></a>
+                  <a><p>Key Holders</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Set Top Box Holders</b></p></a
+                  >
+                  <a><p>Hand Paintings</p></a>
+                  <a><p>Art Prints</p></a>
+                  <a><p>Art Panels</p></a>
+                  <a><p>Wall Coverings</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Wall Stickers</b></p></a
+                  >
+                  <a><p>Wallpapers</p></a>
+                  <a><p>Wall Clocks</p></a>
+                  <a><p>Decorative</p></a>
+                  <a><p>Platform</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Pendulum</b></p></a
+                  >
+                  <a><p>Cuckoo</p></a>
+                  <a><p>Mirrors</p></a>
+                  <a><p>Wall</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Floor</b></p></a
+                  >
+                  <a><p>Full-Length</p></a> <a><p>LED</p></a>
+                  <a><p>Mirror Sets</p></a>
+                  <a><p>Décor Gift Sets</p></a>
+                </div>
+              </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Home Décor</a>
+              <a class="nav-link" data-dropdown-button2>Home Décor</a>
+               </li>
+            <li class="nav-item">
+              <a class="nav-link" data-dropdown-button4>Lamps & Lighting</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Lamps & Lighting</a>
+              <a class="nav-link active" data-dropdown-button2>Kitchen & Dining</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Kitchen & Dining</a>
+              <a class="nav-link" data-dropdown-button1>Furnishings</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Furnishings</a>
+              <a class="nav-link" data-dropdown-button4>Mattresses</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Mattresses</a>
+              <a class="nav-link active" data-dropdown-button1>Appliances</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Appliances</a>
+              <a class="nav-link" data-dropdown-button3>Pets</a>
+           
+              
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Pets</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Modular</a>
+              <a class="nav-link">Modular</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Gift Cards</a>
@@ -167,12 +769,14 @@
         </nav>
       </nav>
     
+    
+      
+      
     </header>
     <!--?--------------------------------------------- Main Body ----------------------------------------------->
     <main>
     </main>
-    
-    <!--?--------------------------------------------- Footer ----------------------------------------------->
+    <!--odo--------------------------------------------- Footer ----------------------------------------------->
     <div id="footerspace"></div>
     <footer>
       <section class="footer1">
@@ -277,6 +881,7 @@
     </footer>
   </body>
 </html>
+<script src="JS/index.js"></script>
 <script src="JS/common.js"></script>
 <script
   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
