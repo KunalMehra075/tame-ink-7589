@@ -198,16 +198,3 @@ footer li {
   margin: 12px 5px;
   color: rgb(100, 99, 99) !important;
 }
-#modalbox {
-  padding: 0px !important;
-  border-radius: 0px !important;
-}
-.modal-body {
-  padding: 0px !important;
-  margin: 0px !important;
-}
-.btn-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}

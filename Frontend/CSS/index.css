@@ -1,6 +1,10 @@
 #carouselExampleInterval {
   width: 64%;
+  z-index: -1 !important;
   margin-right: 20px;
+}
+html {
+  overflow-x: hidden;
 }
 section {
   width: 87%;
@@ -12,6 +16,7 @@ section {
 #BANNER_SECTION {
   display: flex;
   justify-content: center;
+
   margin: auto 5px !important;
 }
 #bannerside {
@@ -69,7 +74,7 @@ section {
   display: grid;
   border-radius: 50%;
   place-items: center;
-  z-index: 999;
+  z-index: 1;
   border: 0px;
 }
 .Slidebuttons:hover {
@@ -142,4 +147,98 @@ section {
   position: absolute;
   width: 100px;
   border-radius: 50%;
+}
+
+/*? <!----------------------------------------------- < Megamenu > -----------------------------------------------> */
+header a {
+  cursor: pointer;
+}
+#megalistheads {
+  position: relative;
+  z-index: 1;
+}
+
+.main-mega-menu {
+  position: absolute;
+  top: 100%;
+  left: -50px;
+  background: rgb(250, 248, 248);
+  margin: 0px;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0px;
+  z-index: 4;
+  width: 110%;
+  padding: 0px 90px;
+}
+.main-mega-menu > div {
+  background-color: white;
+}
+.main-mega-menu > div:nth-child(3n) {
+  background-color: rgb(247, 244, 244);
+}
+.main-mega-menu p {
+  font-size: 12px;
+  margin: 0px !important;
+}
+.main-mega-menu p:hover {
+  color: rgb(245, 68, 68);
+}
+.menu-box {
+  padding: 8px;
+  margin: 0px !important;
+  width: 150px;
+}
+#petsmenu {
+  position: absolute;
+  top: 100%;
+  background: rgb(250, 248, 248);
+  margin: 0px;
+  z-index: 2;
+  width: 100%;
+  padding: 0px 50px;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+#petsmenulist {
+  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#petsmenulist div:nth-child(n) {
+  background-color: rgb(247, 244, 244);
+}
+.petsimg img {
+  width: 200px;
+  margin: 10px;
+}
+#furmenu,
+#decormenu,
+#petsmenu,
+#lampsmenu {
+  display: none;
+  z-index: 8;
+}
+#lampsmenu,
+#petsmenu {
+  justify-content: space-around;
+}
+#myBtn {
+  position: fixed;
+  z-index: 999;
+  bottom: 10px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(239, 22, 22);
+  margin-bottom: 10px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+#myBtn:hover {
+  background-color: rgb(255, 145, 0);
 }

@@ -13,3 +13,11 @@ nxtbtn.addEventListener("click", () => {
     .querySelector("#Slider")
     .setAttribute("class", "compslidtranslateNXT");
 });
+let AllProductButtons = document.querySelectorAll(
+  ".main-mega-menu p,.main-mega-menu a,#ThreeCardParent > div > img, #FourCardParent > div > img, #SixCardParent > div > img"
+);
+AllProductButtons.forEach((item) => {
+  item.addEventListener("click", () => {
+    window.location.href = "AllProducts.html";
+  });
+});
