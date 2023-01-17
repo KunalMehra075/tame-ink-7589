@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OrangerFry.com</title>
-    <link rel="stylesheet" href="../CSS/index.css" />
-    <link rel="stylesheet" href="../CSS/commons.css" />
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <link rel="stylesheet" href="./CSS/commons.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -27,7 +27,7 @@
   <body>
     <!--?--------------------------------------------- Header ----------------------------------------------->
     <header>
-      <nav class="topfirst">
+      <nav id="top1" class="topfirst">
         <ul class="nav justify-content-right mx-5">
           <li class="nav-item">
             <a class="nav-link active" href="#"
@@ -46,11 +46,11 @@
             <a class="nav-link" href="#"
               ><b>
                 Earn 25% Cashback On All Orders T&C Apply
-                <i style="color: rgb(0, 255, 76)">Sign Up</i>
+                <u style="color: rgb(0, 255, 76)">Sign Up</u>
               </b></a
             >
           </li>
-          <img src="../Images/icons/close.png" alt="" />
+          <img  id="close-top1"  src="./Images/icons/close.png" alt="" />
         </ul>
       </nav>
       <nav class="topsec">
@@ -70,93 +70,103 @@
           <li class="nav-item">
             <a class="nav-link active" href="#"> Find Design Inspiration</a>
           </li>
+          <hr />
+
+          <li class="nav-item">
+            <a class="nav-link  pincode active " href="#"
+              >Enter Pincode <img src="Images/index/edit-21.svg" alt="">
+              <u style="color: red;">Find Pepperfry studio</u>
+          </li>
         </ul>
       </nav>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="../index.html"
-            ><img id="navlogo" src="../Images/Orangefrylogo.png" alt=""
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div></div>
-            <div class="megasearch">
-              <input
-                id="megasearch"
-                class="form-control me-2"
-                type="search"
-                placeholder="Search for Decorations "
-                aria-label="Search"
-              />
-              <img
-                style="opacity: 0.6; width: 25px; height: 25px"
-                src="../Images/icons/search.png"
-                alt=""
-              />
-            </div>
-
-            <div class="flex iconsbar">
+      <nav id="stickynav">
+        <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html"
+              ><img id="navlogo" src="./Images/Orangefrylogo.png" alt=""
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <div></div>
-              <div>
-                <img width="40px" src="../Images/icons/help-icon.svg" alt="" />
+              <div class="megasearch">
+                <input
+                  id="megasearch"
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search for Decorations "
+                  aria-label="Search"
+                />
+                <img
+                  style="opacity: 0.6; width: 25px; height: 25px"
+                  src="./Images/icons/search.png"
+                  alt=""
+                />
               </div>
-              <div>
-                <img width="40px" src="../Images/icons/icon.svg" alt="" />
-              </div>
-              <div>
-                <img width="40px" src="../Images/icons/heart.svg" alt="" />
-              </div>
-              <div>
-                <img width="40px" src="../Images/icons/cart-21.svg" alt="" />
+  
+              <div class="flex iconsbar">
+                <div></div>
+                <div>
+                  <img width="40px" src="./Images/icons/help-icon.svg" alt="" />
+                </div>
+                <div>
+                  <img width="40px" src="./Images/icons/icon.svg" alt="" />
+                </div>
+                <div>
+                  <img width="40px" src="./Images/icons/heart.svg" alt="" />
+                </div>
+                <div>
+                  <img width="40px" src="./Images/icons/cart-21.svg" alt="" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </nav>
+        <nav id="megalistheads">
+          <ul class="nav justify-content-center mx-5">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Furniture</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home Décor</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Lamps & Lighting</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Kitchen & Dining</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Furnishings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mattresses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Appliances</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Modular</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Gift Cards</a>
+            </li>
+          </ul>
+        </nav>
       </nav>
-      <nav>
-        <ul class="nav justify-content-center mx-5">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Furniture</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home Décor</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Lamps & Lighting</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Kitchen & Dining</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Furnishings</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Mattresses</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Appliances</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pets</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Modular</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Gift Cards</a>
-          </li>
-        </ul>
-      </nav>
+    
     </header>
     <!--?--------------------------------------------- Main Body ----------------------------------------------->
     <main>
@@ -208,7 +218,7 @@
 
         <div>
           <br /><br /><br />
-          <img width="450px" src="../Images/index/googleplay.png" alt="" />
+          <img width="450px" src="./Images/index/googleplay.png" alt="" />
         </div>
       </section>
       <section class="footer2">
@@ -247,7 +257,7 @@
         </div>
       </section>
       <section class="footer3">
-        <img width="100%" src="../Images/index/footerlinks.webp" alt="" />
+        <img width="100%" src="./Images/index/footerlinks.webp" alt="" />
       </section>
       <hr style="color: grey" />
       <section class="footer4">
@@ -267,7 +277,7 @@
     </footer>
   </body>
 </html>
-<script src="index.js"></script>
+<script src="JS/common.js"></script>
 <script
   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
   integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

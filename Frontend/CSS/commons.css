@@ -23,20 +23,29 @@ input {
   display: flex;
   align-items: center;
 }
-html {
-  position: relative;
+
+html,
+body {
+  position: relative !important;
 }
+
 a {
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
 .bg-body-tertiary {
-  padding: 0px;
   background-color: rgb(255, 255, 255) !important;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px !important;
+  justify-content: space-evenly !important;
 }
 nav {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.navbar,
+.nav {
+  padding: 0px;
+  position: sticky !important;
+  top: 0px;
 }
 .iconsbar {
   margin: 5px;
@@ -54,7 +63,10 @@ nav {
   flex-grow: 0;
 }
 .navbar > .container-fluid {
-  margin: auto 70px;
+  display: flex;
+  justify-content: space-around !important;
+  margin-right: 60px !important;
+  padding: 0px !important;
 }
 .navbar-expand-lg .navbar-nav .nav-link {
   padding: 0px 40px;
@@ -70,7 +82,7 @@ nav {
   color: rgb(0, 0, 0);
   font-size: 40px;
   padding-left: 25px;
-  margin: 0px;
+  margin: 0px !important;
 }
 #navlogo {
   width: 240px;
@@ -112,6 +124,21 @@ nav {
   display: flex;
   justify-content: space-between;
   filter: invert();
+  transition: all 300ms ease;
+}
+.pincode {
+  font-weight: 300 !important;
+}
+#stickynav {
+  z-index: 2;
+}
+#megalistheads {
+  background-color: rgba(249, 249, 249, 0.658);
+}
+.sticky {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
 }
 
 /*? <!----------------------------------------------- < Footer > -----------------------------------------------> */
@@ -126,7 +153,7 @@ footer {
   width: 100%;
 }
 #footerspace {
-  height: 1200px;
+  height: 1000px;
   width: 100%;
 }
 .footer1 {
@@ -170,4 +197,17 @@ footer li {
 .footer4 a {
   margin: 12px 5px;
   color: rgb(100, 99, 99) !important;
+}
+#modalbox {
+  padding: 0px !important;
+  border-radius: 0px !important;
+}
+.modal-body {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }

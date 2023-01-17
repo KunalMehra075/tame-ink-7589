@@ -6,6 +6,9 @@ section {
   width: 87%;
   margin: 30px auto;
 }
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 0, 0);
+}
 #BANNER_SECTION {
   display: flex;
   justify-content: center;
@@ -22,15 +25,121 @@ section {
 #seciton-heads {
   font-size: 34px;
   font-weight: 700;
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif !important;
 }
-#shopbyroom {
+#subheads {
+  font-size: 21px;
+}
+#FourCardParent,
+#ThreeCardParent,
+#SixCardParent {
   display: flex;
 }
-#shopbyroom > div {
+#ThreeCardParent > div > img,
+#FourCardParent > div > img,
+#SixCardParent > div > img {
+  margin-bottom: 10px;
+}
+#FourCardParent > div {
   width: 25%;
   margin: 5px;
 }
-#shopbyroom > div > img {
-  margin-bottom: 10px;
+
+#ThreeCardParent > div {
+  width: 33%;
+  margin: 5px;
+}
+
+#SixCardParent > div {
+  width: 16%;
+  margin: 5px;
+}
+
+/*? <!----------------------------------------------- < Slider > -----------------------------------------------> */
+.companies {
+  min-width: 250px;
+}
+.Slidebuttons {
+  font-size: 30px;
+  width: 60px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px 10px;
+  background-color: white;
+  cursor: pointer;
+  display: grid;
+  border-radius: 50%;
+  place-items: center;
+  z-index: 999;
+  border: 0px;
+}
+.Slidebuttons:hover {
+  background-color: rgba(174, 170, 170, 0.5);
+  opacity: 1;
+}
+#pre-but {
+  position: absolute;
+  top: 45%;
+}
+#nxt-but {
+  position: absolute;
+  top: 45%;
+  right: 0px;
+}
+#topcomp-sec {
+  position: relative;
+  overflow: hidden;
+}
+#Slider {
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+  transition: all 500ms ease;
+  width: 200vw;
+}
+#Slider > div {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: left;
+  margin: 2px 10px;
+  scroll-behavior: smooth;
+  transition: all 500ms ease;
+}
+#Slider::-webkit-scrollbar {
+  display: none;
+}
+
+#Slider > div > div {
+  width: 350px;
+  height: 500px;
+  position: relative;
+  margin: 5px;
+  cursor: -webkit-grab;
+  transition: all 250ms ease;
+  border-radius: 10px;
+}
+#Slider > div > div > img {
+  background-color: white;
+  height: 400px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+}
+.slidptag {
+  color: grey;
+  margin: 7px auto;
+}
+.compslidtranslateNXT {
+  transform: translateX(-850px);
+}
+.compslidtranslatePRE {
+  transform: translateX(0px);
+}
+#sliderid-images {
+  left: 130px;
+  top: 68%;
+  background-color: rgba(245, 238, 238, 0.523);
+  padding: 0px;
+  position: absolute;
+  width: 100px;
+  border-radius: 50%;
 }
