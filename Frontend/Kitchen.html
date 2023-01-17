@@ -4,342 +4,1257 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css" />
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        font: 16px Arial;
-      }
-      .autocomplete {
-        /*the container must be positioned relative:*/
-        position: relative;
-        display: inline-block;
-      }
-      input {
-        border: 1px solid transparent;
-        background-color: #f1f1f1;
-        padding: 10px;
-        font-size: 16px;
-      }
-      input[type="text"] {
-        background-color: #f1f1f1;
-        width: 100%;
-      }
-      .autocomplete-items {
-        position: absolute;
-        border: 1px solid #d4d4d4;
-        border-bottom: none;
-        border-top: none;
-        z-index: 99;
-        /*position the autocomplete items to be the same width as the container:*/
-        top: 100%;
-        left: 0;
-        right: 0;
-      }
-      .autocomplete-items div {
-        padding: 10px;
-        cursor: pointer;
-        background-color: #fff;
-        border-bottom: 1px solid #d4d4d4;
-      }
-      .autocomplete-items div:hover {
-        /*when hovering an item:*/
-        background-color: #e9e9e9;
-      }
-      .autocomplete-active {
-        /*when navigating through the items using the arrow keys:*/
-        background-color: DodgerBlue !important;
-        color: #ffffff;
-      }
-    </style>
+    <title>OrangerFry.com</title>
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <link rel="stylesheet" href="./CSS/commons.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/pets.css">
   </head>
   <body>
+    <!--!--------------------------------------------- <Essentials> ----------------------------------------------->
+<!-- Prelaoder,offcanvas -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <!--?--------------------------------------------- Header ----------------------------------------------->
-    <header></header>
+    <header>
+      <nav id="top1" class="topfirst">
+        <ul class="nav justify-content-right mx-5">
+          <li class="nav-item">
+            <a class="nav-link active" href="#"
+              >Anniversary Bash | Up to 70% Off
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><b> Use Code: ANNIVERSARY</b></a>
+          </li>
+        </ul>
+        <ul class="nav justify-content-right mx-5">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Grab Latest Deals </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"
+              ><b>
+                Earn 25% Cashback On All Orders T&C Apply
+                <u style="color: rgb(0, 255, 76)">Sign Up</u>
+              </b></a
+            >
+          </li>
+          <img  id="close-top1"  src="./Images/icons/close.png" alt="" />
+        </ul>
+      </nav>
+      <nav class="topsec">
+        <ul class="nav justify-content-right mx-5 topsecond">
+          <li class="nav-item">
+            <a class="nav-link active" href="#"> Sell on Pepperfry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> Become a Franchisee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Buy in Bulk</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Find a Studio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#"> Find Design Inspiration</a>
+          </li>
+          <hr />
+
+          <li class="nav-item">
+            <a class="nav-link  pincode active " href="#"
+              >Enter Pincode <img src="Images/index/edit-21.svg" alt="">
+              <u style="color: red;">Find Pepperfry studio</u>
+          </li>
+        </ul>
+      </nav>
+      <nav id="stickynav">
+        <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html"
+              ><img id="navlogo" src="./Images/Orangefrylogo.png" alt=""
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div></div>
+              <div class="megasearch autocomplete">
+                <input
+                type="text"
+                name="myCountry"
+                  
+                  id="megasearch"
+                  class="form-control me-2"
+                  placeholder="Search for Decorations "
+                  aria-label="Search"
+                />
+                <img
+                  style="opacity: 0.6; width: 25px; height: 25px"
+                  src="./Images/icons/search.png"
+                  alt=""
+                />
+              </div>
+  
+              <div class="flex iconsbar">
+                <div></div>
+                <div>
+                  <img width="40px" src="./Images/icons/help-icon.svg" alt="" />
+                </div>
+                <div>
+                  <img width="40px"  src="./Images/icons/icon.svg" alt="" />
+                
+                </div>
+                <div>
+                  <img width="40px" src="./Images/icons/heart.svg" alt="" />
+                </div>
+                <div>
+                  <img width="40px" src="./Images/icons/cart-21.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <nav id="megalistheads">
+          <ul class="nav justify-content-center mx-5">
+            <li class="nav-item">
+              <a class="nav-link active" id="furbutton" data-dropdown-button1>Furniture</a>
+              <div id="furmenu" class="main-mega-menu" data-visible="X" data-area >
+                <div class="menu-box" data-dropdown>
+                  <a
+                    ><p><b>Sofas</b></p></a
+                  >
+                  <a><p>3 Seater Sofas</p></a>
+                  <a><p>2 Seater Sofas</p></a>
+                  <a><p>1 Seater Sofas</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Sofa Sets</b></p></a
+                  >
+                  <a><p>LHS Sectionals</p></a>
+                  <a><p>RHS Sectionals</p></a>
+                  <a><p>Corner Sofas</p></a>
+                  <a><p>Chaise Loungers</p></a>
+                  <a><p>Sofa Cum Beds</p></a>
+                  <a><p>Futons</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Recliners</b></p></a
+                  >
+                  <a><p>1 Seater</p></a>
+                  <a><p>2 Seater</p></a>
+                  <a><p>3 Seater</p></a>
+                  <a><p>Recliner Sets</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Futons</b></p></a
+                  >
+                  <a><p>Recliners</p></a>
+                  <a><p>1 Seater</p></a>
+                  <a><p>2 Seater</p></a>
+                  <a><p>3 Seater</p></a>
+                  <a><p>Recliner Sets</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Sofa Chairs</b></p></a
+                  >
+                  <a><p>Wing Chairs</p></a>
+                  <a><p>Lounge Chairs</p></a>
+                  <a><p>Slipper Chairs</p></a>
+                  <a><p>Barrel Chairs</p></a>
+                  <a><p>Office Chairs</p></a>
+                  <a><p>Ergonomic Chairs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Executive Chairs</b></p></a
+                  >
+                  <a><p>Training Chairs</p></a>
+                  <a><p>Guest Chairs</p></a>
+                  <a><p>Cantilever Chairs</p></a>
+                  <a><p>Gaming Chairs</p></a>
+                  <a><p>Bean Bags</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Chairs</b></p></a
+                  >
+                  <a><p>Arm Chairs</p></a>
+                  <a><p>Rocking Chairs</p></a>
+                  <a><p>Folding Chairs</p></a>
+                  <a><p>Iconic Chairs</p></a>
+                  <a><p>Cafe Chairs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Seating</b></p></a
+                  >
+                  <a><p>Settees</p></a>
+                  <a><p>Benches</p></a>
+                  <a><p>Ottomans</p></a>
+                  <a><p>Pouffes</p></a>
+                  <a><p>Recamiers</p></a>
+                  <a><p>Foot Stools</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Seating Stools</b></p></a
+                  >
+                  <a><p>Centre Tables</p></a>
+                  <a><p>Coffee Tables</p></a>
+                  <a><p>Coffee Table Sets</p></a>
+                  <a><p>End Tables</p></a>
+                  <a><p>Nest of Tables</p></a>
+                  <a><p>C Shaped Tables</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>TV & Media Units</b></p></a
+                  >
+                  <a><p>TV Consoles</p></a>
+                  <a><p>TV Shelves</p></a>
+                  <a><p>TV Units</p></a>
+                  <a><p>Shoe Racks</p></a>
+                  <a><p>Shoe Cabinets</p></a>
+                  <a><p>Open Shoe Racks</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Shoe Rack & Seat</b></p></a
+                  >
+                  <a><p>Tilt Out Racks</p></a>
+                  <a><p>Dining Sets</p></a>
+                  <a><p>4 Seater Sets</p></a>
+                  <a><p>6 Seater Sets</p></a>
+                  <a><p>8 Seater Sets</p></a>
+                  <a><p>2 Seater Sets</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Dining Chairs</b></p></a
+                  >
+                  <a><p>Dining Tables</p></a>
+                  <a><p>Console Tables</p></a>
+                  <a><p>Bar Furniture</p></a>
+                  <a><p>Bar Cabinets</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Bar Trolleys</b></p></a
+                  >
+                  <a><p>Bar Stools</p></a>
+                  <a><p>Bar Table Sets</p></a>
+                  <a><p>Wine Racks</p></a>
+                  <a><p>Beds</p></a>
+                  <a><p>Queen Size Beds</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>King Size Beds</b></p></a
+                  >
+                  <a><p>Single Beds</p></a>
+                  <a><p>Poster Bed</p></a>
+                  <a><p>Folding Beds</p></a>
+                  <a><p>Bedside Tables</p></a>
+                  <a><p>Night Stands</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Bedside Chests</b></p></a
+                  >
+                  <a><p>Bedside Cabinets</p></a>
+                  <a><p>Dressing Tables</p></a>
+                  <a><p>Dressers</p></a>
+                  <a><p>Dressing Cabinets</p></a>
+                  <a><p>Dressing Consoles</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Dressing Units</b></p></a
+                  >
+                  <a><p>Wardrobes</p></a>
+                  <a><p>1 Door</p></a>
+                  <a><p>2 Door</p></a>
+                  <a><p>3 Door</p></a>
+                  <a><p>4 Door</p></a>
+                  <a><p>4+ Door</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Sliding Door</b></p></a
+                  >
+                  <a><p>Cabinetry</p></a>
+                  <a><p>Sideboards</p></a>
+                  <a><p>Chest of Drawers</p></a>
+                  <a><p>Plastic Cabinets</p></a>
+                  <a><p>Book Shelves</p></a>
+                  <a><p>Book Cases</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Kitchen Cabinets</b></p></a
+                  >
+                  <a><p>Office Cabinets</p></a>
+                  <a><p>Trunks</p></a>
+                  <a><p>Study Tables</p></a>
+                  <a><p>Writing Tables</p></a>
+                  <a><p>Computer Tables</p></a>
+                  <a><p>Hutch Desks</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Foldable Tables</b></p></a
+                  >
+                  <a><p>Wall Mounted</p></a>
+                  <a><p>Portable Tables</p></a>
+                  <a><p>Office Tables</p></a>
+                  <a><p>Outdoor</p></a>
+                  <a><p>Swings</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Hammocks</b></p></a
+                  >
+                  <a><p>Tables</p></a>
+                  <a><p>Table & Chair Sets</p></a>
+                  <a><p>Seating</p></a>
+                  <a><p>Plastic Chairs</p></a>
+                  <a><p>Kids & Teens</p></a>
+                  <a><p>Cribs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Beds</b></p></a
+                  >
+                  <a><p>Bunk Beds</p></a>
+                  <a><p>Study</p></a>
+                  <a><p>Wardrobes</p></a>
+                  <a><p>Book Shelves</p></a>
+                  <a><p>Storage</p></a>
+                  <a><p>Seating</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Bean Bags</b></p></a
+                  >
+                  <a><p>Furniture Care</p></a>
+                  <a><p>Furniture Care Kit</p></a>
+                  <a><p>Sofa Spa</p></a>
+                  <a><p>Chair Spa</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Hammocks</b></p></a
+                  >
+                  <a><p>Tables</p></a>
+                  <a><p>Table & Chair Sets</p></a>
+                  <a><p>Seating</p></a>
+                  <a><p>Plastic Chairs</p></a>
+                  <a><p>Kids & Teens</p></a>
+                  <a><p>Cribs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Hambeds </b></p></a
+                  >
+                  <a><p>Bunk Beds</p></a>
+                  <a><p>Study</p></a>
+                  <a><p>Wardrobes</p></a>
+                  <a><p>Book Shelves</p></a>
+                  <a><p>Storage</p></a>
+                  <a><p>Seating</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Bean Bags</b></p></a
+                  >
+                  <a><p>Furniture Care</p></a>
+                  <a><p>Furniture Care Kit</p></a>
+                  <a><p>Sofa Spa</p></a>
+                  <a><p>Chair Spa</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Builloks</b></p></a
+                  >
+                  <a><p>Tables</p></a>
+                  <a><p>Table & Chair Sets</p></a>
+                  <a><p>Seating</p></a>
+                  <a><p>Plastic Chairs</p></a>
+                  <a><p>Kids & Teens</p></a>
+                  <a><p>Cribs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Roasters</b></p></a
+                  >
+                  <a><p>Bunk Beds</p></a>
+                  <a><p>Study</p></a>
+                  <a><p>Wardrobes</p></a>
+                  <a><p>Book Shelves</p></a>
+                  <a><p>Storage</p></a>
+                  <a><p>Seating</p></a>
+                </div>
+              </div>
+              <div id="petsmenu" class="main-mega-menu" data-visible="X" data-dropdown>
+                <div id="petsmenulist" >
+                  <div class="menu-box"><b><p>Dog Furniture</p></b></div>
+                      <div class="menu-box"><b><p>Dog Beds</p></b></div>
+                      <div class="menu-box"><b><p>Dog House</p></b></div>
+                      <div class="menu-box"><b><p>Cat Furniture</p></b></div>
+                      <div class="menu-box"><b><p>Cat Beds</p></b></div>
+                      <div class="menu-box"><b><p>Cat Trees & Condos</p></b></div>
+                      <div class="menu-box"><b><p>Bird Houses & Feeders</p></b></div>
+                      <div class="menu-box"><b><p>Crates & Carriers</p></b></div>
+                      <div class="menu-box"><b><p>Pet Furnishings</p></b></div>
+                      <div class="menu-box"><b><p>Mats</p></b></div>
+                      <div class="menu-box"><b><p>Cushions</p></b></div>
+                      <div class="menu-box"><b><p>Blankets</p></b></div>
+                      <div class="menu-box"><b><p>Pet Toys</p></b></div>
+                      <div class="menu-box"><b><p>Plush Toys</p></b></div>
+                      <div class="menu-box"><b><p>Chew Toys</p></b></div>
+                      <div class="menu-box"><b><p>Interactive Toys</p></b></div>
+                      <div class="menu-box"><b><p>Rope Toys</p></b></div>
+                      <div class="menu-box"><b><p>Rubber Toys</p></b></div>
+                      <div class="menu-box"><b><p>Pet Grooming</p></b></div>
+                      <div class="menu-box"><b><p>Shampoos</p></b></div>
+                      <div class="menu-box"><b><p>Brushes & Combos</p></b></div>
+                      <div class="menu-box"><b><p>Towels & Wipes</p></b></div>
+                      <div class="menu-box"><b><p>Dental Solutions</p></b></div>
+                      <div class="menu-box"><b><p>Perfumes</p></b></div>
+                      <div class="menu-box"><b><p>Litter & Supplies</p></b></div>
+                      <div class="menu-box"><b><p>Scoop & Trays</p></b></div>
+                </div>
+                <div class="petsimg flex">
+                  <div><img src="Images/index/megamenupet1.webp" alt=""></div>
+                  <div><img src="Images/index/megamenupet2.webp" alt=""></div>
+                  <div><img src="Images/index/megamenupet3.webp" alt=""></div>
+                </div>
+              </div>
+              <div id="lampsmenu" class="main-mega-menu" data-visible="X" data-dropdown>
+                <div id="petsmenulist" >
+                  <div class="menu-box"><b><p>Dog Furniture</p></b></div>
+                      <div class="menu-box"><b><p>Dog Beds</p></b></div>
+                      <div class="menu-box"><b><p>Dog House</p></b></div>
+                      <div class="menu-box"><b><p>Cat Furniture</p></b></div>
+                      <div class="menu-box"><b><p>Cat Beds</p></b></div>
+                      <div class="menu-box"><b><p>Cat Trees & Condos</p></b></div>
+                      <div class="menu-box"><b><p>Bird Houses & Feeders</p></b></div>
+                      <div class="menu-box"><b><p>Crates & Carriers</p></b></div>
+                      <div class="menu-box"><b><p>Pet Furnishings</p></b></div>
+                      <div class="menu-box"><b><p>Mats</p></b></div>
+                      <div class="menu-box"><b><p>Cushions</p></b></div>
+                      <div class="menu-box"><b><p>Blankets</p></b></div>
+                      <div class="menu-box"><b><p>Pet Toys</p></b></div>
+                      <div class="menu-box"><b><p>Plush Toys</p></b></div>
+                      <div class="menu-box"><b><p>Chew Toys</p></b></div>
+                      <div class="menu-box"><b><p>Interactive Toys</p></b></div>
+                      <div class="menu-box"><b><p>Rope Toys</p></b></div>
+                      <div class="menu-box"><b><p>Rubber Toys</p></b></div>
+                      <div class="menu-box"><b><p>Pet Grooming</p></b></div>
+                      <div class="menu-box"><b><p>Shampoos</p></b></div>
+                      <div class="menu-box"><b><p>Brushes & Combos</p></b></div>
+                      <div class="menu-box"><b><p>Towels & Wipes</p></b></div>
+                      <div class="menu-box"><b><p>Dental Solutions</p></b></div>
+                      <div class="menu-box"><b><p>Perfumes</p></b></div>
+                      <div class="menu-box"><b><p>Litter & Supplies</p></b></div>
+                      <div class="menu-box"><b><p>Scoop & Trays</p></b></div>
+                </div>
+                <div class="petsimg flex">
+                  <div><img src="Images/index/lamp.jpg1.webp" alt=""></div>
+                  <div><img src="Images/index/lamp2.webp" alt=""></div>
+                  <div><img src="Images/index/lamp4.webp" alt=""></div>
+                  <div><img src="Images/index/lamp3.jpg" alt=""></div>
+                </div>
+              </div>
+              <div id="decormenu" class="main-mega-menu" data-visible="X" data-dropdown>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Vases</b></p></a
+                  >
+                  <a><p>Figurines</p></a>
+                  <a><p>Collectibles</p></a>
+                  <a><p>Showpieces</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Photo Frames</b></p></a
+                  >
+                  <a><p>Single</p></a>
+                  <a><p>Collage</p></a>
+                  <a><p>Clip Type</p></a>
+                  <a><p>Table Top</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Room Partitions</b></p></a
+                  >
+                  <a><p>Folding Dividers</p></a>
+                  <a><p>Hanging Dividers</p></a>
+                  <a><p>Table Organizers</p></a>
+                  <a><p>Table Clocks</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Decorative Boxes</b></p></a
+                  >
+                  <a><p>Desk Organizers</p></a>
+                  <a><p>Magazine Racks</p></a>
+                  <a><p>Pen Stands</p></a>
+                  <a><p>Bookends</p></a>
+                  <a><p>Festive Decor</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Torans</b></p></a
+                  >
+                  <a><p>Rangoli</p></a>
+                  <a><p>Christmas Decorations</p></a>
+                  <a><p>Spiritual</p></a>
+                  <a><p>Mandirs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Pooja Shelves</b></p></a
+                  >
+                  <a><p>Religious Idols</p></a>
+                  <a><p>Religious Frames</p></a>
+                  <a><p>Chowkies</p></a>
+                  <a><p>Feng Shui</p></a>
+                  <a><p>Prayer Essential</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Bells</b></p></a
+                  >
+                  <a><p>Diyas</p></a>
+                  <a><p>Haldi Kumkum Box</p></a>
+                  <a><p>Incense Holders</p></a>
+                  <a><p>Pooja Metalware</p></a>
+                  <a><p>Prayer Mats</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Beds</b></p></a
+                  >
+                  <a><p>Bunk Beds</p></a>
+                  <a><p>Study</p></a>
+                  <a><p>Wardrobes</p></a>
+                  <a><p>Book Shelves</p></a>
+                  <a><p>Storage</p></a>
+                  <a><p>Seating</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Bean Bags</b></p></a
+                  >
+                  <a><p>Furniture Care</p></a>
+                  <a><p>Furniture Care Kit</p></a>
+                  <a><p>Sofa Spa</p></a>
+                  <a><p>Chair Spa</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Hammocks</b></p></a
+                  >
+                  <a><p>Tables</p></a>
+                  <a><p>Table & Chair Sets</p></a>
+                  <a><p>Seating</p></a>
+                  <a><p>Plastic Chairs</p></a>
+                  <a><p>Kids & Teens</p></a>
+                  <a><p>Cribs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Hambeds </b></p></a
+                  >
+                  <a><p>Bunk Beds</p></a>
+                  <a><p>Study</p></a>
+                  <a><p>Wardrobes</p></a>
+                  <a><p>Book Shelves</p></a>
+                  <a><p>Storage</p></a>
+                  <a><p>Seating</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Bean Bags</b></p></a
+                  >
+                  <a><p>Furniture Care</p></a>
+                  <a><p>Furniture Care Kit</p></a>
+                  <a><p>Sofa Spa</p></a>
+                  <a><p>Chair Spa</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Builloks</b></p></a
+                  >
+                  <a><p>Tables</p></a>
+                  <a><p>Table & Chair Sets</p></a>
+                  <a><p>Seating</p></a>
+                  <a><p>Plastic Chairs</p></a>
+                  <a><p>Kids & Teens</p></a>
+                  <a><p>Cribs</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Roasters</b></p></a
+                  >
+                  <a><p>Bunk Beds</p></a>
+                  <a><p>Study</p></a>
+                  <a><p>Wardrobes</p></a>
+                  <a><p>Book Shelves</p></a>
+                  <a><p>Storage</p></a>
+                  <a><p>Seating</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Candles</b></p></a
+                  >
+                  <a><p>Decorative</p></a>
+                  <a><p>Scented</p></a>
+                  <a><p>Tea Lights</p></a>
+                  <a><p>Home Fragrances</p></a>
+                  <a><p>Candle Stands</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Candle Holders</b></p></a
+                  >
+                  <a><p>Tea Light Holders</p></a>
+                  <a><p>Pots & Planters</p></a>
+                  <a><p>Desk Pots</p></a>
+                  <a><p>Planters</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Planter Stands</b></p></a
+                  >
+                  <a><p>Natural Plants</p></a>
+                  <a><p>Indoor</p></a>
+                  <a><p>Flowering</p></a>
+                  <a><p>Succulents</p></a>
+                  <a><p>Bonsai</p></a>
+                  <a><p>Plant Bundles</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Low Maintenance</b></p></a
+                  >
+                  <a><p>Artificial Plants</p></a>
+                  <a><p>Artificial Plants</p></a>
+                  <a><p>Artificial Flowers</p></a>
+                  <a><p>Artificial Grass</p></a>
+                  <a><p>Garden Décor</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Gardening Tools</b></p></a
+                  >
+                  <a><p>Indoor Fountains</p></a>
+                  <a><p>Kids Decor</p></a>
+                  <a><p>Wall Shelves</p></a>
+                  <a><p>Book Ends</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Metal Wall Art</b></p></a
+                  >
+                  <a><p>Wooden Wall Art</p></a>
+                  <a><p>Jharokhas</p></a>
+                  <a><p>Wall Plates</p></a>
+                  <a><p>Wall Masks</p></a>
+                  <a><p>Animal Busts</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Ethnic Art</b></p></a
+                  >
+                  <a><p>Shelves & Cabinets</p></a>
+                  <a><p>Wall Cabinets</p></a>
+                  <a><p>Wall Shelves</p></a>
+                  <a><p>Key Holders</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Set Top Box Holders</b></p></a
+                  >
+                  <a><p>Hand Paintings</p></a>
+                  <a><p>Art Prints</p></a>
+                  <a><p>Art Panels</p></a>
+                  <a><p>Wall Coverings</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Wall Stickers</b></p></a
+                  >
+                  <a><p>Wallpapers</p></a>
+                  <a><p>Wall Clocks</p></a>
+                  <a><p>Decorative</p></a>
+                  <a><p>Platform</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Pendulum</b></p></a
+                  >
+                  <a><p>Cuckoo</p></a>
+                  <a><p>Mirrors</p></a>
+                  <a><p>Wall</p></a>
+                </div>
+                <div class="menu-box">
+                  <a
+                    ><p><b>Floor</b></p></a
+                  >
+                  <a><p>Full-Length</p></a> <a><p>LED</p></a>
+                  <a><p>Mirror Sets</p></a>
+                  <a><p>Décor Gift Sets</p></a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-dropdown-button2>Home Décor</a>
+               </li>
+            <li class="nav-item">
+              <a class="nav-link" data-dropdown-button4>Lamps & Lighting</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" data-dropdown-button2>Kitchen & Dining</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-dropdown-button1>Furnishings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-dropdown-button4>Mattresses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" data-dropdown-button1>Appliances</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-dropdown-button3>Pets</a>
+           
+              
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Modular</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Gift Cards</a>
+            </li>
+          </ul>
+        </nav>
+      </nav>
+    
+    
+      
+      
+    </header>
     <!--?--------------------------------------------- Main Body ----------------------------------------------->
     <main>
-      <section>
-        <!--Make sure the form has the autocomplete function switched off:-->
-        <form autocomplete="off" action="/action_page.php">
-          <div class="autocomplete" style="width: 300px">
-            <input
-              id="myInput"
-              type="text"
-              name="myCountry"
-              placeholder="Country"
+          <nav id="bread" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Kitchen</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Kitchen Products</li>
+            </ol>
+        </nav>
+        <div class="firstview">
+            <div><h1 style="font-family: Playfair Display;">Kitchen and Dining</h1>
+           
+              <a>Serveware</a><br>
+              <a>Teaware</a><br>
+              <a>Dinnerware</a><br>
+              <a>Drinkware</a><br>
+              <a>Barware</a><br>
+              <a>Knives and Cutlery</a><br>
+              <a>Table Essentials</a><br>
+             
+            </div>
+            <div> <img width="100%" src="Images/Kitchen/Firstbanner.jpg" alt=""></div>
+        </div>
+        <!--todo-------------------------- <Need help> --------------------------------->
+          <section >
+            <h1 id="seciton-heads">Meet The Bestsellers</h1>
+            <div id="SixCardParent">
+              <div>
+                <img
+                  width="100%"
+                  src="./Images/kitchen/meetbest1.jpg"
+                  alt=""
+                />
+                <p style="color: grey">The Table Is Set</p>
+              </div>
+              <div>
+                <img
+                  width="100%"
+                  src="./Images/kitchen/meetbest2.webp"
+                  alt=""
+                />
+                <p style="color: grey">Impress Your Guests</p>
+              </div>
+              <div>
+                <img
+                  width="100%"
+                  src="./Images/kitchen/meetbest3.jpg"
+                  alt=""
+                />
+                <p style="color: grey">Everyone's Cup Of Tea</p>
+              </div>
+              <div>
+                <img
+                  width="100%"
+                  src="./Images/kitchen/meetbest4.jpg"
+                  alt=""
+                />
+                <p style="color: grey">Everything About Cabinets And Sideboards</p>
+              </div>
+              
+              <div>
+                <img
+                  width="100%"
+                  src="./Images/kitchen/meetbest5.jpg"
+                  alt=""
+                />
+                <p style="color: grey">Keep The Table Tidy</p>
+              </div>
+              
+              <div>
+                <img
+                  width="100%"
+                  src="./Images/kitchen/meetbest6.jpg"
+                  alt=""
+                />
+                <p style="color: grey">Snack In Style</p>
+              </div>
+              
+              
+            </div>
+          </section>
+        <!--todo-------------------------- <what the fry> --------------------------------->
+      <section >
+        <h1 id="seciton-heads">Best Kitchen Sets</h1>
+        <div id="FourCardParent">
+          <div>
+            <img
+              width="100%"
+              src="./Images/Kitchen/bigdeal1.jpg"
+              alt=""
             />
+            <h4 id="subheads">For ₹99 at 67% Off</h4>
+            <p style="color: grey">Popcorn Serving Bowl</p>
           </div>
-          <input type="submit" />
-        </form>
+          <div>
+            <img
+              width="100%"
+              src="./Images/Kitchen/bigdeal2.jpg"
+              alt=""
+            />
+            <h4 id="subheads">For ₹219 at 73% Off</h4>
+            <p style="color: grey">Floral Bedding</p>
+          </div>
+          <div>
+            <img
+              width="100%"
+              src="./Images/Kitchen/bigdeal3.jpg"
+              alt=""
+            />
+            <h4 id="subheads">For ₹89 at 74% Off</h4>
+            <p style="color: grey">Dress Your Table </p>
+          </div>
+          <div>
+            <img
+              width="100%"
+              src="./Images/Kitchen/bigdeal4.jpg"
+              alt=""
+            />
+            <h4 id="subheads">For ₹179 at 82% Off</h4>
+            <p style="color: grey">A Jar Of Happiness</p>
+          </div>
+        </div>
       </section>
-    </main>
-    <!--?--------------------------------------------- Footer ----------------------------------------------->
-    <footer></footer>
+      <!--todo-------------------------- <what the fry> --------------------------------->
+        <section >
+            <h1 id="seciton-heads">What's #Trending?</h1>
+            <div id="FourCardParent">
+              <div>
+                <img
+                  width="100%"
+                  src="./Images/Kitchen/trend1.jpg"
+                  alt=""
+                />
+                <h4 id="subheads">Romantic Times</h4>
+                <p style="color: grey">50+ Wine Glasses</p>
+              </div>
+              <div>
+                <img
+                  width="100%"
+                  src="./Images/Kitchen/trend2.jpg"
+                  alt=""
+                />
+                <h4 id="subheads">A Stylish Start</h4>
+                <p style="color: grey">250+ Appetizer Platters</p>
+              </div>
+              <div>
+                <img
+                  width="100%"
+                  src="./Images/Kitchen/trend3.jpg"
+                  alt=""
+                />
+                <h4 id="subheads">For Special Occasions</h4>
+                <p style="color: grey">SS Side Plates Set of 4 </p>
+              </div>
+              <div>
+                <img
+                  width="100%"
+                  src="./Images/Kitchen/trend4.jpg"
+                  alt=""
+                />
+                <h4 id="subheads">Nom! Nom! Nom!</h4>
+                <p style="color: grey">Cutlery Runner</p>
+              </div>
+            </div>
+          </section>
+             <!--todo-------------------------- <what the fry> --------------------------------->
+        <section >
+          <h1 id="seciton-heads">Discover New Launches</h1>
+          <div id="FourCardParent">
+            <div>
+              <img
+                width="100%"
+                src="./Images/Kitchen/discover1.jpg"
+                alt=""
+              />
+              <h4 id="subheads">Pretty Pitchers</h4>
+              <p style="color: grey">30+ Carafnter</p>
+            </div>
+            <div>
+              <img
+                width="100%"
+                src="./Images/Kitchen/discover2.jpg"
+                alt=""
+              />
+              <h4 id="subheads">Greet With Grace</h4>
+              <p style="color: grey">50+ Serveware</p>
+            </div>
+            <div>
+              <img
+                width="100%"
+                src="./Images/Kitchen/discover3.jpg"
+                alt=""
+              />
+              <h4 id="subheads">It's Tea Time</h4>
+              <p style="color: grey">SS Side Plates Set of 4 </p>
+            </div>
+            <div>
+              <img
+                width="100%"
+                src="./Images/Kitchen/discover4.jpg"
+                alt=""
+              />
+              <h4 id="subheads">Tipple Tools</h4>
+              <p style="color: grey">60+ Bar Tools</p>
+            </div>
+          </div>
+        </section>
+   
+     <!--todo-------------------------- <Trends in furniture and decor 3> --------------------------------->
+       
+        <section >
+            <h1 id="seciton-heads">Your Style Chooses You</h1>
+            <div id="ForFur">
+              <div>
+                <img
+                  width="100%"
+                  src="./Images/Kitchen/style1.jpg"
+                  alt=""
+                />
+                <h4 id="subheads">Masala Sets</h4>
+               
+              </div>
+              <div>
+                <img
+                  width="100%"
+                  src="./Images/Kitchen/style2.jpg"
+                  alt=""
+                />
+                <h4 id="subheads">Bowls</h4>
+                
+              </div>
+              <div>
+                <img
+                  width="100%"
+                  src="./Images/Kitchen/style3.jpg"
+                  alt=""
+                />
+                <h4 id="subheads">Tiffins</h4>
+               
+              </div>
+              
+            </div>
+          </section>
+               <!--todo-------------------------- <Need help> --------------------------------->
+                <section >
+                  <h1 id="seciton-heads">Top Brands To Choose From</h1>
+                  <div id="SixCardParent">
+                    <div>
+                      <img
+                        width="100%"
+                        src="./Images/kitchen/topbrand1.jpg"
+                        alt=""
+                      />
+                      <p style="color: grey">220+ Options</p>
+                    </div>
+                    <div>
+                      <img
+                        width="100%"
+                        src="./Images/kitchen/topbrand2.jpg"
+                        alt=""
+                      />
+                      <p style="color: grey">200+ Options</p>
+                    </div>
+                    <div>
+                      <img
+                        width="100%"
+                        src="./Images/kitchen/topbrand3.jpg"
+                        alt=""
+                      />
+                      <p style="color: grey">320+ Options</p>           
+                             </div>
+                    <div>
+                      <img
+                        width="100%"
+                        src="./Images/kitchen/topbrand4.jpg"
+                        alt=""
+                      />
+                      <p style="color: grey">70+ Options</p>   
+                                     </div>
+                    
+                    <div>
+                      <img
+                        width="100%"
+                        src="./Images/kitchen/topbrand5.jpg"
+                        alt=""
+                      />
+                      <p style="color: grey">300+ Options</p>                    
+                    </div>
+                    
+                    <div>
+                      <img
+                        width="100%"
+                        src="./Images/kitchen/topbrand6.jpg"
+                        alt=""
+                      />
+                      <p style="color: grey">100+ Options</p>                   
+                     </div>
+                    
+                    
+                  </div>
+                </section>
+                 <!--todo-------------------------- <Customer speak 3 > --------------------------------->
+        <section >
+          <h1 id="seciton-heads">Customer Speaks</h1>
+          <div id="ThreeCardParent">
+            <div>
+              <img
+                width="100%"
+                src="./Images/index/customerspeak3.jpg"
+                alt=""
+              />
+              <p style="color: grey">Bought these two grey puffy stools from pepperfry. Found them to be surprisingly strong! Blends perfectly</p>
+             <br>
+              <h4 id="subheads">Suman Senapatia,
+                Visakhapatnam</h4>
+            </div>
+            <div>
+              <img
+                width="100%"
+                src="./Images/index/customerspeak2.jpg"
+                alt=""
+              />
+              <p style="color: grey">I purchased Candy Study Chair in Pink Colour by Alex Daisy from pepperfry looks awesome and My daughter</p>
+              <br>
+               <h4 id="subheads">Satya Madhana,
+                Secunderabad</h4>
+            </div>
+            <div>
+              <img
+                width="100%"
+                src="./Images/index/customerspeak1.jpg"
+                alt=""
+              />
+              <p style="color: grey">Purchased an ergonomic chair, I thought it would not be fitting for me but once it got delivered</p>
+              <br>
+               <h4 id="subheads">Baba Kattubadi,
+                Hyderabad</h4>
+            </div>
+            
+          </div>
+        </section>
+
+
+
+
+        <section id="lastview">
+            <a href="">Buy Kitchen & Dining Products Online At Affordable Prices</a>
+            <p>Buying kitchen and dining products at home has been a rite of passage for many generations. As such, the teetering array of kitchen and dining products in the modern era have evolved from the standardized offerings of yesteryear to include a wide range of quality and unique appliances and products. The best way to go about selecting the right appliances and products for your home is to research the right kitchen and dining products for your needs.
+              <br><br>
+              It is frequently stated that you eat with your eyes. It is not enough to make and serve delicious cuisine; it must also look appealing. This is why elegant kitchen & dining products have become the new standard in excellent serveware. Looking for a serving set that can stand up to your cooking? Get serving products with Pepperfry</p>
+            <a href="">Buying Kitchen and Dining Products at Home</a>
+            <p>Shopping for serveware, teaware, and dinnerware is one of the most exciting parts of setting up your dining space, given just how much there is to choose from!
+<br><br>
+              Right from elaborate dinner sets to classic crockery pieces that you can mix and match, chic coffee mugs for your everyday caffeine fix, and elegant teacups that will enhance your afternoon soirees, your tableware can truly reflect your personality in the most innovative manner.
+              <br><br>
+              Pepperfry dinnerware can totally transform your dining space, and the greatest thing is that it can be changed regularly without costing a large investment.</p>
+            <a href="">Why Should You Buy Kitchen & Dining Products from Pepperfry</a>
+            <p>As far as kitchen and dining products at home go, it can be challenging to find the right products to suit your family's needs. Hence, the search for the best kitchen and dining products at home ends at Pepperfry.
+
+              Pepperfry offers plenty of kitchen and dining products to help you find the right products for your needs. It's no secret that the kitchen is the heart of the home and thus, a well-stocked kitchen and dining room is a good way to keep the family happy. As such, it is imperative that you invest in quality products and materials in order to maintain a positive and productive atmosphere. A well stocked kitchen and dining room not only makes meal preparation a breeze, but also enables you to spend more time with your family and enjoy a smorgasbord of foods.</p>
+            
+
+
+
+
+        </section>
+      </main>
+    <!--odo--------------------------------------------- Footer ----------------------------------------------->
+    <div id="footerspace"></div>
+    <footer>
+      <section class="footer1">
+        <div id="footerlinks">
+          <div>
+            <ul>
+              <li><b style="color: black"> Useful Links</b></li>
+              <li>About Us</li>
+              <li>Our Blog</li>
+              <li>Careers</li>
+              <li>Corporate Governance</li>
+              <li>Pepperfry In the News</li>
+              <li>Find A Studio</li>
+              <li>Gift Cards</li>
+              <li>Brands</li>
+              <li>Customer Reviews</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><b style="color: black"> Partners</b></li>
+              <li>Sell With Us</li>
+              <li>Become a Franchisee</li>
+              <li>Become a Pep Homie</li>
+              <li>Design For Us</li>
+              <li>Pepperfry Marketplace Policies</li>
+              <li>Login to Your Merchant Dashboard</li>
+              <li>Important : GST and You</li>
+              <li>Corporate Enquiries</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><b style="color: black"> Need Help?</b></li>
+              <li>Contact Us</li>
+              <li>Returns & Refund</li>
+              <li>Track Your Order</li>
+              <li>FAQs</li>
+              <li>Buy on Phone</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <br /><br /><br />
+          <img width="450px" src="./Images/index/googleplay.png" alt="" />
+        </div>
+      </section>
+      <section class="footer2">
+        <div>
+          <b>Popular Brands</b>
+          <p>
+            Queen Size Beds, King Size Beds, Coffee Tables, Dining Sets,
+            Recliners, Sofa cum Beds, Rocking Chairs, Cabinets, Book Shelves, TV
+            Unit, Wardrobes, Outdoor Furniture, Bar Cabinets, Wall Shelves,
+            Photo Frames, Bed Sheets, Mattresses, Table Cloth, Living Room
+            Furniture, Study Tables, Dining Room Furniture, Office Furniture,
+            Bed Room Furniture, Dining Table, Beds, Sofas, Sofa Set, Trundle Bed
+          </p>
+        </div>
+        <div>
+          <b>Popular Categories</b>
+          <p>
+            Mintwud, Woodsworth, CasaCraft, Amberville, Mudramark, Bohemiana,
+            Clouddio, Spacewood, Durian, Green Soul, Godrej Interio, Nilkamal,
+            Orange Tree , HomeTown , Duroflex , Sleepyhead , Peps India ,
+            NestAsia , Jaipur Rugs , Obettee , Eliante by Jainsons , @Home ,
+            Bombay Dyeing , Kapoor E Illuminaton , Ellementry , Chumbak ,
+            Philips , Jaipur Fabric , Maspar , India Circus by Krsnaa Mehta
+          </p>
+        </div>
+        <div>
+          <b>Cities We deliver to</b>
+          <p>
+            Bengaluru, Mumbai, Navi Mumbai, Delhi, Hyderabad, Pune, Chennai,
+            Gurgaon, Kolkata, Noida, Goa, Ghaziabad, Ahmedabad, Coimbatore,
+            Faridabad, Jaipur, Lucknow, Kochi, Visakhapatnam, Chandigarh,
+            Vadodara, Nagpur, Thiruvananthapuram, Indore, Mysore, Bhopal, Surat,
+            Jalandhar, Patna, Ludhiana, Nashik, Madurai, Kanpur, Aurangabad and
+            many more
+          </p>
+        </div>
+      </section>
+      <section class="footer3">
+        <img width="100%" src="./Images/index/footerlinks.webp" alt="" />
+      </section>
+      <hr style="color: grey" />
+      <section class="footer4">
+        <div>
+          <a>Buy In Bulk</a>
+          <a>Write A Testimonial</a>
+        </div>
+        <div>
+          <a>Whitehat</a>
+          <a>Site Map</a>
+          <a>Terms Of Use</a>
+          <a>Privacy Policy</a>
+          <a>Your Data & Security</a>
+          <a>Grievance Redressal</a>
+        </div>
+      </section>
+    </footer>
   </body>
 </html>
-<script>
-  var countries = [
-    "chair",
-    "table",
-    "sofa",
-    "bed",
-    "dresser",
-    "bookshelf",
-    "desk",
-    "couch",
-    "ottoman",
-    "cabinet",
-    "armchair",
-    "nightstand",
-    "wardrobe",
-    "coffee table",
-    "rocking chair",
-    "recliner",
-    "loveseat",
-    "futon",
-    "bunk bed",
-    "area rug",
-    "lamp",
-    "artwork",
-    "throw pillow",
-    "candle",
-    "vase",
-    "picture frame",
-    "mirror",
-    "clocks",
-    "plants",
-    "curtains",
-    "blinds",
-    "carpet",
-    "throw blanket",
-    "cushions",
-    "wall decor",
-    "wallpaper",
-    "furniture covers",
-    "pet bed",
-    "pet toys",
-    "pet food",
-    "pet grooming supplies",
-    "pet collar",
-    "pet leash",
-    "pet carrier",
-    "dog kennel",
-    "cat tree",
-    "bird cage",
-    "fish tank",
-    "turtle tank",
-    "pet grooming table",
-    "pet shampoo",
-    "pet treats",
-    "pet first aid kit",
-    "floor lamp",
-    "table lamp",
-    "desk lamp",
-    "chandelier",
-    "pendant light",
-    "ceiling light",
-    "wall sconce",
-    "outdoor lighting",
-    "landscape lighting",
-    "LED lights",
-    "smart lights",
-    "light bulbs",
-    "light fixtures",
-    "dimmable lights",
-    "clothes hangers",
-    "clothes rack",
-    "clothes steamer",
-    "laundry hamper",
-    "laundry basket",
-    "laundry detergent",
-    "ironing board",
-    "clothes iron",
-    "sewing machine",
-    "mannequin",
-    "dress form",
-    "sewing supplies",
-    "fabric",
-    "patterns",
-    "thread",
-    "zipper",
-    "buttons",
-    "beads",
-    "needles",
-    "scissors",
-    "paint brushes",
-    "paint rollers",
-    "paint tray",
-    "paint samples",
-    "paint cans",
-    "wall paint",
-    "ceiling paint",
-    "trim paint",
-    "primer",
-    "stain",
-    "varnish",
-    "polyurethane",
-    "paint thinner",
-    "paint remover",
-    "paint brushes",
-    "paint rollers",
-    "paint tray",
-    "paint samples",
-    "paint cans",
-    "wall paint",
-    "ceiling paint",
-    "trim paint",
-    "primer",
-    "stain",
-    "varnish",
-    "polyurethane",
-    "paint thinner",
-    "paint remover",
-    "handbag",
-    "purse",
-    "wallet",
-    "watch",
-    "jewelry",
-    "necklace",
-    "bracelet",
-    "earrings",
-    "ring",
-    "body jewelry",
-    "hair accessories",
-    "sunglasses",
-    "eyeglasses",
-    "hat",
-    "scarf",
-    "gloves",
-    "socks",
-    "tights",
-    "shoes",
-    "boots",
-    "sandals",
-    "flip flops",
-    "slippers",
-    "dress shoes",
-    "sneakers",
-    "loafers",
-    "clogs",
-    "belts",
-    "ties",
-    "bow ties",
-    "suspenders",
-    "cufflinks",
-    "pocket square",
-    "lapel pin",
-    "hair tie",
-    "hair clip",
-    "hairpin",
-    "hair band",
-  ];
-  function autocomplete(inp, arr) {
-    /*the autocomplete function takes two arguments,
-  the text field element and an array of possible autocompleted values:*/
-    var currentFocus;
-    /*execute a function when someone writes in the text field:*/
-    inp.addEventListener("input", function (e) {
-      var a,
-        b,
-        i,
-        val = this.value;
-      /*close any already open lists of autocompleted values*/
-      closeAllLists();
-      if (!val) {
-        return false;
-      }
-      currentFocus = -1;
-      /*create a DIV element that will contain the items (values):*/
-      a = document.createElement("DIV");
-      a.setAttribute("id", this.id + "autocomplete-list");
-      a.setAttribute("class", "autocomplete-items");
-      a.addEventListener("click", () => {
-        window.location.href = "index.html";
-      });
-      /*append the DIV element as a child of the autocomplete container:*/
-      this.parentNode.appendChild(a);
-      /*for each item in the array...*/
-      for (i = 0; i < arr.length; i++) {
-        /*check if the item starts with the same letters as the text field value:*/
-        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-          /*create a DIV element for each matching element:*/
-          b = document.createElement("DIV");
-          /*make the matching letters bold:*/
-          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-          b.innerHTML += arr[i].substr(val.length);
-          /*insert a input field that will hold the current array item's value:*/
-          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-          /*execute a function when someone clicks on the item value (DIV element):*/
-          b.addEventListener("click", function (e) {
-            /*insert the value for the autocomplete text field:*/
-            inp.value = this.getElementsByTagName("input")[0].value;
-            /*close the list of autocompleted values,
-              (or any other open lists of autocompleted values:*/
-            closeAllLists();
-          });
-          a.appendChild(b);
-        }
-      }
-    });
-    /*execute a function presses a key on the keyboard:*/
-    inp.addEventListener("keydown", function (e) {
-      var x = document.getElementById(this.id + "autocomplete-list");
-      if (x) x = x.getElementsByTagName("div");
-      if (e.keyCode == 40) {
-        /*If the arrow DOWN key is pressed,
-        increase the currentFocus variable:*/
-        currentFocus++;
-        /*and and make the current item more visible:*/
-        addActive(x);
-      } else if (e.keyCode == 38) {
-        //up
-        /*If the arrow UP key is pressed,
-        decrease the currentFocus variable:*/
-        currentFocus--;
-        /*and and make the current item more visible:*/
-        addActive(x);
-      } else if (e.keyCode == 13) {
-        /*If the ENTER key is pressed, prevent the form from being submitted,*/
-        e.preventDefault();
-        if (currentFocus > -1) {
-          /*and simulate a click on the "active" item:*/
-          if (x) x[currentFocus].click();
-        }
-      }
-    });
-    function addActive(x) {
-      /*a function to classify an item as "active":*/
-      if (!x) return false;
-      /*start by removing the "active" class on all items:*/
-      removeActive(x);
-      if (currentFocus >= x.length) currentFocus = 0;
-      if (currentFocus < 0) currentFocus = x.length - 1;
-      /*add class "autocomplete-active":*/
-      x[currentFocus].classList.add("autocomplete-active");
-    }
-    function removeActive(x) {
-      /*a function to remove the "active" class from all autocomplete items:*/
-      for (var i = 0; i < x.length; i++) {
-        x[i].classList.remove("autocomplete-active");
-      }
-    }
-    function closeAllLists(elmnt) {
-      /*close all autocomplete lists in the document,
-    except the one passed as an argument:*/
-      var x = document.getElementsByClassName("autocomplete-items");
-      for (var i = 0; i < x.length; i++) {
-        if (elmnt != x[i] && elmnt != inp) {
-          x[i].parentNode.removeChild(x[i]);
-        }
-      }
-    }
-    /*execute a function when someone clicks in the document:*/
-    document.addEventListener("click", function (e) {
-      closeAllLists(e.target);
-    });
-  }
-  autocomplete(document.getElementById("myInput"), countries);
-</script>
+<script src="JS/index.js"></script>
+<script src="JS/common.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+  integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+  crossorigin="anonymous"
+></script>

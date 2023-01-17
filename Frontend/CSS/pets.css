@@ -1,0 +1,27 @@
+.firstview {
+  display: flex;
+  justify-content: space-around;
+}
+.firstview a {
+  text-decoration: none;
+  color: black !important;
+  font-weight: 600 !important;
+}
+#lastview a {
+  font-size: 16px;
+  text-decoration: none;
+  color: black !important;
+  font-weight: 900 !important;
+}
+#lastview p {
+  font-size: 14px;
+}
+.firstview > div:nth-child(1) {
+  width: 35%;
+  padding: 20px 50px;
+}
+#ForFur {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
