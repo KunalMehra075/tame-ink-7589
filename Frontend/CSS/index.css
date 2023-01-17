@@ -5,6 +5,7 @@
 }
 html {
   overflow-x: hidden;
+  position: relative !important;
 }
 section {
   width: 87%;
@@ -16,7 +17,6 @@ section {
 #BANNER_SECTION {
   display: flex;
   justify-content: center;
-
   margin: auto 5px !important;
 }
 #bannerside {

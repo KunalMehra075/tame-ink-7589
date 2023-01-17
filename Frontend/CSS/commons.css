@@ -41,12 +41,7 @@ a {
 nav {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
-.navbar,
-.nav {
-  padding: 0px;
-  position: sticky !important;
-  top: 0px;
-}
+
 .iconsbar {
   margin: 5px;
   display: flex;
@@ -129,8 +124,13 @@ nav {
 .pincode {
   font-weight: 300 !important;
 }
-#stickynav {
+.navbar,
+nav {
   z-index: 2;
+  padding: 0px;
+  position: sticky !important;
+  z-index: 88;
+  top: 0px;
 }
 #megalistheads {
   background-color: rgba(249, 249, 249, 0.658);
