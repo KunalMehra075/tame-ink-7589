@@ -1,0 +1,244 @@
+#carouselExampleInterval {
+  width: 64%;
+  z-index: -1 !important;
+  margin-right: 20px;
+}
+html {
+  overflow-x: hidden;
+}
+section {
+  width: 87%;
+  margin: 30px auto;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 0, 0);
+}
+#BANNER_SECTION {
+  display: flex;
+  justify-content: center;
+
+  margin: auto 5px !important;
+}
+#bannerside {
+  width: 21%;
+}
+#getcredit {
+  width: 87%;
+  padding: 5px;
+  margin: 30px auto;
+}
+#seciton-heads {
+  font-size: 34px;
+  font-weight: 700;
+  font-family: "Playfair Display", serif !important;
+}
+#subheads {
+  font-size: 21px;
+}
+#FourCardParent,
+#ThreeCardParent,
+#SixCardParent {
+  display: flex;
+}
+#ThreeCardParent > div > img,
+#FourCardParent > div > img,
+#SixCardParent > div > img {
+  margin-bottom: 10px;
+}
+#FourCardParent > div {
+  width: 25%;
+  margin: 5px;
+}
+
+#ThreeCardParent > div {
+  width: 33%;
+  margin: 5px;
+}
+
+#SixCardParent > div {
+  width: 16%;
+  margin: 5px;
+}
+
+/*? <!----------------------------------------------- < Slider > -----------------------------------------------> */
+.companies {
+  min-width: 250px;
+}
+.Slidebuttons {
+  font-size: 30px;
+  width: 60px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px 10px;
+  background-color: white;
+  cursor: pointer;
+  display: grid;
+  border-radius: 50%;
+  place-items: center;
+  z-index: 1;
+  border: 0px;
+}
+.Slidebuttons:hover {
+  background-color: rgba(174, 170, 170, 0.5);
+  opacity: 1;
+}
+#pre-but {
+  position: absolute;
+  top: 45%;
+}
+#nxt-but {
+  position: absolute;
+  top: 45%;
+  right: 0px;
+}
+#topcomp-sec {
+  position: relative;
+  overflow: hidden;
+}
+#Slider {
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+  transition: all 500ms ease;
+  width: 200vw;
+}
+#Slider > div {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: left;
+  margin: 2px 10px;
+  scroll-behavior: smooth;
+  transition: all 500ms ease;
+}
+#Slider::-webkit-scrollbar {
+  display: none;
+}
+
+#Slider > div > div {
+  width: 350px;
+  height: 500px;
+  position: relative;
+  margin: 5px;
+  cursor: -webkit-grab;
+  transition: all 250ms ease;
+  border-radius: 10px;
+}
+#Slider > div > div > img {
+  background-color: white;
+  height: 400px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+}
+.slidptag {
+  color: grey;
+  margin: 7px auto;
+}
+.compslidtranslateNXT {
+  transform: translateX(-850px);
+}
+.compslidtranslatePRE {
+  transform: translateX(0px);
+}
+#sliderid-images {
+  left: 130px;
+  top: 68%;
+  background-color: rgba(245, 238, 238, 0.523);
+  padding: 0px;
+  position: absolute;
+  width: 100px;
+  border-radius: 50%;
+}
+
+/*? <!----------------------------------------------- < Megamenu > -----------------------------------------------> */
+header a {
+  cursor: pointer;
+}
+#megalistheads {
+  position: relative;
+  z-index: 1;
+}
+
+.main-mega-menu {
+  position: absolute;
+  top: 100%;
+  left: -50px;
+  background: rgb(250, 248, 248);
+  margin: 0px;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0px;
+  z-index: 4;
+  width: 110%;
+  padding: 0px 90px;
+}
+.main-mega-menu > div {
+  background-color: white;
+}
+.main-mega-menu > div:nth-child(3n) {
+  background-color: rgb(247, 244, 244);
+}
+.main-mega-menu p {
+  font-size: 12px;
+  margin: 0px !important;
+}
+.main-mega-menu p:hover {
+  color: rgb(245, 68, 68);
+}
+.menu-box {
+  padding: 8px;
+  margin: 0px !important;
+  width: 150px;
+}
+#petsmenu {
+  position: absolute;
+  top: 100%;
+  background: rgb(250, 248, 248);
+  margin: 0px;
+  z-index: 2;
+  width: 100%;
+  padding: 0px 50px;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+#petsmenulist {
+  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#petsmenulist div:nth-child(n) {
+  background-color: rgb(247, 244, 244);
+}
+.petsimg img {
+  width: 200px;
+  margin: 10px;
+}
+#furmenu,
+#decormenu,
+#petsmenu,
+#lampsmenu {
+  display: none;
+  z-index: 8;
+}
+#lampsmenu,
+#petsmenu {
+  justify-content: space-around;
+}
+#myBtn {
+  position: fixed;
+  z-index: 999;
+  bottom: 10px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(239, 22, 22);
+  margin-bottom: 10px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+#myBtn:hover {
+  background-color: rgb(255, 145, 0);
+}
