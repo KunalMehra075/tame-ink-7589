@@ -160,6 +160,7 @@ header a {
 
 .main-mega-menu {
   position: absolute;
+
   top: 100%;
   left: -50px;
   background: rgb(250, 248, 248);
@@ -169,7 +170,7 @@ header a {
   gap: 0px;
   z-index: 4;
   width: 110%;
-  padding: 0px 90px;
+  padding: 0px 130px;
 }
 .main-mega-menu > div {
   background-color: white;
@@ -196,9 +197,6 @@ header a {
   margin: 0px;
   z-index: 2;
   width: 100%;
-  padding: 0px 50px;
-  display: flex;
-  justify-content: space-around;
   gap: 10px;
 }
 #petsmenulist {
@@ -223,7 +221,7 @@ header a {
 }
 #lampsmenu,
 #petsmenu {
-  justify-content: space-around;
+  grid-template-columns: repeat(2, 1fr);
 }
 #myBtn {
   position: fixed;

@@ -15,6 +15,9 @@ window.onscroll = function () {
   navbarstick();
   scrollFunction();
 };
+function topFunction() {
+  document.documentElement.scrollTop = 0;
+}
 
 function navbarstick() {
   if (window.pageYOffset >= sticky) {
@@ -29,22 +32,23 @@ let decormenu = document.getElementById("decormenu");
 let petsmenu = document.getElementById("petsmenu");
 let lampsmenu = document.getElementById("lampsmenu");
 
+document.addEventListener("mouseover", (e) => {
+  const ddbtn = e.target.matches("[data-dropdown-button1]");
+  if (ddbtn) {
+    furmenu.style.display = "grid";
+    furmenu.dataset.visible = "Y";
+  }
+});
+
 document.addEventListener("click", (e) => {
   const ddbtn = e.target.matches("[data-dropdown-button1]");
   if (!ddbtn) {
     furmenu.style.display = "none";
     furmenu.dataset.visible = "X";
-  } else {
-    if (furmenu.dataset.visible == "Y") {
-      furmenu.style.display = "none";
-      furmenu.dataset.visible = "X";
-    } else {
-      furmenu.style.display = "grid";
-      furmenu.dataset.visible = "Y";
-    }
   }
 });
-document.addEventListener("click", (e) => {
+
+document.addEventListener("mouseover", (e) => {
   const ddbtn = e.target.matches("[data-dropdown-button2]");
   if (!ddbtn) {
     decormenu.style.display = "none";
@@ -53,13 +57,17 @@ document.addEventListener("click", (e) => {
     if (decormenu.dataset.visible == "Y") {
       decormenu.style.display = "none";
       decormenu.dataset.visible = "X";
+      furmenu.style.display = "none";
+      furmenu.dataset.visible = "X";
     } else {
       decormenu.style.display = "grid";
       decormenu.dataset.visible = "Y";
+      furmenu.style.display = "none";
+      furmenu.dataset.visible = "X";
     }
   }
 });
-document.addEventListener("click", (e) => {
+document.addEventListener("mouseover", (e) => {
   const ddbtn = e.target.matches("[data-dropdown-button3]");
   if (!ddbtn) {
     petsmenu.style.display = "none";
@@ -68,13 +76,17 @@ document.addEventListener("click", (e) => {
     if (petsmenu.dataset.visible == "Y") {
       petsmenu.style.display = "none";
       petsmenu.dataset.visible = "X";
+      furmenu.style.display = "none";
+      furmenu.dataset.visible = "X";
     } else {
-      petsmenu.style.display = "flex";
+      petsmenu.style.display = "grid";
       petsmenu.dataset.visible = "Y";
+      furmenu.style.display = "none";
+      furmenu.dataset.visible = "X";
     }
   }
 });
-document.addEventListener("click", (e) => {
+document.addEventListener("mouseover", (e) => {
   const ddbtn = e.target.matches("[data-dropdown-button4]");
   if (!ddbtn) {
     lampsmenu.style.display = "none";
@@ -83,9 +95,13 @@ document.addEventListener("click", (e) => {
     if (lampsmenu.dataset.visible == "Y") {
       lampsmenu.style.display = "none";
       lampsmenu.dataset.visible = "X";
+      furmenu.style.display = "none";
+      furmenu.dataset.visible = "X";
     } else {
-      lampsmenu.style.display = "flex";
+      lampsmenu.style.display = "grid";
       lampsmenu.dataset.visible = "Y";
+      furmenu.style.display = "none";
+      furmenu.dataset.visible = "X";
     }
   }
 });
@@ -96,7 +112,4 @@ function scrollFunction() {
   } else {
     mybutton.style.display = "none";
   }
-}
-function topFunction() {
-  document.documentElement.scrollTop = 0;
 }
