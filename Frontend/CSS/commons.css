@@ -112,7 +112,7 @@ nav {
 .nav-link {
   color: rgb(40, 39, 39) !important;
   font-weight: 500 !important;
-  margin: auto 12px !important;
+  margin: auto 10px !important;
 }
 .nav-link:hover {
   color: rgb(255, 0, 0) !important;
@@ -147,7 +147,13 @@ nav {
   top: 0;
   width: 100%;
 }
-
+#spinner {
+  position: fixed;
+  display: none;
+  top: 42px;
+  left: 20px;
+  z-index: 100;
+}
 /*? <!----------------------------------------------- < Footer > -----------------------------------------------> */
 html {
   position: relative;
@@ -328,4 +334,71 @@ strong {
 .autocomplete {
   /*the container must be positioned relative:*/
   position: relative;
+}
+.offcanvas-header {
+  background-color: rgb(249, 249, 249);
+  display: flex !important;
+
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+.offcanvas-header > h3 {
+  margin: 0px !important;
+}
+
+.offcanvas-body input {
+  width: 100%;
+  padding: 10px 3px;
+  border: 0px;
+  border-bottom: 2px solid transparent;
+  transition: all 200ms ease;
+  background-color: rgb(242, 242, 242);
+}
+.offcanvas-body label {
+  margin-top: 10px;
+}
+.offcanvas-body input[type="submit"] {
+  background-color: rgb(243, 70, 70);
+  transition: all 200ms ease linear;
+  color: white;
+}
+.offcanvas-body input[type="submit"]:hover {
+  background-color: rgb(255, 0, 0);
+}
+.offcanvas-body input:focus {
+  outline: 0;
+  border-bottom: 2px solid rgb(245, 40, 40);
+}
+#goog {
+  width: 100%;
+  background-color: white;
+  border: 1px solid grey;
+}
+#goog:hover {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(9, 195, 237, 0.5);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(9, 195, 237, 0.5);
+  box-shadow: 0px 0px 10px 0px rgba(9, 195, 237, 0.5);
+}
+#OR {
+  margin: 10px auto;
+}
+#popover {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  width: 120px;
+  right: 140px;
+  transition: all 500ms ease;
+  height: 100px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 14px;
+  z-index: 99;
+  background-color: rgb(255, 255, 255);
+  color: red;
+  clip-path: polygon(0 20%, 40% 20%, 50% 0, 59% 20%, 100% 20%, 100% 84%, 0 84%);
+  border-radius: 5px;
+  border: 2px solid rgb(198, 194, 194);
+  border-bottom: 18px solid rgb(219, 219, 219);
+  border-top: 21px solid rgb(209, 203, 203);
 }

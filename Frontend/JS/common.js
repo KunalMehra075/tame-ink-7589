@@ -1,8 +1,19 @@
 let closetop1 = document.getElementById("close-top1");
 let topfirst = document.getElementById("top1");
 var navbar = document.getElementById("stickynav");
+let popover = document.getElementById("popover");
 var sticky = navbar.offsetTop;
 
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    popover.style.display = "block";
+    popover.style.opacity = "1";
+  }, 2000);
+  setTimeout(() => {
+    popover.style.display = "none";
+    popover.style.opacity = "0";
+  }, 7000);
+});
 closetop1.addEventListener("click", () => {
   topfirst.style.opacity = "0.0";
   topfirst.style.transform = "translateX(-50px)";
