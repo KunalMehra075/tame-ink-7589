@@ -385,20 +385,29 @@ strong {
 #popover {
   display: none;
   opacity: 0;
+  font-weight: 600;
   position: absolute;
   width: 120px;
-  right: 140px;
+  top: 78px;
+  right: 145px;
   transition: all 500ms ease;
   height: 100px;
-  padding: 10px 15px;
+  padding: 30px 15px;
   text-align: center;
-  font-size: 14px;
+  font-size: 15px;
   z-index: 99;
-  background-color: rgb(255, 255, 255);
-  color: red;
+  background-color: rgb(255, 58, 58);
+  color: rgb(255, 255, 255);
   clip-path: polygon(0 20%, 40% 20%, 50% 0, 59% 20%, 100% 20%, 100% 84%, 0 84%);
   border-radius: 5px;
-  border: 2px solid rgb(198, 194, 194);
-  border-bottom: 18px solid rgb(219, 219, 219);
-  border-top: 21px solid rgb(209, 203, 203);
+}
+#userlogo {
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+#username {
+  top: 68%;
+  position: absolute;
 }

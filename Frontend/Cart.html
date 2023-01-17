@@ -7,6 +7,7 @@
     <title>OrangerFry.com</title>
     <link rel="stylesheet" href="./CSS/index.css" />
     <link rel="stylesheet" href="./CSS/commons.css" />
+    <link rel="stylesheet" href="./CSS/cart.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -833,496 +834,78 @@ aria-labelledby="offcanvasRightLabel"
     </header>
     <!--?--------------------------------------------- Main Body ----------------------------------------------->
     <main>
-      <div id="BANNER_SECTION" class="flex">
-        <div
-          id="carouselExampleInterval"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="5000">
-              <img
-                src="./Images/index/banner1.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <img
-                src="./Images/index/banner2.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <img
-                src="./Images/index/banner5.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="./Images/index/banner3.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="./Images/index/banner4.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleInterval"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleInterval"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-        <div id="bannerside">
-          <img width="100%" src="./Images/index/BannerSide.jpg" alt="" />
-        </div>
-      </div>
-      <section id="getcredit">
-        <img width="100%" src="./Images/index/getcredidts.jpg" alt="" />
-      </section>
-<!--todo-------------------------- <Shop by room> ---------------------------------> 
-      <section>
-        <h1 id="seciton-heads">Shop By Rooms</h1>
-        <div id="FourCardParent">
-          <div>
-            <img width="100%" src="./Images/index/shopbyroom1.jpg" alt="" />
-            <h4 id="subheads">Shop Living Room --></h4>
-          </div>
-          <div>
-            <img width="100%" src="./Images/index/shopbyroom2.jpg" alt="" />
-            <h4 id="subheads">Shop Bed Room --></h4>
-          </div>
-          <div>
-            <img width="100%" src="./Images/index/shopbyroom3.jpg" alt="" />
-            <h4 id="subheads">Shop Dining Room --></h4>
-          </div>
-          <div>
-            <img width="100%" src="./Images/index/shopbyroom4.jpg" alt="" />
-            <h4 id="subheads">Shop Study Room --></h4>
-          </div>
-        </div>
-      </section>
-      <!--todo-------------------------- <what the fry> --------------------------------->
-      <section >
-        <h1 id="seciton-heads">What The Fry Deals</h1>
-        <div id="FourCardParent">
-          <div>
-            <img
-              width="100%"
-              src="./Images/index/whatthefrydeals1.jpg"
-              alt=""
-            />
-            <h4 id="subheads">For ₹99 at 67% Off</h4>
-            <p style="color: grey">Popcorn Serving Bowl</p>
-          </div>
-          <div>
-            <img
-              width="100%"
-              src="./Images/index/whatthefrydeals2.jpg"
-              alt=""
-            />
-            <h4 id="subheads">For ₹219 at 73% Off</h4>
-            <p style="color: grey">Floral Bedding</p>
-          </div>
-          <div>
-            <img
-              width="100%"
-              src="./Images/index/whatthefrydeals3.jpg"
-              alt=""
-            />
-            <h4 id="subheads">For ₹89 at 74% Off</h4>
-            <p style="color: grey">SS Side Plates Set of 4 </p>
-          </div>
-          <div>
-            <img
-              width="100%"
-              src="./Images/index/whatthefrydeals4.jpg"
-              alt=""
-            />
-            <h4 id="subheads">For ₹179 at 82% Off</h4>
-            <p style="color: grey">Striped Floor Runner</p>
-          </div>
-        </div>
-      </section>
-      <!--todo-------------------------- <Inspired and get inspired slider> --------------------------------->
-        <section id="topcomp-sec">
-          <h1 id="seciton-heads">Inspire and Get Inspired</h1>
-           <div class="companies">
-              <div class="flex">
-               <button id="pre-but" class="Slidebuttons"><img width="50%" src="Images/icons/chevron-left-30.png" alt=""></button>
-              <button id="nxt-but" class="Slidebuttons"><img width="50%" src="Images/icons/chevron-right-30.png" alt=""></button>
-             
+        <section id="cartsect">
+            <h1 class="yourproducts">Your Shopping Basket</h1>
+            <hr />
+            <div class="checkoutpage">
+              <div class="showproducts">
+                <label>Your Basket is Empty..</label>
+    
+                <a href="index.html"
+                  ><button class="EmptyCart">Lets look for Products-></button></a
+                >
+                <!-- append cards here -->
               </div>
-               <div id="Slider">
-                  <div>
-                  <!-- div slider -->
-                  <div>
+              <div class="checkoutsection">
+                <div class="checkout-subs">
+                  <label for="">Delivery to</label>
+                  <input
+                    id="delievery-input"
+                    type="text"
+                    placeholder="Enter Pincode"
+                  />
+                  <button id="checkbutton">Check</button><br />
+                  <div id="pincode">
+                    <p>
+                      Enter pin code in box above for delivery estimates and charges
+                      X
+                    </p>
+                  </div>
+                </div>
+                <div class="checkoutsubs">
+                  <div id="offersub" class="checkout-subs">
                     <img
-                      width="100%"
-                      src="./Images/index/insta2.jpg"
+                      id="offerimg"
+                      src="Images/icons/product-icon.png"
                       alt=""
                     />
-                    <br>
-                    <h4><img id="sliderid-images" src="Images/index/instagramlogo.png" alt=""></h4>
-                    <br>
-                   <center> <p style="color: grey">Designed by-  @princekumar</p></center>
+                    <div>
+                      <h4>Offers for you!</h4>
+                      <label>Choose and apply voucher in 2 simple steps</label>
+                    </div>
+                  </div>
+                </div>
+                <div id="totals" class="checkout-subs">
+                  <div>
+                    <label class="totals">Total Price</label>
+                    <label>₹ 000</label>
                   </div>
                   <div>
-                    <img
-                      width="100%"
-                      src="./Images/index/insta1.jpg"
-                      alt=""
-                    />
-                    <br>
-                    <h4><img id="sliderid-images" src="Images/index/instagramlogo.png" alt=""></h4>
-                    <br>
-                   <center> <p style="color: grey">Designed by-  @ankitkumar</p></center>
+                    <label class="totals">Shipping Charge:</label>
+                    <label>Free</label>
                   </div>
+                  <hr />
                   <div>
-                    <img
-                      width="100%"
-                      src="./Images/index/insta3.webp"
-                      alt=""
-                    />  <br>
-                    <h4><img id="sliderid-images" src="Images/index/instagramlogo.png" alt=""></h4>
-                    <br>
-                   <center> <p style="color: grey">Designed by-  @shravan</p></center>
+                    <label class="totals Total">Total</label>
+                    <label class="Total">₹ 000</label>
                   </div>
+                  <br />
                   <div>
-                    <img
-                      width="100%"
-                      src="./Images/index/insta4.webp"
-                      alt=""
-                    />
-                    <br>
-                    <h4><img id="sliderid-images" src="Images/index/instagramlogo.png" alt=""></h4>
-                    <br>
-                   <center> <p style="color: grey">Designed by- @vishalsingh</p></center>
+                    <button id="Checkout">Checkout</button>
                   </div>
+                  <br />
                   <div>
-                    <img
-                      width="100%"
-                      src="./Images/index/insta5.webp"
-                      alt=""
-                    />  <br><h4><img id="sliderid-images" src="Images/index/instagramlogo.png" alt=""></h4>
-                    <br>
-            
-                   <center> <p style="color: grey">Designed by-  @vijaysolanki</p></center>
-              
+                    <label>
+                      Shipping charges might vary based on pincode delivery location
+                    </label>
                   </div>
-                  <div>
-                    <img
-                      width="100%"
-                      src="./Images/index/insta6.webp"
-                      alt=""
-                    />  <br>
-                    <h4><img id="sliderid-images" src="Images/index/instagramlogo.png" alt=""></h4>
-                    <br>
-                   <center> <p style="color: grey">Designed by-  @princekumar</p></center>
-                  </div>
-                  
+                </div>
+    
+                <!-- checkout subs end -->
               </div>
-              </div>
-          </div>
+            </div>
           </section>
-      <!--todo-------------------------- <Trends in furniture and decor 3> --------------------------------->
-       
-        <section >
-          <h1 id="seciton-heads"> Trends In Furniture And Decor</h1>
-          <div id="ThreeCardParent">
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/trendsinfuture1.jpg"
-                alt=""
-              />
-              <h4 id="subheads">Pantone Color Sofas</h4>
-              <p style="color: grey">Explore Starting ₹10939 -></p>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/trendsinfuture2.jpg"
-                alt=""
-              />
-              <h4 id="subheads">Gentle Lighting Shelf Lamps</h4>
-              <p style="color: grey">Explore Starting ₹1999 -> </p>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/trendsinfuture3.jpg"
-                alt=""
-              />
-              <h4 id="subheads">Maximalist Pieces By Chumbak</h4>
-              <p style="color: grey">Explore Starting ₹4495 -></p>
-            </div>
-            
-          </div>
-        </section>
-      <!--todo-------------------------- <New Arrivals 4> --------------------------------->
-        <section id="newarrivals">
-          <h1 id="seciton-heads">New Arrivals</h1>
-          <div id="FourCardParent">
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/newarrivals1.jpg"
-                alt=""
-              />
-              <h4 id="subheads">Premium Office Chairs</h4>
-              <p style="color: grey">06+ Options
-                Starting ₹14499</p>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/newarrivals2.jpg"
-                alt=""
-              />
-              <h4 id="subheads">Unique Collectibles</h4>
-              <p style="color: grey">120+ Options
-                Starting ₹249</p>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/newarrivals3.jpg"
-                alt=""
-              />
-              <h4 id="subheads">Printed Cushion Covers</h4>
-              <p style="color: grey">150+ Options
-                Starting ₹149</p>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/newarrivals4.jpg"
-                alt=""
-              />
-              <h4 id="subheads">Smart Grid Mattresses</h4>
-              <p style="color: grey">20+ Options
-                Starting ₹11925</p>
-            </div>
-          </div>
-        </section>
-      <!--todo-------------------------- <Winter end 3 --------------------------------->
-        <section >
-          <h1 id="seciton-heads">Winter Edit</h1>
-          <div id="ThreeCardParent">
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/winteredit1.jpg"
-                alt=""
-              />
-              <p style="color: grey">Top Incoming</p>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/winteredit2.jpg"
-                alt=""
-              />
-              <p style="color: grey">Top Incoming</p>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/winteredit3.jpg"
-                alt=""
-              />
-              <p style="color: grey">Top Incoming</p>
-            </div>
-            
-          </div>
-        </section>
-      <!--todo-------------------------- <Top Brands on OrangeFry 4 > --------------------------------->
-        <section id="topbrand-on-orangefry" >
-          <h1 id="seciton-heads">Top Brands On OrangeFry</h1>
-          <div id="FourCardParent">
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/topbrands1.jpg"
-                alt=""
-              />
-              <h4 id="subheads">Popular For Sofas</h4>
-              <p style="color: grey">600+ Options</p>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/topbrands2.jpg"
-                alt=""
-              />
-              <h4 id="subheads">Popular For Office Chairs</h4>
-              <p style="color: grey">45+ Options</p>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/topbrands3.jpg"
-                alt=""
-              />
-              <h4 id="subheads">Popular For Home Decor</h4>
-              <p style="color: grey">120+ Options</p>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/topbrands4.jpg"
-                alt=""
-              />
-              <h4 id="subheads">Popular For Serveware</h4>
-              <p style="color: grey">120+ Options</p>
-            </div>
-          </div>
-        </section>
-                <!--todo-------------------------- <what the fry> --------------------------------->
-      <section >
-        <h1 id="seciton-heads">Its a Big Deal !!</h1>
-        <div id="FourCardParent">
-          <div>
-            <img
-              width="100%"
-              src="./Images/Kitchen/bigdeal1.jpg"
-              alt=""
-            />
-            <h4 id="subheads">For ₹99 at 67% Off</h4>
-            <p style="color: grey">Popcorn Serving Bowl</p>
-          </div>
-          <div>
-            <img
-              width="100%"
-              src="./Images/Kitchen/bigdeal2.jpg"
-              alt=""
-            />
-            <h4 id="subheads">For ₹219 at 73% Off</h4>
-            <p style="color: grey">Floral Bedding</p>
-          </div>
-          <div>
-            <img
-              width="100%"
-              src="./Images/Kitchen/bigdeal3.jpg"
-              alt=""
-            />
-            <h4 id="subheads">For ₹89 at 74% Off</h4>
-            <p style="color: grey">SS Side Plates Set of 4 </p>
-          </div>
-          <div>
-            <img
-              width="100%"
-              src="./Images/Kitchen/bigdeal4.jpg"
-              alt=""
-            />
-            <h4 id="subheads">For ₹179 at 82% Off</h4>
-            <p style="color: grey">Striped Floor Runner</p>
-          </div>
-        </div>
-      </section>
-      <!--todo-------------------------- <Inspiration from blog 4 > --------------------------------->
-        <section >
-          <h1 id="seciton-heads">Inspiration from Our Blog</h1>
-          <div id="FourCardParent">
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/inspirationblog.jpg"
-                alt=""
-              />
-
-              <p style="color: grey">How to Declutter Your House Based on Your Personality Type? | Read More -></p>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/inspirationblog2.jpg"
-                alt=""
-              />
-
-              <p style="color: grey">5 Elegant Ideas for Your Dreamy Modern Master Bedroom | Read More -></p>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/inspirationblog3.jpg"
-                alt=""
-              />
-              <p style="color: grey">7 Decor Ideas to Spruce up Your Hallway | Read More -></p>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/inspirationblog4.jpg"
-                alt=""
-              />
-              <p style="color: grey">8 Trends You Can Use This Holiday Season in Your Home | Read More -></p>
-            </div>
-          </div>
-        </section>
-      <!--todo-------------------------- <Customer speak 3 > --------------------------------->
-        <section >
-          <h1 id="seciton-heads">Customer Speaks</h1>
-          <div id="ThreeCardParent">
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/customerspeak1.jpg"
-                alt=""
-              />
-              <p style="color: grey">Bought these two grey puffy stools from pepperfry. Found them to be surprisingly strong! Blends perfectly</p>
-             <br>
-              <h4 id="subheads">Suman Senapatia,
-                Visakhapatnam</h4>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/customerspeak2.jpg"
-                alt=""
-              />
-              <p style="color: grey">I purchased Candy Study Chair in Pink Colour by Alex Daisy from pepperfry looks awesome and My daughter</p>
-              <br>
-               <h4 id="subheads">Satya Madhana,
-                Secunderabad</h4>
-            </div>
-            <div>
-              <img
-                width="100%"
-                src="./Images/index/customerspeak3.jpg"
-                alt=""
-              />
-              <p style="color: grey">Purchased an ergonomic chair, I thought it would not be fitting for me but once it got delivered</p>
-              <br>
-               <h4 id="subheads">Baba Kattubadi,
-                Hyderabad</h4>
-            </div>
-            
-          </div>
-        </section>
+        <!--todo-------------------------- <Cart> --------------------------------->
       <!--todo-------------------------- <Need Help 6 > --------------------------------->
         <section >
           <h1 id="seciton-heads">Need Help?</h1>
