@@ -113,12 +113,12 @@
     <main>
       <!--*-------------------------- <Navigator> --------------------------------->
       <div id="Navigator">
-        <button id="bxn0" class="activenav">Add Product</button>
+        <button id="bxn0">Add Product</button>
         <button id="bxn1"> Edit Product</button>
         <button id="bxn2"> Manage Orders</button>
         <button id="bxn3"> Manage Users</button>
         <button id="bxn4">Reviews& Feedbacks</button>
-        <button id="bxn5"> Certification</button>
+        <button id="bxn5"> Website Management</button>
         <button id="bxn6"> About</button>
       </div>
       <div id="topspace"></div>
@@ -132,44 +132,90 @@
       <div class="AllSects">
          <!--todo-------------------------- <AddProduct> --------------------------------->
           <section id="AddProduct">
-            <h3 id="AdminHeads">Add a Product</h3>
+           <center> <h3 class="AdminHeads"><u>Add a Product</u></h3></center>
+            <form action="">
+
+           
            <div class="adddiv1">
-            <div>Details and inputs</div>
-            <div> Images</div>
+            <div>
+              <!-- title,description,price,brand,rating,thumbnail,images2,type,discount  -->
+              <span>
+                <label for="">Title</label><br>
+                <input id="title" type="text" placeholder="Enter Title" required><br> 
+                <label for="">Brand</label><br>
+                <input id="brand" type="text" placeholder="Enter Brand Name" required><br>
+              </span>
+              <span>
+                <label for="">Type</label><br>
+                <input id="type" type="text" placeholder="Enter Product Type" required><br>
+                <label for="">Discount</label><br>
+                <input id="discount" type="number" placeholder="Enter Discount" required><br>
+              </span>
+              <span>
+                <label for="">Rating</label><br>
+              <input id="rating" type="number" placeholder="Enter Rating" required><br>
+              <label for="">Thumbnail</label><br>
+              <input id="thumbnail" type="text" placeholder="Enter Product Thumbnail" required><br>
+              </span>
+             <span>
+              <label for="">Image 1</label><br>
+              <input id="img2" type="text" placeholder="Enter Image" required><br>
+              <label for="">Image2</label><br>
+              <input id="img1" type="text" placeholder="Enter Image" required><br>
+             </span>
+              <span>
+                <label for="">Stock</label><br>
+              <input id="stock" type="number" placeholder="Enter Stock" required><br>
+              </span>
+              <span>
+                <label for="">Description</label><br>
+              <textarea id="description" type="text" placeholder="Enter Description" required>Enter Description</textarea><br>
+              </span>
+
+            </div>
+            <div>
+              <div>
+                <img id="sxmimg1" src="" alt="Product Thumbnail">
+                <img id="sxmimg2" src="" alt="Product Image1">
+                <img id="sxmimg3" src="" alt="Product Image2">
+                <p>Preview of <br> Images</p>
+              </div>
+            </div>
            </div>
             <div class="adddiv2">
-              <button class="Redwhitebtn">Add the Product</button>
-              <button class="WhiteRedbtn">Edit</button>
+              <button class="Redwhitebtn">Edit</button>
+              <button class="WhiteRedbtn">Add The Product</button>
             </div>
+          </form>
           </section>
            <!--todo-------------------------- <Edit Product> --------------------------------->
             <section id="EditProduct">
-              <h3 id="AdminHeads">Edit Product</h3>
+              <h3 class="AdminHeads">Edit Product</h3>
     
             </section>
              <!--todo-------------------------- <Manage Orders> --------------------------------->
           <section id="ManageOrders">
-            <h3 id="AdminHeads">Manage Orders</h3>
+            <h3 class="AdminHeads">Manage Orders</h3>
     
           </section>
            <!--todo-------------------------- <Manage Users> --------------------------------->
             <section id="MangeUsers">
-              <h3 id="AdminHeads">Manage Users</h3>
+              <h3 class="AdminHeads">Manage Users</h3>
     
             </section>
              <!--todo-------------------------- <Reviews and feedbacks> --------------------------------->
           <section id="RevNfeed">
-            <h3 id="AdminHeads">Reviews & Feedbacks</h3>
+            <h3 class="AdminHeads">Reviews & Feedbacks</h3>
     
           </section>
-           <!--todo-------------------------- <Certifications> --------------------------------->
-            <section id="Certification">
-              <h3 id="AdminHeads">Certifications</h3>
+           <!--todo-------------------------- <Website Management> --------------------------------->
+            <section id="WebsiteManage">
+              <h3 class="AdminHeads">Website <Details>Hello</Details></h3>
     
             </section>
               <!--todo-------------------------- <About> --------------------------------->
              <section id="About">
-              <h3 id="AdminHeads">About</h3>
+              <h3 class="AdminHeads">About</h3>
     
              </section>
       </div>
@@ -201,6 +247,7 @@
 <script src="JS/index.js"></script>
 <script src="JS/common.js"></script>
 <script src="JS/Admin.js"></script>
+<script src="JS/Admin2.js"></script>
 <script
   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
   integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

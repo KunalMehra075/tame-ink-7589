@@ -13,6 +13,13 @@ let hex1 = document.getElementById("hex1");
 let hex2 = document.getElementById("hex2");
 let welcomehead = document.getElementById("welcomehead");
 let welcomesubhead = document.getElementById("welcomesubhead");
+let img1 = document.getElementById("thumbnail");
+let img2 = document.getElementById("img1");
+let img3 = document.getElementById("img2");
+let sxm1 = document.getElementById("sxmimg1");
+let sxm2 = document.getElementById("sxmimg2");
+let sxm3 = document.getElementById("sxmimg3");
+
 window.addEventListener("load", () => {
   removefn();
   btn6.classList.add("activenav");
@@ -30,6 +37,18 @@ window.addEventListener("load", () => {
     welcomesubhead.style.opacity = "1";
   }, 1000);
 });
+
+img1.addEventListener("input", () => {
+  sxm1.setAttribute("src", img1.value);
+});
+img2.addEventListener("input", () => {
+  sxm2.setAttribute("src", img2.value);
+});
+
+img3.addEventListener("input", () => {
+  sxm3.setAttribute("src", img3.value);
+});
+
 function removefn() {
   for (let i = 0; i < allnavs.length; i++) {
     allnavs[i].classList.remove("activenav");
@@ -62,7 +81,6 @@ btn3.addEventListener("click", () => {
   welcome.style.display = "none";
   allsects[3].style.display = "block";
 });
-
 btn4.addEventListener("click", () => {
   removefn();
   btn4.classList.add("activenav");
