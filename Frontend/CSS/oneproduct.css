@@ -8,13 +8,14 @@
 .image {
   /* border: 1px solid red; */
   width: 55%;
+  padding: 5px 25px;
 }
 
 .image > img {
   width: 100%;
 }
 .image > div > img {
-  width: 30.5%;
+  width: 29.5%;
   margin: 10px;
 }
 
@@ -31,7 +32,7 @@
 .checkBox {
   /* border: 1px solid green; */
   width: 60%;
-  padding: 25px;
+  padding: 5px 40px;
 }
 
 .ship {
@@ -43,9 +44,8 @@
   width: 10%;
   border: 2px solid teal;
 }
-
-.smallImage + p {
-  margin: 10px 0px;
+.breadcrumb {
+  margin-left: 20px;
 }
 
 .size {
@@ -167,6 +167,7 @@ p {
 #crumbar {
   margin: 9px 20px;
   z-index: -1;
+  position: static !important;
 }
 #someImage {
   /* border: 1px solid red; */

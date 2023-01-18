@@ -9,3 +9,103 @@ section {
 #OR {
   margin: 10px auto;
 }
+#stickynav {
+  width: 100%;
+  position: fixed !important;
+}
+#Navigator {
+  position: fixed;
+  top: 180px;
+  left: 30px;
+  width: 20%;
+}
+#Navigator > button {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 99%;
+  padding: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+  background-color: white;
+  border: 3px solid rgb(235, 229, 229);
+}
+.ida {
+  color: black;
+}
+
+.activenav {
+  color: white !important;
+  background-color: rgb(237, 66, 66) !important;
+  border: 3px solid rgb(255, 0, 0) !important;
+  border-right: white !important;
+}
+.activa {
+  color: white !important;
+}
+#topspace {
+  height: 150px;
+}
+section {
+  width: 73%;
+  min-height: 71vh;
+  margin-left: 360px !important;
+}
+.adddiv1 {
+  display: flex;
+}
+/* .adddiv1>div: {
+} */
+#WelcomeAdmin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#adminimg {
+  width: 200px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 500ms ease;
+}
+#hex1 {
+  position: absolute;
+  background-color: red;
+  opacity: 0.4;
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  border: none;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 500ms ease;
+}
+#hex2 {
+  position: absolute;
+  background-color: red;
+  opacity: 0.4;
+  top: -100px;
+  opacity: 0;
+  transition: all 500ms ease;
+  left: -90px;
+  width: 300px;
+  height: 300px;
+  border: none;
+  border-radius: 50%;
+}
+#welcomehead {
+  opacity: 0;
+  transition: all 500ms ease;
+}
+#welcomesubhead {
+  opacity: 0;
+  font-size: 14px;
+  opacity: 0;
+  transition: all 500ms ease;
+  color: grey;
+}

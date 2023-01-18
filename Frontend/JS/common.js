@@ -4,7 +4,7 @@ var navbar = document.getElementById("stickynav");
 let popover = document.getElementById("popover");
 let username = document.getElementById("username");
 let user = localStorage.getItem("user") || "";
-username.innerText = user;
+username.innerText = user || "";
 var sticky = navbar.offsetTop;
 
 window.addEventListener("load", () => {
