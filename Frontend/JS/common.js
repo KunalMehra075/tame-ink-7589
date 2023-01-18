@@ -8,7 +8,7 @@ username.innerText = user;
 var sticky = navbar.offsetTop;
 
 window.addEventListener("load", () => {
-  if (user === "") {
+  if (user === "" && popover) {
     setTimeout(() => {
       popover.style.display = "block";
       popover.style.opacity = "1";
@@ -19,14 +19,25 @@ window.addEventListener("load", () => {
     }, 7000);
   }
 });
-closetop1.addEventListener("click", () => {
-  topfirst.style.opacity = "0.0";
-  topfirst.style.transform = "translateX(-50px)";
+if (closetop1) {
+  closetop1.addEventListener("click", () => {
+    topfirst.style.opacity = "0.0";
+    topfirst.style.transform = "translateX(-50px)";
 
-  setTimeout(() => {
-    topfirst.style.display = "none";
-  }, 300);
-});
+    setTimeout(() => {
+      topfirst.style.display = "none";
+    }, 300);
+  });
+}
+let mybutton = document.getElementById("myBtn");
+function scrollFunction() {
+  if (!mybutton) return;
+  if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
 window.onscroll = function () {
   navbarstick();
   scrollFunction();
@@ -49,87 +60,79 @@ let furmenu = document.getElementById("furmenu");
 let decormenu = document.getElementById("decormenu");
 let petsmenu = document.getElementById("petsmenu");
 let lampsmenu = document.getElementById("lampsmenu");
-
-document.addEventListener("mouseover", (e) => {
-  const ddbtn = e.target.matches("[data-dropdown-button1]");
-  if (ddbtn) {
-    furmenu.style.display = "grid";
-    furmenu.dataset.visible = "Y";
-  }
-});
-document.addEventListener("click", (e) => {
-  const ddbtn = e.target.matches("[data-dropdown-button1]");
-  if (!ddbtn) {
-    furmenu.style.display = "none";
-    furmenu.dataset.visible = "X";
-  }
-});
-document.addEventListener("mouseover", (e) => {
-  const ddbtn = e.target.matches("[data-dropdown-button2]");
-  if (!ddbtn) {
-    decormenu.style.display = "none";
-    decormenu.dataset.visible = "X";
-  } else {
-    if (decormenu.dataset.visible == "Y") {
+if (furmenu && decormenu && petsmenu && lampsmenu) {
+  document.addEventListener("mouseover", (e) => {
+    const ddbtn = e.target.matches("[data-dropdown-button1]");
+    if (ddbtn) {
+      furmenu.style.display = "grid";
+      furmenu.dataset.visible = "Y";
+    }
+  });
+  document.addEventListener("click", (e) => {
+    const ddbtn = e.target.matches("[data-dropdown-button1]");
+    if (!ddbtn) {
+      furmenu.style.display = "none";
+      furmenu.dataset.visible = "X";
+    }
+  });
+  document.addEventListener("mouseover", (e) => {
+    const ddbtn = e.target.matches("[data-dropdown-button2]");
+    if (!ddbtn) {
       decormenu.style.display = "none";
       decormenu.dataset.visible = "X";
-      furmenu.style.display = "none";
-      furmenu.dataset.visible = "X";
     } else {
-      decormenu.style.display = "grid";
-      decormenu.dataset.visible = "Y";
-      furmenu.style.display = "none";
-      furmenu.dataset.visible = "X";
+      if (decormenu.dataset.visible == "Y") {
+        decormenu.style.display = "none";
+        decormenu.dataset.visible = "X";
+        furmenu.style.display = "none";
+        furmenu.dataset.visible = "X";
+      } else {
+        decormenu.style.display = "grid";
+        decormenu.dataset.visible = "Y";
+        furmenu.style.display = "none";
+        furmenu.dataset.visible = "X";
+      }
     }
-  }
-});
-document.addEventListener("mouseover", (e) => {
-  const ddbtn = e.target.matches("[data-dropdown-button3]");
-  if (!ddbtn) {
-    petsmenu.style.display = "none";
-    petsmenu.dataset.visible = "X";
-  } else {
-    if (petsmenu.dataset.visible == "Y") {
+  });
+  document.addEventListener("mouseover", (e) => {
+    const ddbtn = e.target.matches("[data-dropdown-button3]");
+    if (!ddbtn) {
       petsmenu.style.display = "none";
       petsmenu.dataset.visible = "X";
-      furmenu.style.display = "none";
-      furmenu.dataset.visible = "X";
     } else {
-      petsmenu.style.display = "grid";
-      petsmenu.dataset.visible = "Y";
-      furmenu.style.display = "none";
-      furmenu.dataset.visible = "X";
+      if (petsmenu.dataset.visible == "Y") {
+        petsmenu.style.display = "none";
+        petsmenu.dataset.visible = "X";
+        furmenu.style.display = "none";
+        furmenu.dataset.visible = "X";
+      } else {
+        petsmenu.style.display = "grid";
+        petsmenu.dataset.visible = "Y";
+        furmenu.style.display = "none";
+        furmenu.dataset.visible = "X";
+      }
     }
-  }
-});
-document.addEventListener("mouseover", (e) => {
-  const ddbtn = e.target.matches("[data-dropdown-button4]");
-  if (!ddbtn) {
-    lampsmenu.style.display = "none";
-    lampsmenu.dataset.visible = "X";
-  } else {
-    if (lampsmenu.dataset.visible == "Y") {
+  });
+  document.addEventListener("mouseover", (e) => {
+    const ddbtn = e.target.matches("[data-dropdown-button4]");
+    if (!ddbtn) {
       lampsmenu.style.display = "none";
       lampsmenu.dataset.visible = "X";
-      furmenu.style.display = "none";
-      furmenu.dataset.visible = "X";
     } else {
-      lampsmenu.style.display = "grid";
-      lampsmenu.dataset.visible = "Y";
-      furmenu.style.display = "none";
-      furmenu.dataset.visible = "X";
+      if (lampsmenu.dataset.visible == "Y") {
+        lampsmenu.style.display = "none";
+        lampsmenu.dataset.visible = "X";
+        furmenu.style.display = "none";
+        furmenu.dataset.visible = "X";
+      } else {
+        lampsmenu.style.display = "grid";
+        lampsmenu.dataset.visible = "Y";
+        furmenu.style.display = "none";
+        furmenu.dataset.visible = "X";
+      }
     }
-  }
-});
-let mybutton = document.getElementById("myBtn");
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+  });
 }
-
 //? <!----------------------------------------------- < Mega Searchbar> ----------------------------------------------->
 
 var Furnitures = [

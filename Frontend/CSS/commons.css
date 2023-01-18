@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   font-family: Manrope, sans-serif;
+  scroll-behavior: smooth;
 }
 /* div,
 section {
@@ -288,6 +289,7 @@ header a {
 }
 #myBtn {
   position: fixed;
+  display: none;
   z-index: 999;
   bottom: 10px;
   right: 30px;
@@ -369,15 +371,15 @@ strong {
   outline: 0;
   border-bottom: 2px solid rgb(245, 40, 40);
 }
-#goog {
+.goog {
   width: 100%;
   background-color: white;
-  border: 1px solid grey;
+  border: 1px solid grey !important;
 }
-#goog:hover {
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(9, 195, 237, 0.5);
-  -moz-box-shadow: 0px 0px 10px 0px rgba(9, 195, 237, 0.5);
-  box-shadow: 0px 0px 10px 0px rgba(9, 195, 237, 0.5);
+.goog:hover {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(9, 195, 237, 0.5) !important;
+  -moz-box-shadow: 0px 0px 10px 0px rgba(9, 195, 237, 0.5) !important;
+  box-shadow: 0px 0px 10px 0px rgba(9, 195, 237, 0.5) !important;
 }
 #OR {
   margin: 10px auto;
@@ -410,4 +412,21 @@ strong {
 #username {
   top: 68%;
   position: absolute;
+}
+/*? <!----------------------------------------------- < Buttons > -----------------------------------------------> */
+.Redwhitebtn {
+  border: 1px solid red !important;
+  font-weight: 800 !important;
+  color: red !important;
+  background-color: white !important;
+  padding: 10px 50px !important;
+  margin: 5px;
+}
+.WhiteRedbtn {
+  border: 1px solid rgb(228, 49, 49) !important;
+  font-weight: 800 !important;
+  color: rgb(255, 255, 255) !important;
+  background-color: rgb(231, 47, 47) !important;
+  padding: 10px 50px !important;
+  margin: 5px;
 }

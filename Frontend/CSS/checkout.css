@@ -1,0 +1,121 @@
+.accordion-button:not(.collapsed) {
+  background-color: rgba(247, 48, 48, 0.7) !important;
+  color: white !important;
+}
+.accordion-button:not(.collapsed):focus,
+button:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+#projectbox {
+  /* display: flex; */
+  justify-content: space-around;
+}
+.project-imgs {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.accordion-button {
+  font-weight: 500;
+  font-size: 22px;
+}
+#projectdetails {
+  padding: 15px;
+}
+#addressdetails {
+  display: flex !important;
+  justify-content: left;
+}
+.addresses {
+  width: 300px;
+  position: relative;
+  height: 200px;
+  border: 2px solid black;
+  padding: 20px;
+  overflow: hidden;
+  margin: 10px 15px;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.addresses h5,
+.addresses p {
+  z-index: 2 !important;
+}
+.activeadd {
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(255, 46, 46, 0.97);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(255, 46, 46, 0.97);
+  box-shadow: 0px 0px 5px 2px rgba(255, 46, 46, 0.97);
+}
+
+#addressimg {
+  position: absolute;
+  top: 30%;
+  right: -10%;
+  opacity: 0.5;
+  /* z-index:  !important; */
+  width: 70%;
+}
+#Addnewaddress {
+  border: 2px dotted grey;
+  font-size: 20px;
+  color: grey;
+
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+#sessionNo {
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  font-stretch: 800px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+#OTP {
+  text-align: center;
+}
+#timer {
+  color: black;
+}
+.accordion-button {
+  font-size: 20px !important;
+}
+fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding-left: 100px !important;
+}
+fieldset > div {
+  width: 70%;
+}
+fieldset label {
+  font-weight: 800;
+}
+
+.orderdet {
+  display: flex;
+}
+.orderdet > div:nth-child(1) {
+  width: 60%;
+  /* height: 250px; */
+}
+.orderdet > div:nth-child(2) {
+  width: 37%;
+  /* height: 250px; */
+}
+#checkoutsection {
+  width: 100%;
+}
+#continue,
+#editdetail,
+#paynow {
+  width: 18.6%;
+}
+#contbuttons {
+  text-align: end;
+  padding: 0px 39px;
+}
