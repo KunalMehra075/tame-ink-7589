@@ -17,9 +17,7 @@ section {
 #filter:hover {
   cursor: pointer;
 }
-footer {
-  display: none;
-}
+
 .sort {
   color: rgb(0, 0, 0);
   padding: 25px;
@@ -67,11 +65,14 @@ input[type="radio"] {
   justify-content: left;
   align-items: center;
   padding: 3px 10px;
+  font-size: 14px;
+  cursor: pointer;
 }
 
 .HTLswitcher > div {
   margin: 10px auto;
   background-color: white;
+  cursor: pointer;
 }
 .sort h1 {
   font-size: 25px;
@@ -144,6 +145,7 @@ section {
 #productsearch {
   border: 1px solid rgb(168, 164, 164);
   padding: 7px 20px;
+  width: 90%;
   outline: none;
   border: none;
 }
@@ -159,11 +161,21 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
+  height: fit-content;
 }
 .ChildBoxes {
-  border: 2px solid rgb(245, 244, 244);
-  max-height: 570px;
+  cursor: pointer;
+  border: 1px solid rgba(169, 163, 163, 0.114);
+  min-height: 590px;
   position: relative;
+}
+.ChildBoxes:hover {
+  border: 1px solid rgb(245, 244, 244);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.ChildBoxes:hover .addtocartX {
+  display: block;
 }
 
 .childimage > img {
@@ -212,11 +224,21 @@ section {
   bottom: 10px;
   margin: 0px;
   width: 95%;
-  padding: 10px auto;
+  padding: 10px !important;
   border: none !important;
   font-weight: 600;
   background-color: rgb(254, 75, 75);
 }
 .addtocartX:hover {
   background-color: #ff0000;
+}
+.heart {
+  position: absolute;
+  filter: brightness(1.1);
+  width: 35px;
+  right: 10px;
+  top: 10px;
+}
+.heart:hover {
+  transform: scale(1.1);
 }
