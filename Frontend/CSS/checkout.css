@@ -62,6 +62,9 @@ button:focus:not(:focus-visible) {
   place-items: center;
   text-align: center;
 }
+#resend {
+  cursor: pointer;
+}
 #sessionNo {
   padding: 12px 20px;
   text-align: center;

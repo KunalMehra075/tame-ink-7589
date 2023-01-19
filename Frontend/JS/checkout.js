@@ -8,6 +8,7 @@ let clbtn1 = document.getElementById("clbtn1");
 let clbtn2 = document.getElementById("clbtn2");
 let clbtn3 = document.getElementById("clbtn3");
 let clbtn4 = document.getElementById("clbtn4");
+let resend = document.getElementById("resend");
 
 let cont = document.getElementById("continue");
 cont.addEventListener("click", () => {
@@ -103,3 +104,8 @@ function timerfn() {
     }
   }, 1000);
 }
+resend.addEventListener("click", () => {
+  // "warning","success","error","info"
+  swal("OTP Sent!", "OTP sent to your registered mobile no.!", "info");
+  timer.innerHTML = 59;
+});
