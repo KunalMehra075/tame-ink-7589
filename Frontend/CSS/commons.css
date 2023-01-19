@@ -494,6 +494,14 @@ strong {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
+  #SixCardParent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  #SixCardParent > div {
+    width: 100%;
+  }
   #FourCardParent > div {
     width: 100%;
   }

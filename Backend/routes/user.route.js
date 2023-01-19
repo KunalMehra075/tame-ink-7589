@@ -57,7 +57,7 @@ userRouter.post("/login", async (req, res) => {
         if (result) {
           jwt.sign({ user }, "Yukino", (err, token) => {
             if (token) {
-              res.json({ Message: "Login Successful", token });
+              res.json({ Message: "Login Successful", token, user });
             } else {
               res.json({ Message: "Wrong Credentials" });
             }

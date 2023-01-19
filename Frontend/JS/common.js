@@ -1,7 +1,13 @@
+let baseURL = "http://localhost:4500";
+
 let closetop1 = document.getElementById("close-top1");
 let topfirst = document.getElementById("top1");
 var navbar = document.getElementById("stickynav");
 var sticky = navbar.offsetTop;
+let mybutton = document.getElementById("myBtn");
+let topFunction = () => {
+  document.documentElement.scrollTop = 0;
+};
 
 if (closetop1) {
   closetop1.addEventListener("click", () => {
@@ -13,7 +19,6 @@ if (closetop1) {
     }, 300);
   });
 }
-let mybutton = document.getElementById("myBtn");
 function scrollFunction() {
   if (!mybutton) return;
   if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
@@ -26,10 +31,6 @@ window.onscroll = function () {
   navbarstick();
   scrollFunction();
 };
-function topFunction() {
-  document.documentElement.scrollTop = 0;
-}
-
 function navbarstick() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky");
@@ -535,3 +536,40 @@ function autocomplete(inp, arr) {
   });
 }
 autocomplete(document.getElementById("megasearch"), Furnitures);
+
+//! <!----------------------------------------------- < Login Section> ----------------------------------------------->
+let UserLoginForm = document.getElementById("LoginForm");
+UserLoginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let creds = {
+    email: UserLoginForm.emailX.value,
+    pass: UserLoginForm.passX.value,
+  };
+  LoginFunction(creds);
+});
+async function LoginFunction(creds) {
+  try {
+    let res = await fetch(`${baseURL}/users/login`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(creds),
+    });
+    let data = await res.json();
+
+    if (data.exist === false) {
+      swal("User Dosen't Exists!", "Please Signup First!", "warning");
+      return;
+    }
+    sessionStorage.setItem("token", data.token);
+    sessionStorage.setItem("current-user", JSON.stringify(data.user));
+    swal("Login Successful!", "You are logged in, Lets Explore!", "success");
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 2000);
+  } catch (error) {
+    swal("Something Went Wrong.", "Server Error 504 ", "error");
+    console.log(error);
+  }
+}
