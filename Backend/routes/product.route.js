@@ -4,8 +4,10 @@ const { ProductModel } = require("../models/products.model");
 const productRouter = express.Router();
 
 productRouter.get("/", async (req, res) => {
+  let query = req.query;
+  console.log(query);
   try {
-    const Products = await ProductModel.find();
+    const Products = await ProductModel.find(query);
     res.json({ Products });
   } catch (err) {
     console.log(err);

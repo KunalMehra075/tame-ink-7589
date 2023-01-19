@@ -21,7 +21,10 @@ section {
 .sort {
   color: rgb(0, 0, 0);
   padding: 25px;
+  position: sticky !important;
+  bottom: 0px;
   width: 370px;
+  height: max-content;
   margin: 5px;
   margin-left: 20px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
@@ -166,11 +169,13 @@ section {
 .ChildBoxes {
   cursor: pointer;
   border: 1px solid rgba(169, 163, 163, 0.114);
-  min-height: 590px;
+  min-height: 500px;
+  z-index: 2;
   position: relative;
 }
 .ChildBoxes:hover {
-  border: 1px solid rgb(245, 244, 244);
+  cursor: pointer;
+  border: 1px solid rgb(227, 102, 102);
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
@@ -182,7 +187,7 @@ section {
   width: 100%;
 }
 .details {
-  padding: 6px;
+  padding: 12px;
 }
 .Actualpage {
   display: flex;
@@ -196,6 +201,7 @@ section {
 .priceX {
   font-size: 1.125em;
   color: #ff4444;
+  z-index: 3;
   font-weight: 900;
 }
 .cutprX {
@@ -221,7 +227,7 @@ section {
   position: absolute;
   color: white;
   right: 10px;
-  bottom: 10px;
+  top: 320px;
   margin: 0px;
   width: 95%;
   padding: 10px !important;

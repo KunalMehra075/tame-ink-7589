@@ -545,7 +545,27 @@ UserLoginForm.addEventListener("submit", (e) => {
     email: UserLoginForm.emailX.value,
     pass: UserLoginForm.passX.value,
   };
-  LoginFunction(creds);
+  console.log(creds.email, creds.pass);
+
+  if (creds.email == "admin@gmail.com" && creds.pass == "kunal143") {
+    swal({
+      title: "Welcome Back Admin! ",
+      text: "Do you want to redirect to Admin's Portal?",
+      icon: "info",
+      buttons: true,
+      dangerMode: true,
+    }).then((admin) => {
+      if (admin) {
+        setTimeout(() => {
+          window.location.href = "Admin.html";
+        }, 1000);
+      } else {
+        LoginFunction(creds);
+      }
+    });
+  } else {
+    LoginFunction(creds);
+  }
 });
 async function LoginFunction(creds) {
   try {

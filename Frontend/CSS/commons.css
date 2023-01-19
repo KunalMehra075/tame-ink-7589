@@ -429,6 +429,8 @@ strong {
 }
 #username {
   top: 68%;
+  font-size: 16px;
+  color: rgb(6, 0, 128);
   position: absolute;
 }
 .offcanvasAvatar {
