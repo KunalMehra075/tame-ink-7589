@@ -8,8 +8,8 @@ AddProductForm.addEventListener("submit", (e) => {
   let rat = +AddProductForm.rating.value;
   let desc = AddProductForm.description.value;
   if (!prp) {
-    prp = Math.floor(Math.random() * 100000);
-    if (prp < 999) prp = 10999;
+    prp = Math.floor(Math.random() * 10000);
+    if (prp < 999) prp = 1999;
   }
   if (!dis) {
     dis = Math.floor(Math.random() * 100);
@@ -47,7 +47,10 @@ async function AddProduct(product) {
     });
     let data = await res.json();
     console.log(data);
+    // "warning","success","error","info"
+    swal("Added Product", "Product Added Successfully!", "success");
   } catch (error) {
+    swal("Something Went Wrong", "", "warning");
     console.log(error);
   }
 }

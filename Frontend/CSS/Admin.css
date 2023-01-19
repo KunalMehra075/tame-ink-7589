@@ -1,7 +1,7 @@
-div,
+/* div,
 section {
   border: 1px solid black;
-}
+} */
 .navbar > .container-fluid {
   width: 100% !important;
   padding: 2px 80px !important;
@@ -346,7 +346,7 @@ section {
     text-align: center;
   }
   .AdminHeads > u {
-    font-size: 20px;
+    font-size: 28px;
   }
   .navbar-toggler {
     display: none !important;
@@ -387,8 +387,15 @@ section {
   .adddiv1 > div:nth-child(2) > div {
     grid-template-columns: repeat(1, 1fr);
   }
+  .adddiv1 > div:nth-child(2) > div > img {
+    min-height: 200px;
+    max-height: 156.5px;
+  }
   .adddiv2 > button {
     width: 48%;
+  }
+  .adddiv2 > button:hover {
+    filter: brightness(1.2);
   }
   #ThreeCardContainerX {
     grid-template-columns: repeat(2, 1fr);

@@ -1,28 +1,8 @@
 let closetop1 = document.getElementById("close-top1");
 let topfirst = document.getElementById("top1");
 var navbar = document.getElementById("stickynav");
-let popover = document.getElementById("popover");
-let username = document.getElementById("username");
-let user = JSON.parse(sessionStorage.getItem("current-user"));
-if (!user) {
-  username.innerText = "";
-} else {
-  username.innerText = user.name;
-}
 var sticky = navbar.offsetTop;
 
-window.addEventListener("load", () => {
-  if (user === "" && popover) {
-    setTimeout(() => {
-      popover.style.display = "block";
-      popover.style.opacity = "1";
-    }, 3000);
-    setTimeout(() => {
-      popover.style.display = "none";
-      popover.style.opacity = "0";
-    }, 7000);
-  }
-});
 if (closetop1) {
   closetop1.addEventListener("click", () => {
     topfirst.style.opacity = "0.0";
@@ -467,7 +447,7 @@ var Furnitures = [
 ];
 function autocomplete(inp, arr) {
   var currentFocus;
-
+  if (!inp) return;
   inp.addEventListener("input", function (e) {
     var a,
       b,

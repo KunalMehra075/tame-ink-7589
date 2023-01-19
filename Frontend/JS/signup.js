@@ -34,7 +34,7 @@ signform.addEventListener("submit", (e) => {
 });
 async function AddUser(user) {
   try {
-    let res = await fetch(`${baseURL}/users/create`, {
+    let res = await fetch(`${baseURL}/users/register`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

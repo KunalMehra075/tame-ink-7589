@@ -41,9 +41,26 @@ a {
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
-.bg-body-tertiary {
+#LoginForm {
+  display: none;
+}
+#UserPresent {
+  display: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #fafafa !important;
+  color: rgb(255, 0, 0) !important;
+  border: 1px solid grey;
+  box-shadow: none !important;
+}
+.accordion-button {
+  border: 1px solid rgb(214, 211, 211) !important;
+}
+#LoginForm .bg-body-tertiary {
   background-color: rgb(255, 255, 255) !important;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px !important;
+
   justify-content: space-evenly !important;
 }
 nav {
@@ -287,6 +304,7 @@ header a {
 #petsmenu {
   grid-template-columns: repeat(2, 1fr);
 }
+/*? <!----------------------------------------------- < Offcanvas and Essential > -----------------------------------------------> */
 #myBtn {
   position: fixed;
   display: none;
@@ -413,6 +431,25 @@ strong {
   top: 68%;
   position: absolute;
 }
+.offcanvasAvatar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.offcanvas-body {
+  overflow-y: scroll;
+}
+.offcanvas-body::-webkit-scrollbar {
+  display: none;
+}
+.offcanvasUser {
+  padding: 7px;
+}
+#avatar {
+  width: 30%;
+  border-radius: 50%;
+}
 /*? <!----------------------------------------------- < Buttons > -----------------------------------------------> */
 .Redwhitebtn {
   border: 1px solid red !important;
@@ -421,6 +458,9 @@ strong {
   background-color: white !important;
   padding: 10px 50px !important;
   margin: 5px;
+}
+.Redwhitebtn:hover {
+  filter: brightness(1.2);
 }
 .WhiteRedbtn {
   border: 1px solid rgb(228, 49, 49) !important;
