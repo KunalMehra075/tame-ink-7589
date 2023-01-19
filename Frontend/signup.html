@@ -223,18 +223,24 @@ aria-labelledby="offcanvasRightLabel"
                     <h1 id="signuphead">Signup & Explore</h1>
                 <form id="SignupForm">
                     <!-- name,email,pass,gender,mobileno -->
-                    <label>Name</label><br>
-                    <input type="text" placeholder="Enter Name" required><br>
-                    <label>Email</label><br>
-                    <input type="text" placeholder="Enter Email" required><br>
-                    <label>Gender</label><br>
-                    <input type="text" placeholder="Enter Gender" required><br>
+                    <label class="required">Name</label><br>
+                    <input type="text" id="name" placeholder="Enter Name" required><br>
+                    <label class="required">Email</label><br>
+                    <input type="email" id="emails" placeholder="Enter Email" required><br>
+                    <label class="required">Gender</label><br>
+                    <select name="" id="gender" required>
+                        <option value="">Choose Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select><br>
+                    
                     <label>Mobile</label><br>
-                    <input type="text" placeholder="Enter Mobile" required><br>
-                    <label>Password</label><br>
-                    <input type="text" placeholder="Enter Password" required><br>
-                    <label>Confirm Password</label><br>
-                    <input type="text" placeholder="Re-enter Password" required><br>
+                    <input type="number" min="999999999" id="mobile" placeholder="Enter Mobile"><br>
+                    <label class="required">Password</label><br>
+                    <input type="password" id="password" placeholder="Enter Password" required><br>
+                    <label class="required">Confirm Password</label><br>
+                    <input type="password" id="confpass" placeholder="Re-enter Password" required><br>
 
                     <br>
                     <input type="submit">
@@ -353,10 +359,9 @@ aria-labelledby="offcanvasRightLabel"
         </div>
       </section>
     </footer>
-  </body>
-</html>
-<script src="JS/index.js"></script>
+    <script src="JS/index.js"></script>
 <script src="JS/common.js"></script>
+<script src="JS/signup.js"></script>
 <script
   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
   integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -369,3 +374,6 @@ aria-labelledby="offcanvasRightLabel"
   crossorigin="anonymous"
 ></script>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </body>
+</html>

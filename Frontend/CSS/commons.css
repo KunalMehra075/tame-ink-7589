@@ -430,3 +430,50 @@ strong {
   padding: 10px 50px !important;
   margin: 5px;
 }
+.required::after {
+  content: "*";
+  color: red;
+}
+/*? ----------------------------Small Screen Sizes -------------------------------- */
+@media all and (min-width: 320px) and (max-width: 909px) {
+  /*-------------------------- Universals-------------------------- */
+  * {
+    font-size: 13px;
+  }
+  #footerspace {
+    height: 1300px !important;
+  }
+  .topfirst {
+    display: none;
+  }
+  .main-mega-menu {
+    display: none !important;
+  }
+  #FourCardParent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  #FourCardParent > div {
+    width: 100%;
+  }
+  .firstview > div:nth-child(1) {
+    display: none;
+  }
+  #subheads {
+    font-size: 14px;
+  }
+  #subheads + p {
+    font-size: 10px;
+  }
+  #footerlinks > div {
+    margin: 0px !important;
+  }
+  .footer1 {
+    flex-direction: column !important;
+  }
+  footer li {
+    margin: 0px !important;
+  }
+  /* -------------------------Page Specifcs------------------------- */
+}

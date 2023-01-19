@@ -1,18 +1,21 @@
 const express = require("express");
 const { connection } = require("./configs/db");
-const { UserModel } = require("./models/users.model");
+const { productRouter } = require("./routes/product.route");
 const { userRouter } = require("./routes/user.route");
+const cors = require("cors");
 
 const app = express();
+app.use(cors("*"));
 app.use(express.json());
 app.use("/users", userRouter);
+app.use("/products", productRouter);
 
 app.get("/", (req, res) => {
   try {
-    res.send("Welcome to Pepperfry");
+    res.json({ Message: "Welcome to OrangeFry" });
   } catch (err) {
     console.log(err);
-    res.send({ Error: err });
+    res.json({ Error: err });
   }
 });
 

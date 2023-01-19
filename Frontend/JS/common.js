@@ -3,8 +3,12 @@ let topfirst = document.getElementById("top1");
 var navbar = document.getElementById("stickynav");
 let popover = document.getElementById("popover");
 let username = document.getElementById("username");
-let user = localStorage.getItem("user") || "";
-username.innerText = user || "";
+let user = JSON.parse(sessionStorage.getItem("current-user"));
+if (!user) {
+  username.innerText = "";
+} else {
+  username.innerText = user.name;
+}
 var sticky = navbar.offsetTop;
 
 window.addEventListener("load", () => {

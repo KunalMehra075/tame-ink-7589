@@ -122,3 +122,77 @@ fieldset label {
   text-align: end;
   padding: 0px 39px;
 }
+div,
+section {
+  border: 1px solid black;
+}
+/*? <!----------------------------------------------- < Checkout > -----------------------------------------------> */
+.checkoutsection {
+  width: 30%;
+}
+.checkoutsection > *,
+#offersub {
+  box-shadow: none !important;
+}
+.checkout-subs {
+  margin: 4px;
+
+  padding: 10px;
+  height: auto;
+}
+#pincode {
+  margin: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 0px;
+  background-color: rgb(243, 240, 241);
+}
+#checkbutton {
+  cursor: pointer;
+  background-color: #ff3c27;
+  border-radius: 4px;
+  border: 0px;
+  color: white;
+  font-size: 17px;
+}
+#delievery-input,
+#checkbutton {
+  padding: 7px 10px;
+}
+#delievery-input {
+  width: 50% !important;
+}
+#offersub {
+  padding: 5px;
+  display: flex;
+  justify-content: left;
+}
+#offerimg {
+  width: 100px;
+  margin: 10px;
+}
+.totals {
+  font-size: 17px;
+  font-weight: bold;
+}
+#totals > div {
+  display: flex;
+  justify-content: space-between;
+}
+.Total {
+  font-size: 21px;
+}
+#Checkout {
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  color: white;
+  border: 0px;
+  border-radius: 2px;
+  background-color: #ef402c;
+  font-size: 20px;
+  font-weight: bold;
+}
+#Checkout:hover {
+  background-color: rgb(255, 0, 0);
+}

@@ -4,22 +4,22 @@ const { ProductModel } = require("../models/products.model");
 
 productRouter.get("/", async (req, res) => {
   try {
-    const data = await ProductModel.find();
-    res.send(data);
+    const Products = await ProductModel.find();
+    res.json({ Products });
   } catch (err) {
     console.log(err);
-    res.send({ Error: err });
+    res.json({ Error: err });
   }
 });
-productRouter.post("/", async (req, res) => {
+productRouter.post("/create", async (req, res) => {
   let data = req.body;
   try {
     const instance = new ProductModel(data);
     await instance.save();
-    res.send("Added product Successfully");
+    res.json({ Message: "Added product Successfully", Instance: instance });
   } catch (err) {
     console.log(err);
-    res.send({ Error: err });
+    res.json({ Error: err });
   }
 });
 module.exports = { productRouter };
