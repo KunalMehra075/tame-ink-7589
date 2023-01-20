@@ -198,7 +198,7 @@ function RenderOffCanvasCart(products) {
     </div>
   <div id="canvasPrice">
  <b> Price:</b>
-    ${item.price}
+ ₹${item.price}
   </div>
   <div id="canvasQnty">
   <b> Qty:</b>
@@ -222,6 +222,7 @@ function RenderOffCanvasCart(products) {
     </div>
     <a href="Cart.html">  <button id="gotocartX" class="WhiteRedbtn">
     Proceed to Cart</button></a>
+    <hr>
    </div>
 
     
@@ -260,11 +261,15 @@ function RenderOffCanvasFav(products) {
     </div>
   <div id="canvasPrice">
  <b> Price:</b>
-    ${item.price}
+ ₹${item.price}
   </div>
   <div id="canvasQnty">
-  <b> Qty:</b>
-  ${item.Quantity}
+  <b> Brand:</b>
+  ${item.brand}
+  <br/>
+  <br/>
+  <img width="25px" class="FavRemovers" data-id=${item._id}
+ src="Images/icons/redheart.png" alt="" tooltip="Remove">
   </div>
   </div>`;
     })
@@ -272,5 +277,37 @@ function RenderOffCanvasFav(products) {
 
   UserFavoriteDivs.innerHTML = `
     ${products}
+    <hr>
     `;
+  let FavRemovers = document.getElementsByClassName("FavRemovers");
+  for (const frvs of FavRemovers) {
+    frvs.addEventListener("click", (e) => {
+      swal({
+        title: "Remove From Fav?",
+        text: "Item will be removed from Favorites",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          DeleteFav(e.target.dataset.id);
+        } else {
+          swal("Item is in favorites");
+        }
+      });
+    });
+  }
+}
+async function DeleteFav(id) {
+  try {
+    let res = await fetch(`${baseURL}/favorites/delete/${id}`, {
+      method: "DELETE",
+    });
+    let data = await res.json();
+    console.log(data);
+    swal("Removed from Favorites", "", "success");
+    FetchFavorites(user._id);
+  } catch (error) {
+    console.log(error);
+  }
 }

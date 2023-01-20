@@ -58,3 +58,9 @@ section {
   padding: 4px;
   min-width: 150px;
 }
+.FavRemovers {
+  filter: brightness(10);
+}
+.FavRemovers:hover {
+  filter: grayscale();
+}
