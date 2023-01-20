@@ -133,43 +133,51 @@
          <!--todo-------------------------- <AddProduct> --------------------------------->
           <section id="AddProduct">
            <center> <h3 class="AdminHeads"><u>Add a Product</u></h3></center>
-            <form action="">
+            <form id="addproductform" action="">
 
            
            <div class="adddiv1">
             <div>
               <!-- title,description,price,brand,rating,thumbnail,images2,type,discount  -->
               <span>
-                <label for="">Title</label><br>
+                <label class="required" for="">Title</label><br>
                 <input id="title" type="text" placeholder="Enter Title" required><br> 
-                <label for="">Brand</label><br>
+                <label for="">Price</label><br>
+                <input id="price" type="number" placeholder="Enter Product Price"><br>
+                
+              </span>
+              <span>
+                <label class="required" for="type">Type</label><br>
+                <select name="" id="type" required>
+                  <option value="">Choose Type</option>
+                  <option value="HOME DECOR">HOME DECOR</option>
+                  <option value="TABLE LAMPS">TABLE LAMPS</option>
+                  <option value="PETS">PETS</option>
+                  <option value="FURNITURE">FURNITURE</option>
+                  <option value="KITCHEN">KITCHEN</option>
+                </select><br>
+                <label class="required" for="">Brand</label><br>
                 <input id="brand" type="text" placeholder="Enter Brand Name" required><br>
               </span>
               <span>
-                <label for="">Type</label><br>
-                <input id="type" type="text" placeholder="Enter Product Type" required><br>
-                <label for="">Price</label><br>
-                <input id="price" type="number" placeholder="Enter Product Price" required><br>
-              </span>
-              <span>
                 <label for="">Rating</label><br>
-              <input id="rating" type="number" placeholder="Enter Rating" required><br>
-              <label for="">Thumbnail</label><br>
-              <input id="thumbnail" type="text" placeholder="Enter Product Thumbnail" required><br>
+              <input id="rating" type="number" placeholder="Enter Rating"><br>
+              <label for="">Discount</label><br>
+              <input id="discount" type="number" placeholder="Enter Discount"><br>
               </span>
              <span>
-              <label for="">Image 1</label><br>
+              <label class="required" for="">Image 1</label><br>
               <input id="img2" type="text" placeholder="Enter Image" required><br>
-              <label for="">Image2</label><br>
+              <label class="required" for="">Image2</label><br>
               <input id="img1" type="text" placeholder="Enter Image" required><br>
              </span>
               <span>
-                <label for="">Discount</label><br>
-              <input id="discount" type="number" placeholder="Enter Discount" required><br>
+                <label class="required" for="">Thumbnail</label><br>
+                <input id="thumbnail" type="text" placeholder="Enter Product Thumbnail" required><br>
               </span>
               <span>
                 <label for="">Description</label><br>
-              <textarea id="description" type="text" placeholder="Enter Description" required></textarea><br>
+              <textarea id="description" type="text" placeholder="Enter Description"></textarea><br>
               </span>
 
             </div>
@@ -183,7 +191,7 @@
             </div>
            </div>
             <div class="adddiv2">
-              <button class="Redwhitebtn">Edit</button>
+              <button class="Redwhitebtn">Import Product</button>
               <button class="WhiteRedbtn">Add The Product</button>
             </div>
           </form>
@@ -191,7 +199,160 @@
            <!--todo-------------------------- <Edit Product> --------------------------------->
             <section id="EditProduct">
               <center> <h3 class="AdminHeads"><u>Edit Product</u></h3></center>
-              
+              <div id="crumbar">
+                <div>
+                    <nav id="bread" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="#">Home</a></li>
+                          <li class="breadcrumb-item"><a href="#">Home Decor</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Home Decor Products</li>  
+                        </ol>
+                    </nav>
+                </div>
+             
+                    <div class="productsearch">
+                        <input
+                        type="text"
+                        id="productsearch"
+                          placeholder="Search for Products "
+                          aria-label="Search"
+                        />
+                        <img
+                          style="opacity: 0.6; width: 25px; height: 25px"
+                          src="./Images/icons/search.png"
+                          alt=""
+                        />
+                      </div>
+                   
+               
+                  
+               </div>
+      
+                 <!--todo-------------------------- <Container> --------------------------------->
+                  <div id="ThreeCardContainerX">
+                    <!--!-------------------------- <Sample Childbox> --------------------------------->
+                    <div class="ChildBoxes">
+                        <div class="childimage">
+                          <img src="Images/Home/best1.jpg" alt="" />
+                        </div>
+                        <div class="details">
+                          <label class="titleX"
+                            >Monster Ultimate (T) Gaming Chair in Black & Grey Colour</label
+                          ><br />
+                          <label class="brandX">Green Soul</label><br />
+                          <label class="priceX">₹ 19,690</label>
+                          <label class="cutprX">₹ 1350</label><br />
+                          <label class="typeX">Home Decor</label>
+                          <label class="discountX">44% Off</label><br />
+                          <label class="ratingX">Rating : 9.2 ⭐</label><br />
+                          <button class="addtocartX">Edit</button>
+                          <img class="heart" data-like="notlike" src="./Images/icons/blakheart.png" alt="">
+                        </div>
+                      </div>
+                      <!--!--------------------------------------------------------------------------->
+                     <!--!-------------------------- <Sample Childbox> --------------------------------->
+                      <div class="ChildBoxes">
+                        <div class="childimage">
+                          <img src="Images/Home/best1.jpg" alt="" />
+                        </div>
+                        <div class="details">
+                          <label class="titleX"
+                            >Monster Ultimate (T) Gaming Chair in Black & Grey Colour</label
+                          ><br />
+                          <label class="brandX">Green Soul</label><br />
+                          <label class="priceX">₹ 19,690</label>
+                          <label class="cutprX">₹ 1350</label><br />
+                          <label class="typeX">Home Decor</label>
+                          <label class="discountX">44% Off</label><br />
+                          <label class="ratingX">Rating : 9.2 ⭐</label><br />
+                          <button class="addtocartX">Edit</button>
+                          <img class="heart" data-like="notlike" src="./Images/icons/blakheart.png" alt="">
+                        </div>
+                      </div>
+                      <!--!--------------------------------------------------------------------------->
+                    
+                       <!--!-------------------------- <Sample Childbox> --------------------------------->
+                    <div class="ChildBoxes">
+                      <div class="childimage">
+                        <img src="Images/Home/best1.jpg" alt="" />
+                      </div>
+                      <div class="details">
+                        <label class="titleX"
+                          >Monster Ultimate (T) Gaming Chair in Black & Grey Colour</label
+                        ><br />
+                        <label class="brandX">Green Soul</label><br />
+                        <label class="priceX">₹ 19,690</label>
+                        <label class="cutprX">₹ 1350</label><br />
+                        <label class="typeX">Home Decor</label>
+                        <label class="discountX">44% Off</label><br />
+                        <label class="ratingX">Rating : 9.2 ⭐</label><br />
+                        <button class="addtocartX">Edit</button>
+                        <img class="heart" data-like="notlike" src="./Images/icons/blakheart.png" alt="">
+                      </div>
+                    </div>
+                    <!--!--------------------------------------------------------------------------->
+                   <!--!-------------------------- <Sample Childbox> --------------------------------->
+                    <div class="ChildBoxes">
+                      <div class="childimage">
+                        <img src="Images/Home/best1.jpg" alt="" />
+                      </div>
+                      <div class="details">
+                        <label class="titleX"
+                          >Monster Ultimate (T) Gaming Chair in Black & Grey Colour</label
+                        ><br />
+                        <label class="brandX">Green Soul</label><br />
+                        <label class="priceX">₹ 19,690</label>
+                        <label class="cutprX">₹ 1350</label><br />
+                        <label class="typeX">Home Decor</label>
+                        <label class="discountX">44% Off</label><br />
+                        <label class="ratingX">Rating : 9.2 ⭐</label><br />
+                        <button class="addtocartX">Edit</button>
+                        <img class="heart" data-like="notlike" src="./Images/icons/blakheart.png" alt="">
+                      </div>
+                    </div>
+                    <!--!--------------------------------------------------------------------------->
+                   <!--!-------------------------- <Sample Childbox> --------------------------------->
+                    <div class="ChildBoxes">
+                      <div class="childimage">
+                        <img src="Images/Home/best1.jpg" alt="" />
+                      </div>
+                      <div class="details">
+                        <label class="titleX"
+                          >Monster Ultimate (T) Gaming Chair in Black & Grey Colour</label
+                        ><br />
+                        <label class="brandX">Green Soul</label><br />
+                        <label class="priceX">₹ 19,690</label>
+                        <label class="cutprX">₹ 1350</label><br />
+                        <label class="typeX">Home Decor</label>
+                        <label class="discountX">44% Off</label><br />
+                        <label class="ratingX">Rating : 9.2 ⭐</label><br />
+                        <button class="addtocartX">Edit</button>
+                        <img class="heart" data-like="notlike" src="./Images/icons/blakheart.png" alt="">
+                      </div>
+                    </div>
+                    <!--!--------------------------------------------------------------------------->
+                   <!--!-------------------------- <Sample Childbox> --------------------------------->
+                    <div class="ChildBoxes">
+                      <div class="childimage">
+                        <img src="Images/Home/best1.jpg" alt="" />
+                      </div>
+                      <div class="details">
+                        <label class="titleX"
+                          >Monster Ultimate (T) Gaming Chair in Black & Grey Colour</label
+                        ><br />
+                        <label class="brandX">Green Soul</label><br />
+                        <label class="priceX">₹ 19,690</label>
+                        <label class="cutprX">₹ 1350</label><br />
+                        <label class="typeX">Home Decor</label>
+                        <label class="discountX">44% Off</label><br />
+                        <label class="ratingX">Rating : 9.2 ⭐</label><br />
+                        <button class="addtocartX">Edit</button>
+                        <img class="heart" data-like="notlike" src="./Images/icons/blakheart.png" alt="">
+                      </div>
+                    </div>
+                    <!--!--------------------------------------------------------------------------->
+                  
+                </div>
     
             </section>
              <!--todo-------------------------- <Manage Orders> --------------------------------->
@@ -247,7 +408,7 @@
 <script src="JS/index.js"></script>
 <script src="JS/common.js"></script>
 <script src="JS/Admin.js"></script>
-<script src="JS/Admin2.js"></script>
+<script type="module" src="JS/Admin2.js"></script>
 <script
   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
   integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -258,3 +419,4 @@
   integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
   crossorigin="anonymous"
 ></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

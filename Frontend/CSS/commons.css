@@ -8,12 +8,31 @@
 section {
   border: 1px solid black;
 } */
-
+#preloader {
+  z-index: 99999999999999999999;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#AdminRedirect {
+  display: none;
+  padding: 5px !important;
+  width: 98%;
+}
 ul,
 li {
   list-style: none;
 }
-
+::-webkit-scrollbar {
+  background-color: rgb(241, 229, 229);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(250, 73, 73);
+}
 img {
   cursor: pointer;
 }
@@ -41,9 +60,26 @@ a {
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
-.bg-body-tertiary {
+#LoginForm {
+  display: none;
+}
+#UserPresent {
+  display: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #fafafa !important;
+  color: rgb(255, 0, 0) !important;
+  border: 1px solid grey;
+  box-shadow: none !important;
+}
+.accordion-button {
+  border: 1px solid rgb(214, 211, 211) !important;
+}
+#LoginForm .bg-body-tertiary {
   background-color: rgb(255, 255, 255) !important;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px !important;
+
   justify-content: space-evenly !important;
 }
 nav {
@@ -154,6 +190,22 @@ nav {
   top: 42px;
   left: 20px;
   z-index: 100;
+}
+#signCanvasDiv {
+  padding: 10px;
+}
+#signCanvasDiv label {
+  font-size: 14px;
+  margin: 0px !important;
+}
+.ORhr {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+#OR {
+  margin: 0px !important;
 }
 /*? <!----------------------------------------------- < Footer > -----------------------------------------------> */
 html {
@@ -287,6 +339,7 @@ header a {
 #petsmenu {
   grid-template-columns: repeat(2, 1fr);
 }
+/*? <!----------------------------------------------- < Offcanvas and Essential > -----------------------------------------------> */
 #myBtn {
   position: fixed;
   display: none;
@@ -381,9 +434,7 @@ strong {
   -moz-box-shadow: 0px 0px 10px 0px rgba(9, 195, 237, 0.5) !important;
   box-shadow: 0px 0px 10px 0px rgba(9, 195, 237, 0.5) !important;
 }
-#OR {
-  margin: 10px auto;
-}
+
 #popover {
   display: none;
   opacity: 0;
@@ -411,8 +462,30 @@ strong {
 }
 #username {
   top: 68%;
+  font-size: 16px;
+  color: rgb(6, 0, 128);
   position: absolute;
 }
+.offcanvasAvatar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.offcanvas-body {
+  overflow-y: scroll;
+}
+.offcanvas-body::-webkit-scrollbar {
+  display: none;
+}
+.offcanvasUser {
+  padding: 3px;
+}
+#avatar {
+  width: 30%;
+  border-radius: 50%;
+}
+
 /*? <!----------------------------------------------- < Buttons > -----------------------------------------------> */
 .Redwhitebtn {
   border: 1px solid red !important;
@@ -422,6 +495,9 @@ strong {
   padding: 10px 50px !important;
   margin: 5px;
 }
+.Redwhitebtn:hover {
+  filter: brightness(1.2);
+}
 .WhiteRedbtn {
   border: 1px solid rgb(228, 49, 49) !important;
   font-weight: 800 !important;
@@ -429,4 +505,59 @@ strong {
   background-color: rgb(231, 47, 47) !important;
   padding: 10px 50px !important;
   margin: 5px;
+}
+.required::after {
+  content: "*";
+  color: red;
+}
+/*? ----------------------------Small Screen Sizes -------------------------------- */
+@media all and (min-width: 320px) and (max-width: 909px) {
+  /*-------------------------- Universals-------------------------- */
+  * {
+    font-size: 13px;
+  }
+  #footerspace {
+    height: 1300px !important;
+  }
+  .topfirst {
+    display: none;
+  }
+  .main-mega-menu {
+    display: none !important;
+  }
+  #FourCardParent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  #SixCardParent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  #SixCardParent > div {
+    width: 100%;
+  }
+  #FourCardParent > div {
+    width: 100%;
+  }
+  .firstview > div:nth-child(1) {
+    display: none;
+  }
+  #subheads {
+    font-size: 14px;
+  }
+  #subheads + p {
+    font-size: 10px;
+  }
+  #footerlinks > div {
+    margin: 0px !important;
+  }
+  .footer1 {
+    flex-direction: column !important;
+  }
+  footer li {
+    margin: 0px !important;
+  }
+  /* -------------------------Page Specifcs------------------------- */
 }

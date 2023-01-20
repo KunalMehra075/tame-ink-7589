@@ -1,24 +1,50 @@
+let baseURL = "http://localhost:4500";
+let spinner = document.getElementById("spinner");
 let closetop1 = document.getElementById("close-top1");
 let topfirst = document.getElementById("top1");
 var navbar = document.getElementById("stickynav");
-let popover = document.getElementById("popover");
-let username = document.getElementById("username");
-let user = localStorage.getItem("user") || "";
-username.innerText = user || "";
+let preloader = document.getElementById("preloader");
 var sticky = navbar.offsetTop;
+let mybutton = document.getElementById("myBtn");
+let gotocart = document.getElementById("gotocart");
+
+let furnitureR = document.getElementById("furbutton");
+let homedecorR = document.getElementById("homedecorR");
+let lampsR = document.getElementById("lampsR");
+let kitchenR = document.getElementById("kitchenR");
+let petsR = document.getElementById("petsR");
+
+furnitureR.addEventListener("click", () => {
+  sessionStorage.setItem("product-type", "FURNITURE");
+  window.location.href = "AllProducts.html";
+});
+homedecorR.addEventListener("click", () => {
+  sessionStorage.setItem("product-type", "HOME DECOR");
+  window.location.href = "AllProducts.html";
+});
+lampsR.addEventListener("click", () => {
+  sessionStorage.setItem("product-type", "TABLE LAMPS");
+  window.location.href = "AllProducts.html";
+});
+kitchenR.addEventListener("click", () => {
+  sessionStorage.setItem("product-type", "KITCHEN");
+  window.location.href = "AllProducts.html";
+});
+petsR.addEventListener("click", () => {
+  sessionStorage.setItem("product-type", "PETS");
+  window.location.href = "AllProducts.html";
+});
 
 window.addEventListener("load", () => {
-  if (user === "" && popover) {
-    setTimeout(() => {
-      popover.style.display = "block";
-      popover.style.opacity = "1";
-    }, 3000);
-    setTimeout(() => {
-      popover.style.display = "none";
-      popover.style.opacity = "0";
-    }, 7000);
-  }
+  preloader.style.display = "none";
 });
+gotocart.addEventListener("click", () => {
+  window.location.href = "cart.html";
+});
+let topFunction = () => {
+  document.documentElement.scrollTop = 0;
+};
+
 if (closetop1) {
   closetop1.addEventListener("click", () => {
     topfirst.style.opacity = "0.0";
@@ -29,7 +55,6 @@ if (closetop1) {
     }, 300);
   });
 }
-let mybutton = document.getElementById("myBtn");
 function scrollFunction() {
   if (!mybutton) return;
   if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
@@ -42,10 +67,6 @@ window.onscroll = function () {
   navbarstick();
   scrollFunction();
 };
-function topFunction() {
-  document.documentElement.scrollTop = 0;
-}
-
 function navbarstick() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky");
@@ -463,7 +484,7 @@ var Furnitures = [
 ];
 function autocomplete(inp, arr) {
   var currentFocus;
-
+  if (!inp) return;
   inp.addEventListener("input", function (e) {
     var a,
       b,

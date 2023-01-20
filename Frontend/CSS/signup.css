@@ -20,17 +20,20 @@ form label {
   margin-top: 5px;
 }
 
-form input {
+form input,
+form select {
   border-bottom: 1px solid transparent;
   width: 100%;
   padding: 7px 10px;
   border: none;
   background-color: whitesmoke;
 }
-form input:focus {
+form input:focus,
+form select:focus {
   outline: none;
   border-bottom: 1px solid red;
 }
+
 input[type="submit"] {
   background-color: rgb(59, 58, 58);
   color: white;
