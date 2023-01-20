@@ -14,7 +14,7 @@ let UserMobile = document.getElementById("UserMobile");
 let UserGender = document.getElementById("UserGender");
 let UserRole = document.getElementById("UserRole");
 let UserCartDetails = document.getElementById("UserCartDetails");
-
+let UserFavoriteDivs = document.getElementById("UserFavoriteDivs");
 window.addEventListener("load", () => {
   if (user) {
     let initial = user.name.split(" ")[0];
@@ -67,6 +67,7 @@ function RenderOFFCANVAS(user) {
   UserGender.innerText = user.gender;
   UserRole.innerText = user.role;
   FetchCartProducts(user._id);
+  FetchFavorites(user._id);
 }
 //! <!----------------------------------------------- < Login Section> ----------------------------------------------->
 let UserLoginForm = document.getElementById("LoginForm");
@@ -126,9 +127,18 @@ async function LoginFunction(creds) {
 }
 async function FetchCartProducts(userid) {
   try {
-    let res = await fetch(`${baseURL}/cart?UserID=${userid}`);
+    let res = await fetch(`${baseURL}/carts?UserID=${userid}`);
     let data = await res.json();
     RenderOffCanvasCart(data.Items);
+  } catch (error) {
+    console.log(error);
+  }
+}
+async function FetchFavorites(userid) {
+  try {
+    let res = await fetch(`${baseURL}/favorites?UserID=${userid}`);
+    let data = await res.json();
+    RenderOffCanvasFav(data.Items);
   } catch (error) {
     console.log(error);
   }
@@ -215,5 +225,52 @@ function RenderOffCanvasCart(products) {
    </div>
 
     
+    `;
+}
+function RenderOffCanvasFav(products) {
+  if (products.length === 0) {
+    UserFavoriteDivs.innerHTML = `
+    <center>No Favorites </center>
+`;
+    return;
+  }
+  products = products
+    .map((item) => {
+      return `
+  
+    <div class="ChildCanvas">
+    <div><img height="100px" src="${item.thumbnail}" alt=""></div>
+    <div id="canvas2nd">
+      <label id="canvasTitle">${item.title.substring(0, 25)}</label><br>
+      <label id="canvasDescp" for="">
+      ${item.description.substring(0, 50)}</label><br>
+      <label id="canvasRating" for="">Rating :${item.rating}
+      <img data-id=${item._id} width="11px" 
+      src="https://ii1.pepperfry.com/images/svg/vip-rating-filled-star.svg" alt="">
+      <img data-id=${item._id} width="11px" 
+      src="https://ii1.pepperfry.com/images/svg/vip-rating-filled-star.svg" alt="">
+      <img data-id=${item._id} width="11px" 
+      src="https://ii1.pepperfry.com/images/svg/vip-rating-filled-star.svg" alt="">
+      <img data-id=${item._id} width="11px" 
+      src="https://ii1.pepperfry.com/images/svg/vip-rating-filled-star.svg" alt="">
+      <img data-id=${item._id} width="11px" 
+      src="https://ii1.pepperfry.com/images/svg/vip-rating-half-filled-star.svg" alt="">
+      
+      </label>
+    </div>
+  <div id="canvasPrice">
+ <b> Price:</b>
+    ${item.price}
+  </div>
+  <div id="canvasQnty">
+  <b> Qty:</b>
+  ${item.Quantity}
+  </div>
+  </div>`;
+    })
+    .join(" ");
+
+  UserFavoriteDivs.innerHTML = `
+    ${products}
     `;
 }

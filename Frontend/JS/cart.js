@@ -3,9 +3,9 @@ let CartItems = [];
 GetCartItems(Initiator._id);
 async function GetCartItems(id) {
   try {
-    let res = await fetch(`${baseURL}/cart?UserID=${id}`);
+    let res = await fetch(`${baseURL}/carts?UserID=${id}`);
     let data = await res.json();
-    showdata(data.Items);
+    RenderCartData(data.Items);
     CartItems = [...data.Items];
     UpdateTotal(CartItems);
   } catch (error) {
@@ -37,7 +37,7 @@ function UpdateTotal(cartitems) {
 // }
 //? <!-------------------------------------<ShowData on Checkout Page> ----------------------------------------------->
 
-function showdata(data) {
+function RenderCartData(data) {
   let productList = document.querySelector(".showproducts");
 
   let count = 0;
@@ -164,7 +164,7 @@ async function ChangeProductQty(id, qty) {
     Quantity: +qty,
   };
   try {
-    let res = await fetch(`${baseURL}/cart/update/${id}`, {
+    let res = await fetch(`${baseURL}/carts/update/${id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
@@ -180,7 +180,7 @@ async function ChangeProductQty(id, qty) {
 }
 async function RemoveProductCrt(id) {
   try {
-    let res = await fetch(`${baseURL}/cart/delete/${id}`, {
+    let res = await fetch(`${baseURL}/carts/delete/${id}`, {
       method: "DELETE",
     });
     let data = await res.json();

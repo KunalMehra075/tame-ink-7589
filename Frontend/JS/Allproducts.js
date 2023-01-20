@@ -59,7 +59,8 @@ function RenderData(products) {
           <button data-id=${item._id}
            class="addtocartX" Add-to-cart>Add To cart</button>
           <img class="heart"
-           data-like="notlike" src="./Images/icons/blakheart.png" alt="">
+           data-id=${item._id}  
+           src="./Images/icons/blakheart.png" alt="" Add-To-Favorite>
         </div>
         </div>
     `;
@@ -78,9 +79,19 @@ function RenderData(products) {
     });
   }
   let ChildBoxes = document.getElementsByClassName("ChildBoxes");
+
   for (const box of ChildBoxes) {
     box.addEventListener("click", (e) => {
       sessionStorage.setItem("oneproduct", e.target.dataset.id);
+      if (e.target.matches("[Add-To-Favorite]")) {
+        if (!initiator) {
+          swal("Please Login First!", "No user currently logged in", "warning");
+          return;
+        } else {
+          FetchProductForFav(e.target.dataset.id, initiator._id);
+        }
+        return;
+      }
       if (!e.target.matches("[Add-to-cart]")) {
         console.log("Childbox");
         window.location.href = "Oneproduct.html";
@@ -88,6 +99,9 @@ function RenderData(products) {
     });
   }
 }
+
+//? <!----------------------------------------------- < For Favorites> ----------------------------------------------->
+
 function AddToCartFunction(UserID, productID) {
   if (!initiator) {
     swal("Please Login First", "No user in", "info");
@@ -122,7 +136,7 @@ async function AddtoCart(product, userid) {
   };
 
   try {
-    let res = await fetch(`${baseURL}/cart/post`, {
+    let res = await fetch(`${baseURL}/carts/post`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -135,6 +149,61 @@ async function AddtoCart(product, userid) {
       swal("Already in cart!", "Product already added in cart!", "info");
     } else {
       swal("Added to Cart!", "Product Added Successfully!", "success");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+//? <!----------------------------------------------- < For Favorites> ----------------------------------------------->
+
+async function FetchProductForFav(id, userid) {
+  try {
+    let res = await fetch(`${baseURL}/products?_id=${id}`);
+    let data = await res.json();
+    AddtoFavorite(data.Products[0], userid);
+  } catch (error) {
+    console.log(error);
+  }
+}
+async function AddtoFavorite(product, userid) {
+  let obj = {
+    title: product.title,
+    type: product.type,
+    price: product.price,
+    brand: product.brand,
+    rating: product.rating,
+    thumbnail: product.thumbnail,
+    images: [product.images[0], product.images[1]],
+    discount: product.discount,
+    description: product.description,
+    UserID: userid,
+    ProductID: product._id,
+    UserName: initiator.name,
+  };
+
+  try {
+    let res = await fetch(`${baseURL}/favorites/post`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    });
+    let data = await res.json();
+
+    if (data.exist) {
+      swal(
+        "Already in the Favorites!",
+        "Product already added in the Favorites.",
+        "info"
+      );
+    } else {
+      swal(
+        "Added to Favorites.",
+        "Product Added to Favorites Successfully!",
+        "success"
+      );
     }
   } catch (error) {
     console.log(error);

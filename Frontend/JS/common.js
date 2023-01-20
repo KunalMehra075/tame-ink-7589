@@ -1,11 +1,16 @@
 let baseURL = "http://localhost:4500";
+let spinner = document.getElementById("spinner");
 
 let closetop1 = document.getElementById("close-top1");
 let topfirst = document.getElementById("top1");
 var navbar = document.getElementById("stickynav");
+let preloader = document.getElementById("preloader");
 var sticky = navbar.offsetTop;
 let mybutton = document.getElementById("myBtn");
 let gotocart = document.getElementById("gotocart");
+window.addEventListener("load", () => {
+  preloader.style.display = "none";
+});
 gotocart.addEventListener("click", () => {
   window.location.href = "cart.html";
 });

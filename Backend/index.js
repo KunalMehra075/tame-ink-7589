@@ -5,6 +5,7 @@ const { userRouter } = require("./routes/user.route");
 const { logger } = require("./middlewares/logger.middleware");
 const { ReviewRouter } = require("./routes/review.route");
 const { CartRouter } = require("./routes/cart.route");
+const { FavoriteRouter } = require("./routes/favorite.route");
 const cors = require("cors");
 
 const app = express();
@@ -13,7 +14,8 @@ app.use(express.json());
 app.use("/users", userRouter);
 app.use("/products", productRouter);
 app.use("/reviews", ReviewRouter);
-app.use("/cart", CartRouter);
+app.use("/carts", CartRouter);
+app.use("/favorites", FavoriteRouter);
 
 app.get("/", (req, res) => {
   try {
