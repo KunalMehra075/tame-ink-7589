@@ -4,12 +4,14 @@ const { productRouter } = require("./routes/product.route");
 const { userRouter } = require("./routes/user.route");
 const { logger } = require("./middlewares/logger.middleware");
 const cors = require("cors");
+const { ReviewRouter } = require("./routes/review.route");
 
 const app = express();
 app.use(cors("*"));
 app.use(express.json());
 app.use("/users", userRouter);
 app.use("/products", productRouter);
+app.use("/reviews", ReviewRouter);
 
 app.get("/", (req, res) => {
   try {

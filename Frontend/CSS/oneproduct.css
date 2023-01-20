@@ -10,7 +10,42 @@
   width: 55%;
   padding: 5px 25px;
 }
+#crumbar {
+  display: flex;
+  padding: 5px !important;
+  margin: 5px 0px !important;
+  justify-content: left;
+}
 
+#pincosd {
+  border: 1px solid grey;
+}
+#pincosd > input {
+  outline: none;
+  border: none;
+}
+#checkbtnnn {
+  color: rgb(255, 0, 0);
+  border-radius: 0px !important;
+  background-color: rgb(255, 226, 226);
+  font-size: 19px;
+  font-weight: 700;
+  padding: 5px 10px !important;
+  margin: 0px !important;
+  /* border: 1px solid black; */
+}
+.sechalf {
+  display: flex;
+  justify-content: space-between;
+}
+#qnty,
+label[for="qnty"] {
+  padding: 10px;
+  border: 1px solid grey;
+}
+.breadcrumb {
+  margin: 0px !important;
+}
 .image > img {
   width: 100%;
 }
@@ -236,4 +271,73 @@ p {
 .reviewbar2 > button {
   background-color: black !important;
   color: white !important;
+}
+#description {
+  color: rgb(153, 148, 148);
+  font-size: 14px;
+}
+#SixCardParent {
+  overflow-x: scroll;
+}
+#SixCardParent > div {
+  width: 400px !important;
+}
+#SixCardParent > div > img {
+  width: 200px;
+}
+#SixCardParent::-webkit-scrollbar {
+  display: none;
+}
+#recentlyview {
+  display: flex !important;
+  justify-content: left;
+}
+#recentlyview > div {
+  padding: 15px;
+}
+#recentlyview > div > img {
+  width: 100%;
+}
+.ReviewSect {
+  background-color: rgb(251, 250, 250);
+  padding: 10px 0px;
+}
+.ReviewSect > div {
+  margin: 20px;
+}
+.ChildReviews {
+  padding: 4px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.ChildReviews > img {
+  margin: 5px;
+}
+.ChildReviews > div {
+  padding: 0px 60px;
+}
+.ReviewBodyInp {
+  outline: none;
+  border: none;
+  background-color: rgb(251, 250, 250);
+  width: 100%;
+  margin: 0px;
+  padding: 5px;
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+.redborder {
+  background-color: rgb(250, 224, 224);
+  border-bottom: 2px solid red;
+}
+.donecomment {
+  display: none;
+}
+.revbtns {
+  color: grey;
+  cursor: pointer;
+  /* text-decoration: underline; */
+  margin: 3px 3px;
+}
+.revbtns:hover {
+  color: red;
 }

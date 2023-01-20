@@ -3,10 +3,11 @@ const mongoose = require("mongoose");
 // title,description,price,brand,thumbnail,rating,images[],images2,type,discount
 
 const reviewsSchema = mongoose.Schema({
-  userID: { type: String, required: true },
-  prodctID: { type: String, required: true },
-  rating: { type: Number, required: true },
-  reviewbody: { type: String, required: true },
+  UserID: { type: String, required: true },
+  UserName: { type: String, required: true },
+  ProductID: { type: String, required: true },
+  Type: { type: String, required: true },
+  ReviewBody: { type: String, required: true },
   createdAt: {
     type: Date,
     default: () => Date.now(),
