@@ -62,7 +62,10 @@ input[type="radio"] {
   width: 1.8em;
   margin: 2px !important;
 }
-
+#mainpagehead {
+  font-family: Playfair Display;
+  font-weight: 700;
+}
 .sort label {
   display: flex;
   justify-content: left;

@@ -20,13 +20,24 @@ async function fetchproducts(query) {
   }
 }
 
-let query = sessionStorage.getItem("product-type") || "HOME+DECOR";
+let query = sessionStorage.getItem("product-type") || "HOME DECOR";
 fetchproducts(query);
+let mainpagehead = document.getElementById("mainpagehead");
+let crum1 = document.getElementById("crum1");
+let crum2 = document.getElementById("crum2");
+crum1.innerText = query;
+crum2.innerText = query + " " + "PRODUCTS";
+mainpagehead.innerText = query;
 
 function RenderData(products) {
   Container.innerHTML = "";
   products = products
     .map((item) => {
+      let x = item.title.length;
+      x < 45
+        ? (item.title =
+            item.title + " by " + item.brand + " best for " + item.type)
+        : null;
       return `
     <div class="ChildBoxes" data-id=${item._id}>
         <div class="childimage">
@@ -34,7 +45,7 @@ function RenderData(products) {
         </div>
         <div class="details" data-id=${item._id}>
           <label class="titleX" data-id=${item._id}
-            >${item.title.substring(0, 70)}</label
+            >${item.title.substring(0, 80)}</label
           ><br />
           <label data-id=${item._id} class="brandX">${item.brand}</label><br />
           <label data-id=${item._id} class="priceX">₹${item.price}</label>

@@ -1,6 +1,5 @@
 let baseURL = "http://localhost:4500";
 let spinner = document.getElementById("spinner");
-
 let closetop1 = document.getElementById("close-top1");
 let topfirst = document.getElementById("top1");
 var navbar = document.getElementById("stickynav");
@@ -8,6 +7,34 @@ let preloader = document.getElementById("preloader");
 var sticky = navbar.offsetTop;
 let mybutton = document.getElementById("myBtn");
 let gotocart = document.getElementById("gotocart");
+
+let furnitureR = document.getElementById("furbutton");
+let homedecorR = document.getElementById("homedecorR");
+let lampsR = document.getElementById("lampsR");
+let kitchenR = document.getElementById("kitchenR");
+let petsR = document.getElementById("petsR");
+
+furnitureR.addEventListener("click", () => {
+  sessionStorage.setItem("product-type", "FURNITURE");
+  window.location.href = "AllProducts.html";
+});
+homedecorR.addEventListener("click", () => {
+  sessionStorage.setItem("product-type", "HOME DECOR");
+  window.location.href = "AllProducts.html";
+});
+lampsR.addEventListener("click", () => {
+  sessionStorage.setItem("product-type", "TABLE LAMPS");
+  window.location.href = "AllProducts.html";
+});
+kitchenR.addEventListener("click", () => {
+  sessionStorage.setItem("product-type", "KITCHEN");
+  window.location.href = "AllProducts.html";
+});
+petsR.addEventListener("click", () => {
+  sessionStorage.setItem("product-type", "PETS");
+  window.location.href = "AllProducts.html";
+});
+
 window.addEventListener("load", () => {
   preloader.style.display = "none";
 });
