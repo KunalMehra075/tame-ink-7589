@@ -18,6 +18,11 @@ section {
   justify-content: center;
   align-items: center;
 }
+#AdminRedirect {
+  display: none;
+  padding: 5px !important;
+  width: 98%;
+}
 ul,
 li {
   list-style: none;

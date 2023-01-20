@@ -160,6 +160,7 @@ async function AddtoCart(product, userid) {
       swal("Already in cart!", "Product already added in cart!", "info");
     } else {
       swal("Added to Cart!", "Product Added Successfully!", "success");
+      FetchCartProducts(user._id);
     }
   } catch (error) {
     console.log(error);
@@ -215,6 +216,7 @@ async function AddtoFavorite(product, userid) {
         "Product Added to Favorites Successfully!",
         "success"
       );
+      FetchFavorites(user._id);
     }
   } catch (error) {
     console.log(error);

@@ -15,6 +15,8 @@ let UserGender = document.getElementById("UserGender");
 let UserRole = document.getElementById("UserRole");
 let UserCartDetails = document.getElementById("UserCartDetails");
 let UserFavoriteDivs = document.getElementById("UserFavoriteDivs");
+let ADR = document.getElementById("AdminRedirect");
+
 window.addEventListener("load", () => {
   if (user) {
     let initial = user.name.split(" ")[0];
@@ -66,11 +68,15 @@ function RenderOFFCANVAS(user) {
   UserMobile.innerText = user.mobile;
   UserGender.innerText = user.gender;
   UserRole.innerText = user.role;
+  if (user.role === "Admin") {
+    ADR.style.display = "block";
+  }
   FetchCartProducts(user._id);
   FetchFavorites(user._id);
 }
 //! <!----------------------------------------------- < Login Section> ----------------------------------------------->
 let UserLoginForm = document.getElementById("LoginForm");
+
 UserLoginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let creds = {
