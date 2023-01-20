@@ -7,6 +7,7 @@
     <title>OrangerFry.com</title>
     <link rel="stylesheet" href="./CSS/index.css">
     <link rel="stylesheet" href="./CSS/commons.css" />
+    <link rel="stylesheet" href="./CSS/commons2.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -86,17 +87,87 @@ aria-labelledby="offcanvasRightLabel"
             </button>
           </h2>
           <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+            <div class="accordion-body">
+              <!--todo-------------------------- <User Account Details> --------------------------------->
+                <div id="UserCanvasDetails">
+                  <table>
+                    <tr>
+                      <td>Name:</td>
+                      <td id="UserNameX">User Name</td>
+                    </tr>
+                    <tr>
+                      <td>Email:</td>
+                      <td id="UserEmail">User Email</td>
+                    </tr>
+                    <tr>
+                      <td>Gender :</td>
+                      <td id="UserGender">Male</td>
+                    </tr>
+                    <tr>
+                      <td>Mobile :</td>
+                      <td id="UserMobile">Mobile</td>
+                    </tr>
+                    <tr>
+                      <td>Role :</td>
+                      <td id="UserRole">Explored</td>
+                    </tr>
+                  </table>
+                           
+                </div>
+              
+              
+
+              
+              
+              </div>
           </div>
         </div>
         <div class="accordion-item">
           <h2 class="accordion-header" id="flush-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
               My Orders
             </button>
           </h2>
           <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+            <div id="axxordianbodyX" class="accordion-body">
+              
+              <!--todo-------------------------- <Users Order Will be here> --------------------------------->
+              <div id="UserCartDetails">
+                
+                    <div id="Fetchcanvascart">
+                      <!-- Canvaschilds -->
+                      <div class="ChildCanvas">
+                        <div><img height="100px" src="Images/Home/best1.jpg" alt=""></div>
+                        <div id="canvas2nd">
+                          <label id="canvasTitle">Title</label><br>
+                          <label id="canvasDescp" for="">Description</label><br>
+                          <label id="canvasRating" for="">Rating</label>
+                        </div>
+                      <div id="canvasPrice">
+                        item price
+                      </div>
+                      <div id="canvasQnty">
+                        item qnty
+                      </div>
+                      </div>
+                    </div>
+
+                   <div>
+                    <div style="display: flex;justify-content:space-between;">
+                      <label><b>Total Items :</b> 5</label>
+                      <span style="color: white;">----------</span>
+                      
+                      <label><b>Total Price :</b> 15687/-</label>
+                  
+                  
+                    </div>
+                     
+                    <a href="Cart.html">  <button id="gotocartX" class="WhiteRedbtn">Proceed to Cart</button></a>
+                   </div>
+
+              </div>
+            </div>
           </div>
         </div>
         <div class="accordion-item">
@@ -106,7 +177,15 @@ aria-labelledby="offcanvasRightLabel"
             </button>
           </h2>
           <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+            <div class="accordion-body">
+
+
+              <!--??--------------------------------------------- <Users Cart> ----------------------------------------------->
+              <center>No Favorites </center>
+              
+              
+              
+              </div>
           </div>
         </div>
       </div>
@@ -239,7 +318,7 @@ aria-labelledby="offcanvasRightLabel"
 
                 </div>
                 <div>
-                  <img width="44px" src="./Images/icons/cart-21.svg" alt="" />
+                  <img width="44px" id="gotocart" src="./Images/icons/cart-21.svg" alt="" />
                 </div>
                 
                

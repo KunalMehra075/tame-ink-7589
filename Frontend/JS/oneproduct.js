@@ -12,7 +12,7 @@ let PostReview = document.getElementById("PostReview");
 let PostQuestion = document.getElementById("PostQuestion");
 let review = document.getElementById("review-body");
 let question = document.getElementById("question-body");
-
+let Youtube = document.getElementById("Youtube");
 let overtitle = document.getElementById("overtitle");
 let title = document.getElementById("title");
 let redprice = document.getElementById("redprice");
@@ -134,6 +134,7 @@ function RenderYouMayAlso(data) {
     })
     .join(" ");
   SixCardParent.innerHTML = data;
+  Youtube.innerHTML = data;
 }
 async function FetchReviewsAndQuestions(id) {
   try {

@@ -285,6 +285,32 @@ p {
 #SixCardParent > div > img {
   width: 200px;
 }
+#Youtube {
+  width: 30%;
+  padding: 10px;
+  max-height: 1500px;
+  overflow-y: scroll;
+  display: grid;
+  background-color: rgb(252, 252, 252);
+  place-items: center;
+}
+#Youtube::-webkit-scrollbar {
+  background-color: hsl(0, 31%, 93%);
+  border-radius: 10px;
+}
+#Youtube::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 1%, 59%);
+  border-radius: 10px;
+}
+#Youtube > div {
+  text-align: center;
+  width: 320px;
+  background-color: white;
+  margin: 5px;
+}
+#Youtube > div > img {
+  width: 320px;
+}
 #SixCardParent::-webkit-scrollbar {
   display: none;
 }
@@ -301,6 +327,7 @@ p {
 .ReviewSect {
   background-color: rgb(251, 250, 250);
   padding: 10px 0px;
+  width: 70%;
 }
 .ReviewSect > div {
   margin: 20px;
@@ -340,4 +367,7 @@ p {
 }
 .revbtns:hover {
   color: red;
+}
+#LastSection {
+  display: flex;
 }

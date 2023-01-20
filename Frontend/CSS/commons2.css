@@ -1,0 +1,60 @@
+#UserCanvasDetails td {
+  padding: 1px 10px;
+
+  border: 1px solid rgb(253, 251, 251);
+}
+#UserCanvasDetails table {
+  width: 100%;
+}
+#UserCanvasDetails td:nth-child(2n) {
+  background-color: rgb(239, 239, 239);
+}
+
+#UserCartDetails td {
+  background: rgb(242, 242, 242);
+  padding: 5px;
+}
+.ChildCanvas {
+  max-height: 150px;
+  display: flex;
+  justify-content: space-around;
+  padding: 2px;
+}
+#gotocartX {
+  color: rgb(255, 255, 255) !important;
+  background-color: rgb(249, 56, 56) !important;
+  width: 98%;
+  padding: 5px !important;
+}
+#axxordianbodyX {
+  padding: 0px !important;
+}
+/* div,
+section {
+  border: 1px solid black;
+} */
+#canvasTitle {
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+#canvasDescp {
+  font-size: 12px;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+#canvasRating {
+  font-size: 12px;
+  margin: 0px !important;
+}
+#canvasPrice,
+#canvasQnty {
+  padding: 4px;
+  width: 50px;
+  font-size: 13px;
+}
+#canvas2nd {
+  padding: 4px;
+  min-width: 150px;
+}

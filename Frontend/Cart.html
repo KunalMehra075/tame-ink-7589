@@ -34,11 +34,12 @@
     />
   </head>
   <body>
-    <!--!--------------------------------------------- <Essentials> ----------------------------------------------->
+       <!--!--------------------------------------------- <Essentials> ----------------------------------------------->
 <!-- Prelaoder,offcanvas -->
 <div id="spinner" class="spinner-border text-danger" role="status">
 
 </div>
+<!--??--------------------------------------------- <Offcanvas> ----------------------------------------------->
 <div
 class="offcanvas offcanvas-end"
 tabindex="-1"
@@ -57,18 +58,116 @@ aria-labelledby="offcanvasRightLabel"
 <div class="offcanvas-body">
   <form id="LoginForm">
     <label for="">Email</label><br>
-    <input id="email" type="email" placeholder="Enter Email" required /><br />
+    <input id="emailX" type="email" placeholder="Enter Email" required /><br />
    
     <label for="">Password</label><br>
-    <input id="pass" type="password" placeholder="Enter Password" required /><br />
+    <input id="passX" type="password" placeholder="Enter Password" required /><br />
     <hr>
     <input type="submit">
    
     <center id="OR">OR</center>
-    <button class="btn" id="goog">Continue With Google <img width="22px" src="Images/icons/goog.png" alt=""></button>
+    <button  class="goog btn">Continue With Google <img width="22px" src="Images/icons/goog.png" alt=""></button>
     <hr>
-    <button class="btn" id="goog">Continue With Facebook <img width="22px" src="Images/icons/fb.png" alt=""></button>
+    <button  class="goog btn" >Continue With Facebook <img width="22px" src="Images/icons/fb.png" alt=""></button>
   </form>
+ <div id="UserPresent">
+  <div class="offcanvasAvatar">
+    <img id="avatar" src="Images/icons/avatar.png" alt="">
+  </div>
+  <div class="offcanvasUser">
+    <h3 id="canvasname">Some Username</h3>
+    <h6 style="color: grey;" id="canvasemail">demoemail@gmail.com</h6>
+    <p style="font-size: 10px;" id="canvasid">7846513213441</p>
+    <!--todo-------------------------- < Bootstrap Accordian> --------------------------------->
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              My Account
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <!--todo-------------------------- <User Account Details> --------------------------------->
+                <div id="UserCanvasDetails">
+                  <table>
+                    <tr>
+                      <td>Name:</td>
+                      <td id="UserNameX">User Name</td>
+                    </tr>
+                    <tr>
+                      <td>Email:</td>
+                      <td id="UserEmail">User Email</td>
+                    </tr>
+                    <tr>
+                      <td>Gender :</td>
+                      <td id="UserGender">Male</td>
+                    </tr>
+                    <tr>
+                      <td>Mobile :</td>
+                      <td id="UserMobile">Mobile</td>
+                    </tr>
+                    <tr>
+                      <td>Role :</td>
+                      <td id="UserRole">Explored</td>
+                    </tr>
+                  </table>
+                           
+                </div>
+              
+              
+
+              
+              
+              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              My Orders
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              
+              <!--todo-------------------------- <Users Order Will be here> --------------------------------->
+              <div id="UserCartDetails">
+                
+              </div>
+              
+              
+              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              My Favorites
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+
+
+              <!--??--------------------------------------------- <Users Cart> ----------------------------------------------->
+              
+              
+              
+              
+              </div>
+          </div>
+        </div>
+      </div>
+      <!--todo-------------------------- <Accordian end> --------------------------------->
+    </div>
+    <br>
+    <div class="text-center">
+      <button class="WhiteRedbtn" id="logout"> Logout</button>
+    </div>
+  
+ </div>
   <br>
   <center style="font-size:12px ;color: grey;">All copyrights reserved®</center>
   <br>
@@ -76,6 +175,8 @@ aria-labelledby="offcanvasRightLabel"
 </div>
 <!--todo-------------------------- <topbtn> --------------------------------->
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
     <!--?--------------------------------------------- Header ----------------------------------------------->
     <header>
       <nav id="top1" class="topfirst">
@@ -186,7 +287,7 @@ aria-labelledby="offcanvasRightLabel"
 
                 </div>
                 <div>
-                  <img width="44px" src="./Images/icons/cart-21.svg" alt="" />
+                  <img width="44px" id="gotocart" src="./Images/icons/cart-21.svg" alt="" />
                 </div>
                 
                
@@ -881,13 +982,17 @@ aria-labelledby="offcanvasRightLabel"
                     <label>₹ 000</label>
                   </div>
                   <div>
+                    <label class="totals">Total Items:</label>
+                    <label id="totalitems">0</label>
+                  </div>
+                  <div>
                     <label class="totals">Shipping Charge:</label>
                     <label>Free</label>
                   </div>
                   <hr />
                   <div>
                     <label class="totals Total">Total</label>
-                    <label class="Total">₹ 000</label>
+                    <label id="BigTotal" class="Total">₹ 000</label>
                   </div>
                   <br />
                   <div>
@@ -1072,6 +1177,8 @@ aria-labelledby="offcanvasRightLabel"
 </html>
 <script src="JS/index.js"></script>
 <script src="JS/common.js"></script>
+<script src="JS/cart.js"></script>
+<script src="JS/offcanvas.js"></script>
 <script
   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
   integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

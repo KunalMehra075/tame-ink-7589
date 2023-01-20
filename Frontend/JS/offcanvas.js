@@ -8,6 +8,12 @@ let canvasname = document.getElementById("canvasname");
 let canvasemail = document.getElementById("canvasemail");
 let canvasid = document.getElementById("canvasid");
 let logout = document.getElementById("logout");
+let UserNameX = document.getElementById("UserNameX");
+let UserEmail = document.getElementById("UserEmail");
+let UserMobile = document.getElementById("UserMobile");
+let UserGender = document.getElementById("UserGender");
+let UserRole = document.getElementById("UserRole");
+let UserCartDetails = document.getElementById("UserCartDetails");
 
 window.addEventListener("load", () => {
   if (user) {
@@ -19,12 +25,13 @@ window.addEventListener("load", () => {
     loginname.innerHTML = "Welcome User";
     UserPresent.style.display = "block";
     LoginForm.style.display = "none";
+    RenderOFFCANVAS(user);
   } else {
     username.innerText = "";
     UserPresent.style.display = "none";
     LoginForm.style.display = "block";
   }
-  if (user === "" && popover) {
+  if (!user && popover) {
     setTimeout(() => {
       popover.style.display = "block";
       popover.style.opacity = "1";
@@ -52,6 +59,15 @@ logout.addEventListener("click", () => {
     }
   });
 });
+
+function RenderOFFCANVAS(user) {
+  UserNameX.innerText = user.name;
+  UserEmail.innerText = user.email;
+  UserMobile.innerText = user.mobile;
+  UserGender.innerText = user.gender;
+  UserRole.innerText = user.role;
+  FetchCartProducts(user._id);
+}
 //! <!----------------------------------------------- < Login Section> ----------------------------------------------->
 let UserLoginForm = document.getElementById("LoginForm");
 UserLoginForm.addEventListener("submit", (e) => {
@@ -107,4 +123,97 @@ async function LoginFunction(creds) {
     swal("Something Went Wrong.", "Server Error 504 ", "error");
     console.log(error);
   }
+}
+async function FetchCartProducts(userid) {
+  try {
+    let res = await fetch(`${baseURL}/cart?UserID=${userid}`);
+    let data = await res.json();
+    RenderOffCanvasCart(data.Items);
+  } catch (error) {
+    console.log(error);
+  }
+}
+function RenderOffCanvasCart(products) {
+  if (products.length === 0) {
+    UserCartDetails.innerHTML = `
+    <div id="Fetchcanvascart">
+    <!-- Canvaschilds -->
+    <br/>
+    <center>No Favorites </center>
+    <div>
+    <div style="display: flex;justify-content:space-between;">
+      <label><b>Total Items :</b> 0</label>
+   
+      <label><b>Total Price :</b> <span style="color:red;
+        font-weight:600;
+      ">₹0</span></label>
+    </div>
+    <a href="Cart.html">  <button id="gotocartX" class="WhiteRedbtn">
+    Proceed to Cart</button></a>
+   </div>
+`;
+    return;
+  }
+
+  let totalmm = 0;
+  let totalitemsmm = 0;
+  for (const i of products) {
+    totalmm += i.price * i.Quantity;
+    totalitemsmm += i.Quantity;
+  }
+
+  products = products
+    .map((item) => {
+      return `
+  
+    <div class="ChildCanvas">
+    <div><img height="100px" src="${item.thumbnail}" alt=""></div>
+    <div id="canvas2nd">
+      <label id="canvasTitle">${item.title.substring(0, 25)}</label><br>
+      <label id="canvasDescp" for="">
+      ${item.description.substring(0, 50)}</label><br>
+      <label id="canvasRating" for="">Rating :${item.rating}
+      <img data-id=${item._id} width="11px" 
+      src="https://ii1.pepperfry.com/images/svg/vip-rating-filled-star.svg" alt="">
+      <img data-id=${item._id} width="11px" 
+      src="https://ii1.pepperfry.com/images/svg/vip-rating-filled-star.svg" alt="">
+      <img data-id=${item._id} width="11px" 
+      src="https://ii1.pepperfry.com/images/svg/vip-rating-filled-star.svg" alt="">
+      <img data-id=${item._id} width="11px" 
+      src="https://ii1.pepperfry.com/images/svg/vip-rating-filled-star.svg" alt="">
+      <img data-id=${item._id} width="11px" 
+      src="https://ii1.pepperfry.com/images/svg/vip-rating-half-filled-star.svg" alt="">
+      
+      </label>
+    </div>
+  <div id="canvasPrice">
+ <b> Price:</b>
+    ${item.price}
+  </div>
+  <div id="canvasQnty">
+  <b> Qty:</b>
+  ${item.Quantity}
+  </div>
+  </div>`;
+    })
+    .join(" ");
+
+  UserCartDetails.innerHTML = `
+    <div id="Fetchcanvascart">
+    <!-- Canvaschilds -->
+    ${products}
+    <div>
+    <div style="display: flex;justify-content:space-between;">
+      <label><b>Total Items :</b> ${totalitemsmm}</label>
+   
+      <label><b>Total Price :</b> <span style="color:red;
+        font-weight:600;
+      ">₹${totalmm}</span></label>
+    </div>
+    <a href="Cart.html">  <button id="gotocartX" class="WhiteRedbtn">
+    Proceed to Cart</button></a>
+   </div>
+
+    
+    `;
 }

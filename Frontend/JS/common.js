@@ -5,6 +5,10 @@ let topfirst = document.getElementById("top1");
 var navbar = document.getElementById("stickynav");
 var sticky = navbar.offsetTop;
 let mybutton = document.getElementById("myBtn");
+let gotocart = document.getElementById("gotocart");
+gotocart.addEventListener("click", () => {
+  window.location.href = "cart.html";
+});
 let topFunction = () => {
   document.documentElement.scrollTop = 0;
 };

@@ -9,7 +9,10 @@ const cartSchema = mongoose.Schema({
   images: { type: [String], required: true },
   discount: { type: Number, required: true },
   description: { type: String, required: true },
-  userID: { type: String, required: true },
+  UserID: { type: String, required: true },
+  UserName: { type: String, required: true },
+  ProductID: { type: String, required: true },
+  Quantity: { type: Number, required: true },
   createdAt: {
     type: Date,
     default: () => Date.now(),

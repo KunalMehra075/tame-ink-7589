@@ -13,7 +13,12 @@ ul,
 li {
   list-style: none;
 }
-
+::-webkit-scrollbar {
+  background-color: rgb(241, 229, 229);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(250, 73, 73);
+}
 img {
   cursor: pointer;
 }
@@ -446,12 +451,13 @@ strong {
   display: none;
 }
 .offcanvasUser {
-  padding: 7px;
+  padding: 3px;
 }
 #avatar {
   width: 30%;
   border-radius: 50%;
 }
+
 /*? <!----------------------------------------------- < Buttons > -----------------------------------------------> */
 .Redwhitebtn {
   border: 1px solid red !important;

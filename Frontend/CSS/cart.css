@@ -29,25 +29,26 @@ section {
   width: 85%;
   height: auto;
   display: flex;
+  justify-content: center;
   padding: 10px;
 }
 .checkoutpage > div {
   margin: 5px;
 }
 .showproducts {
-  width: 69%;
+  width: 65%;
 }
 .product-card {
   margin: 4px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   padding: 5px;
-  height: auto;
+  min-height: 150px;
   display: flex;
   justify-content: left;
 }
 .product-card > div > img {
-  width: 110px;
+  width: 150px;
   margin: 7px;
 }
 .product-card > div:nth-child(2) {
@@ -55,6 +56,7 @@ section {
   padding: 10px;
   position: relative;
 }
+
 .cardbuttons {
   cursor: pointer;
   width: 95%;
@@ -63,21 +65,22 @@ section {
   display: flex;
   justify-content: space-around;
 }
-#quantity {
-  width: 20px;
+.quantity {
+  width: 25px;
+  padding: 2px !important;
   text-align: center;
 }
 
 .removeNview {
   cursor: pointer;
   margin: 8px;
-  font-weight: 700;
+  font-weight: 700 !important;
   width: 45%;
   font-size: 18px;
   border: 0.5px solid gainsboro;
   background-color: white;
   color: #ff3c27;
-  padding: 10px;
+  padding: 7px;
 }
 .removeNview:hover {
   border: 0.5px solid #f71c04;
