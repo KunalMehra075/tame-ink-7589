@@ -1,15 +1,33 @@
+let initiator = JSON.parse(sessionStorage.getItem("current-user"));
+let mainpagehead = document.getElementById("mainpagehead");
 let htl = document.getElementById("HTL");
 let lth = document.getElementById("LTH");
+let crum1 = document.getElementById("crum1");
+let crum2 = document.getElementById("crum2");
 let Container = document.getElementById("ThreeCardContainerX");
-let initiator = JSON.parse(sessionStorage.getItem("current-user"));
-htl.addEventListener("click", () => {
-  htl.classList.add("htlid");
-  lth.classList.remove("htlid");
+let productsearch = document.getElementById("productsearch");
+let discountfield = document.getElementById("discountfield");
+let discount = discountfield.value;
+let title = productsearch.value;
+let BadBanner = document.getElementById("BadBanner");
+let BadBannerValue =
+  sessionStorage.getItem("product-banner") || "Images/Home/firstbanner.jpg";
+let query = sessionStorage.getItem("product-type") || "HOME DECOR";
+let myRange = document.getElementById("myRange");
+let stars = document.getElementById("stars");
+myRange.addEventListener("input", () => {
+  stars.innerHTML = `${myRange.value}    <img width="17px" 
+  src="https://ii1.pepperfry.com/images/svg/vip-rating-filled-star.svg" alt="">`;
 });
-lth.addEventListener("click", () => {
-  htl.classList.remove("htlid");
-  lth.classList.add("htlid");
+
+window.addEventListener("load", () => {
+  crum1.innerText = query;
+  crum2.innerText = query + " " + "PRODUCTS";
+  mainpagehead.innerText = query;
+  BadBanner.setAttribute("src", BadBannerValue);
+  fetchproducts(query);
 });
+
 async function fetchproducts(query) {
   try {
     let res = await fetch(`${baseURL}/products?type=${query}`);
@@ -19,16 +37,6 @@ async function fetchproducts(query) {
     console.log(error);
   }
 }
-
-let query = sessionStorage.getItem("product-type") || "HOME DECOR";
-fetchproducts(query);
-let mainpagehead = document.getElementById("mainpagehead");
-let crum1 = document.getElementById("crum1");
-let crum2 = document.getElementById("crum2");
-crum1.innerText = query;
-crum2.innerText = query + " " + "PRODUCTS";
-mainpagehead.innerText = query;
-
 function RenderData(products) {
   Container.innerHTML = "";
   products = products
@@ -111,7 +119,7 @@ function RenderData(products) {
   }
 }
 
-//? <!----------------------------------------------- < For Favorites> ----------------------------------------------->
+//? <!----------------------------------------------- < For Cart> ----------------------------------------------->
 
 function AddToCartFunction(UserID, productID) {
   if (!initiator) {
@@ -151,6 +159,7 @@ async function AddtoCart(product, userid) {
       method: "POST",
       headers: {
         "Content-type": "application/json",
+        Authorization: sessionStorage.getItem("token"),
       },
       body: JSON.stringify(obj),
     });
@@ -199,6 +208,7 @@ async function AddtoFavorite(product, userid) {
       method: "POST",
       headers: {
         "Content-type": "application/json",
+        Authorization: sessionStorage.getItem("token"),
       },
       body: JSON.stringify(obj),
     });
@@ -218,6 +228,43 @@ async function AddtoFavorite(product, userid) {
       );
       FetchFavorites(user._id);
     }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+htl.addEventListener("click", () => {
+  htl.classList.add("htlid");
+  lth.classList.remove("htlid");
+  let title = productsearch.value;
+  FetchProductRegex(query, title, -1);
+});
+lth.addEventListener("click", () => {
+  htl.classList.remove("htlid");
+  lth.classList.add("htlid");
+  let title = productsearch.value;
+  FetchProductRegex(query, title, 1);
+});
+productsearch.addEventListener("input", () => {
+  let title = productsearch.value;
+  FetchProductRegex(query, title, 1);
+});
+discountfield.addEventListener("change", () => {
+  let fields = document.getElementsByName("DISCOUNT");
+  fields.forEach((item) => {
+    if (item.checked) {
+      FetchProductRegex(query, title, 1, item.value);
+    }
+  });
+});
+
+async function FetchProductRegex(query, title = "", sort = 1, discount = 0) {
+  try {
+    let res = await fetch(
+      `${baseURL}/products/query?type=${query}&search=${title}&sort=${sort}&discount=${discount}`
+    );
+    let data = await res.json();
+    RenderData(data.Products);
   } catch (error) {
     console.log(error);
   }

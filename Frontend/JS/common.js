@@ -16,23 +16,28 @@ let petsR = document.getElementById("petsR");
 
 furnitureR.addEventListener("click", () => {
   sessionStorage.setItem("product-type", "FURNITURE");
+  sessionStorage.setItem("product-banner", "Images/Home/furniturebanner.jpg");
   window.location.href = "AllProducts.html";
 });
 homedecorR.addEventListener("click", () => {
   sessionStorage.setItem("product-type", "HOME DECOR");
-  window.location.href = "AllProducts.html";
+  sessionStorage.setItem("product-banner", "Images/Home/firstbanner.jpg");
+  window.location.href = "HomeDecor.html";
 });
 lampsR.addEventListener("click", () => {
   sessionStorage.setItem("product-type", "TABLE LAMPS");
+  sessionStorage.setItem("product-banner", "Images/Home/Lampsbanner.jpg");
   window.location.href = "AllProducts.html";
 });
 kitchenR.addEventListener("click", () => {
   sessionStorage.setItem("product-type", "KITCHEN");
-  window.location.href = "AllProducts.html";
+  sessionStorage.setItem("product-banner", "Images/Kitchen/Firstbanner.jpg");
+  window.location.href = "Kitchen.html";
 });
 petsR.addEventListener("click", () => {
   sessionStorage.setItem("product-type", "PETS");
-  window.location.href = "AllProducts.html";
+  sessionStorage.setItem("product-banner", "Images/Pets/Firstbanner.jpg");
+  window.location.href = "Pets.html";
 });
 
 window.addEventListener("load", () => {

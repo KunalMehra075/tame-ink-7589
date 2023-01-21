@@ -113,14 +113,16 @@ fieldset label {
 #checkoutsection {
   width: 100%;
 }
-#continue,
-#editdetail,
+
 #paynow {
   width: 18.6%;
 }
+#continue,
+#editdetail {
+  width: 100%;
+}
 #contbuttons {
-  text-align: end;
-  padding: 0px 39px;
+  width: 100%;
 }
 /* div,
 section {
@@ -129,6 +131,7 @@ section {
 /*? <!----------------------------------------------- < Checkout > -----------------------------------------------> */
 .checkoutsection {
   width: 30%;
+  padding: 10px 40px;
 }
 .checkoutsection > *,
 #offersub {
@@ -195,4 +198,36 @@ section {
 }
 #Checkout:hover {
   background-color: rgb(255, 0, 0);
+}
+/*? <!----------------------------------------------- < Extras > -----------------------------------------------> */
+.showproducts {
+  width: 100% !important;
+}
+.product-card {
+  width: 100% !important;
+  box-shadow: none !important;
+  border: 0px !important;
+  border-right: 1px solid rgb(201, 197, 197) !important;
+  margin: 0px !important;
+  min-height: 100px !important;
+  padding: 0px !important;
+}
+.product-card > div:nth-child(1) {
+  padding: 1px !important;
+}
+.product-card > div > img {
+  width: 100px !important;
+}
+#otpalert {
+  background-color: rgb(245, 138, 31);
+  font-weight: 700;
+  color: white;
+  position: fixed;
+  padding: 10px 20px;
+  z-index: 100;
+  top: 3px;
+  left: 48%;
+  display: none;
+  height: 0px;
+  transition: height 0.3s;
 }

@@ -1,10 +1,10 @@
 const express = require("express");
+const { authenticator } = require("../middlewares/authenticator.middleware");
 const { CartModel } = require("../models/cart.model");
 const CartRouter = express.Router();
 
 CartRouter.get("/", async (req, res) => {
   let query = req.query;
-  console.log(query);
   try {
     const Items = await CartModel.find(query);
     res.json({ Items });
@@ -35,7 +35,7 @@ CartRouter.post("/post", async (req, res) => {
     res.json({ Error: err });
   }
 });
-CartRouter.delete("/delete/:id", async (req, res) => {
+CartRouter.delete("/delete/:id", authenticator, async (req, res) => {
   let id = req.params.id;
   try {
     const deleted = await CartModel.findByIdAndDelete({ _id: id });
@@ -45,7 +45,21 @@ CartRouter.delete("/delete/:id", async (req, res) => {
     res.json({ Error: err });
   }
 });
-CartRouter.patch("/update/:id", async (req, res) => {
+CartRouter.delete("/deleteAll/:id", async (req, res) => {
+  let id = req.params.id;
+  try {
+    let cleared = await CartModel.deleteMany({ UserID: id });
+    res.json({
+      Message: "Cleared All Item Successfully",
+      done: true,
+      Cleared: cleared,
+    });
+  } catch (err) {
+    console.log(err);
+    res.json({ Error: err, done: false });
+  }
+});
+CartRouter.patch("/update/:id", authenticator, async (req, res) => {
   let id = req.params.id;
   let payload = req.body;
   try {

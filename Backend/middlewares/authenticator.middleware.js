@@ -1,9 +1,10 @@
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
 const authenticator = (req, res, next) => {
   let token = req.headers.authorization;
   if (token) {
-    jwt.verify(token, "Yukino", (err, decoded) => {
+    jwt.verify(token, process.env.key, (err, decoded) => {
       if (decoded) {
         next();
       } else {

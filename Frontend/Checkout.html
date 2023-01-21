@@ -126,7 +126,7 @@ aria-labelledby="offcanvasRightLabel"
           <li class="nav-item">
             <a class="nav-link  pincode active " href="#"
               >Enter Pincode <img src="Images/index/edit-21.svg" alt="">
-              <u style="color: red;">Find Pepperfry studio</u>
+              <u style="color: red;">Find Orange studio</u>
           </li>
         </ul>
       </nav>
@@ -204,6 +204,9 @@ aria-labelledby="offcanvasRightLabel"
     </header>
     <!--?--------------------------------------------- Main Body ----------------------------------------------->
     <section>
+      <div id="otpalert">
+        Your OTP is : 9573
+      </div>
         <div class="SECTIONS" id="projectsection">
     <h1 class="SectionHeads">Order Checkout</h1>
     <div class="accordion" id="accordionExample">
@@ -219,7 +222,9 @@ aria-labelledby="offcanvasRightLabel"
             <!-- Psdnjkvasndvkjasnvkj -->
             <div class="orderdet">
                 <div id="sixty"><H4>Order Summary:-</H4>
-                
+                  <div class="showproducts">
+
+                  </div>
                 
                 
                 
@@ -247,7 +252,11 @@ aria-labelledby="offcanvasRightLabel"
                         <div id="totals" class="checkout-subs">
                           <div>
                             <label class="totals">Total Price</label>
-                            <label>₹ 000</label>
+                            <label id="tmtl1">₹ 000</label>
+                          </div>
+                          <div>
+                            <label class="totals">Total Items</label>
+                            <label id="tmtli">4</label>
                           </div>
                           <div>
                             <label class="totals">Shipping Charge:</label>
@@ -256,16 +265,21 @@ aria-labelledby="offcanvasRightLabel"
                           <hr />
                           <div>
                             <label class="totals Total">Total</label>
-                            <label class="Total">₹ 000</label>
+                            <label id="tmtl2" class="Total">₹ 000</label>
                           </div>
                           <br />
                           <label>
                             Shipping charges might vary based on pincode delivery location
                           </label>
-                         
+
                           <br />
                           <div>
-                          
+                             <div id="contbuttons">
+                              <br><br><br>
+                               <br>    <a ><button id="continue" class="WhiteRedbtn" type="button" class="btn">Continue</button>
+        <a  href="Cart.html"><button id="editdetail" class="Redwhitebtn" type="button" class="btn">Edit Order</button>
+       </a>
+    </div>
                           </div>
                         </div>
             
@@ -273,11 +287,7 @@ aria-labelledby="offcanvasRightLabel"
                       </div>
                 </div>
             </div>
-    <div id="contbuttons">
-        <a  href="Cart.html"><button id="editdetail" class="Redwhitebtn" type="button" class="btn">Edit Order</button>
-        <a ><button id="continue" class="WhiteRedbtn" type="button" class="btn">Continue</button>
-       </a>
-    </div>
+ 
         </div>
         </div>
        

@@ -16,7 +16,9 @@ let UserRole = document.getElementById("UserRole");
 let UserCartDetails = document.getElementById("UserCartDetails");
 let UserFavoriteDivs = document.getElementById("UserFavoriteDivs");
 let ADR = document.getElementById("AdminRedirect");
-
+ADR.addEventListener("click", () => {
+  window.location.href = "admin.html";
+});
 window.addEventListener("load", () => {
   if (user) {
     let initial = user.name.split(" ")[0];
@@ -83,27 +85,7 @@ UserLoginForm.addEventListener("submit", (e) => {
     email: UserLoginForm.emailX.value,
     pass: UserLoginForm.passX.value,
   };
-  console.log(creds.email, creds.pass);
-
-  if (creds.email == "admin@gmail.com" && creds.pass == "kunal143") {
-    swal({
-      title: "Welcome Back Admin! ",
-      text: "Do you want to redirect to Admin's Portal?",
-      icon: "info",
-      buttons: true,
-      dangerMode: true,
-    }).then((admin) => {
-      if (admin) {
-        setTimeout(() => {
-          window.location.href = "Admin.html";
-        }, 1000);
-      } else {
-        LoginFunction(creds);
-      }
-    });
-  } else {
-    LoginFunction(creds);
-  }
+  LoginFunction(creds);
 });
 async function LoginFunction(creds) {
   try {
@@ -122,10 +104,31 @@ async function LoginFunction(creds) {
     }
     sessionStorage.setItem("token", data.token);
     sessionStorage.setItem("current-user", JSON.stringify(data.user));
-    swal("Login Successful!", "You are logged in, Lets Explore!", "success");
-    setTimeout(() => {
-      window.location.href = "";
-    }, 2000);
+    console.log(data);
+    if (data.user.role == "Admin") {
+      swal({
+        title: "Welcome Back Admin! ",
+        text: "Do you want to redirect to Admin's Portal?",
+        icon: "info",
+        buttons: true,
+        dangerMode: true,
+      }).then((admin) => {
+        if (admin) {
+          setTimeout(() => {
+            window.location.href = "Admin.html";
+          }, 1000);
+        } else {
+          setTimeout(() => {
+            window.location.href = "";
+          }, 500);
+        }
+      });
+    } else {
+      swal("Login Successful!", "You are logged in, Lets Explore!", "success");
+      setTimeout(() => {
+        window.location.href = "";
+      }, 2000);
+    }
   } catch (error) {
     swal("Something Went Wrong.", "Server Error 504 ", "error");
     console.log(error);
@@ -155,7 +158,7 @@ function RenderOffCanvasCart(products) {
     <div id="Fetchcanvascart">
     <!-- Canvaschilds -->
     <br/>
-    <center>No Favorites </center>
+    <center>No items in Cart </center>
     <div>
     <div style="display: flex;justify-content:space-between;">
       <label><b>Total Items :</b> 0</label>
@@ -238,6 +241,7 @@ function RenderOffCanvasFav(products) {
   if (products.length === 0) {
     UserFavoriteDivs.innerHTML = `
     <center>No Favorites </center>
+    <hr>
 `;
     return;
   }
@@ -308,6 +312,9 @@ async function DeleteFav(id) {
   try {
     let res = await fetch(`${baseURL}/favorites/delete/${id}`, {
       method: "DELETE",
+      headers: {
+        Authorization: sessionStorage.getItem("token"),
+      },
     });
     let data = await res.json();
     console.log(data);

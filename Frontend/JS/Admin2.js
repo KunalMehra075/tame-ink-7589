@@ -1,4 +1,12 @@
 let baseURL = "http://localhost:4500";
+let Initiator = JSON.parse(sessionStorage.getItem("current-user"));
+if (!Initiator || Initiator.role !== "Admin") {
+  // "warning","success","error","info"
+  swal("Admin's ID not found", "Please Login Again", "info");
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 1500);
+}
 
 let AddProductForm = document.getElementById("addproductform");
 AddProductForm.addEventListener("submit", (e) => {
@@ -42,6 +50,7 @@ async function AddProduct(product) {
       method: "POST",
       headers: {
         "Content-type": "application/json",
+        Authorization: sessionStorage.getItem("token"),
       },
       body: JSON.stringify(product),
     });
