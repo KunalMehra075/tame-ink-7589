@@ -1,3 +1,5 @@
+let BaseURL = "http://localhost:4500";
+
 let pre1 = document.getElementById("pre1");
 let pre2 = document.getElementById("pre2");
 let collapse1 = document.getElementById("collapseOne");
@@ -35,9 +37,22 @@ paynow.addEventListener("click", () => {
       clbtn4.classList.remove("collapsed");
       clbtn3.ariaExpanded = "false";
       clbtn4.ariaExpanded = "true";
+
       timerfn();
+      let otpalert = document.getElementById("otpalert");
+      otpalert.style.display = "block";
+      setTimeout(() => {
+        otpalert.style.height = "45px";
+      }, 200);
+      setTimeout(() => {
+        otpalert.style.display = "none";
+        otpalert.style.height = "0px";
+      }, 4000);
     } else {
       swal("Payment Unsuccessful");
+      setTimeout(() => {
+        window.location.href = "cart.html";
+      }, 1000);
     }
   });
 });
@@ -104,8 +119,133 @@ function timerfn() {
     }
   }, 1000);
 }
+
 resend.addEventListener("click", () => {
   // "warning","success","error","info"
   swal("OTP Sent!", "OTP sent to your registered mobile no.!", "info");
-  timer.innerHTML = 59;
+  let otpalert = document.getElementById("otpalert");
+  otpalert.style.display = "block";
+  setTimeout(() => {
+    otpalert.style.height = "45px";
+  }, 100);
+  setTimeout(() => {
+    otpalert.style.display = "none";
+    otpalert.style.height = "0px";
+  }, 4000);
 });
+
+//? <!----------------------------------------------- < Order Summary> ----------------------------------------------->
+
+let Initiator = JSON.parse(sessionStorage.getItem("current-user"));
+let CartItems = [];
+GetCartItems(Initiator._id);
+async function GetCartItems(id) {
+  try {
+    let res = await fetch(`${BaseURL}/carts?UserID=${id}`);
+    let data = await res.json();
+    RenderCartData(data.Items);
+    CartItems = [...data.Items];
+    UpdateTotal(CartItems);
+  } catch (error) {
+    console.log(error);
+  }
+}
+localStorage.setItem("TotalPrice", 0);
+UpdateTotal(CartItems);
+
+//? <!----------------------------------- <Updating Total Function> ----------------------------------------------->
+
+function UpdateTotal(cartitems) {
+  let total = 0;
+  let totalitems = 0;
+  for (const item of cartitems) {
+    total += item.Quantity * item.price;
+    totalitems += item.Quantity;
+  }
+  let tmtl1 = document.getElementById("tmtl1");
+  let tmtli = document.getElementById("tmtli");
+  let tmtl2 = document.querySelector(" #tmtl2");
+  tmtl1.innerText = `₹${total}`;
+  tmtl2.innerText = `₹${total}`;
+  tmtli.innerText = totalitems;
+}
+
+function RenderCartData(data) {
+  if (data.length === 0) {
+    // "warning","success","error","info"
+    swal("Looks like your cart is empty..", "Redirecting you..", "info");
+    setTimeout(() => {
+      window.location.href = "AllProducts.html";
+    }, 1200);
+  }
+  let productList = document.querySelector(".showproducts");
+
+  let newArray = data.map((item) => {
+    return `
+        <div class="product-card">
+              <div><img src=
+              \"${item.thumbnail}\" alt="" /></div>
+              <div>
+                <h5>${item.title.substring(0, 55)}</h5>
+                <label>Price:<a> ${item.price}</a>/-</label> <space></space>
+                <label>Rating: ${item.rating} 
+                <img data-id=${item._id} width="14px" 
+                src="https://ii1.pepperfry.com/images/svg/vip-rating-filled-star.svg" alt="">
+                <img data-id=${item._id} width="14px" 
+                src="https://ii1.pepperfry.com/images/svg/vip-rating-filled-star.svg" alt="">
+                <img data-id=${item._id} width="14px" 
+                src="https://ii1.pepperfry.com/images/svg/vip-rating-filled-star.svg" alt="">
+                <img data-id=${item._id} width="14px" 
+                src="https://ii1.pepperfry.com/images/svg/vip-rating-filled-star.svg" alt="">
+                <img data-id=${item._id} width="14px" 
+                src="https://ii1.pepperfry.com/images/svg/vip-rating-half-filled-star.svg" alt="">
+                </label><br />
+                <label>Color: Silver</label><br />
+                <label for="">Quantity :</label>
+                <label class="quantity" data-id=${item.id}
+                 >${item.Quantity}</label>
+        
+                <label>Size: M</label><span></span><br />
+                
+              </div>
+            </div> 
+        `;
+  });
+  productList.innerHTML = newArray.join(" ");
+}
+let finish = document.getElementById("finish");
+finish.addEventListener("click", (e) => {
+  let otpbox = document.getElementById("sessionNo");
+  if (otpbox.value !== "9573") {
+    swal("Incorrect OTP", "Please enter correct OTP", "error");
+    return;
+  }
+  DeleteCartMany(Initiator._id);
+});
+
+async function DeleteCartMany(id) {
+  try {
+    let res = await fetch(`${BaseURL}/carts/deleteAll/${id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: sessionStorage.getItem("token"),
+      },
+    });
+    let data = await res.json();
+    if (data.done) {
+      // "warning","success","error","info"
+      swal(
+        "Order Confirmed!",
+        "Thankyou! Your Order will be delivered in few days",
+        "success"
+      );
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 3000);
+    } else {
+      swal("Something Went Wrong", "", "error");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}

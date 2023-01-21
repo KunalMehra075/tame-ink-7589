@@ -46,6 +46,20 @@ CartRouter.delete("/delete/:id", authenticator, async (req, res) => {
     res.json({ Error: err });
   }
 });
+CartRouter.delete("/deleteAll/:id", async (req, res) => {
+  let id = req.params.id;
+  try {
+    let cleared = await CartModel.deleteMany({ UserID: id });
+    res.json({
+      Message: "Cleared All Item Successfully",
+      done: true,
+      Cleared: cleared,
+    });
+  } catch (err) {
+    console.log(err);
+    res.json({ Error: err, done: false });
+  }
+});
 CartRouter.patch("/update/:id", authenticator, async (req, res) => {
   let id = req.params.id;
   let payload = req.body;

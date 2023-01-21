@@ -495,7 +495,8 @@ strong {
   padding: 10px 50px !important;
   margin: 5px;
 }
-.Redwhitebtn:hover {
+.Redwhitebtn:hover,
+.WhiteRedbtn:hover {
   filter: brightness(1.2);
 }
 .WhiteRedbtn {

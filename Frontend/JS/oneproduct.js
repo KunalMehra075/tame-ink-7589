@@ -19,8 +19,26 @@ let redprice = document.getElementById("redprice");
 let off = document.getElementById("off");
 let YouMayAlso = document.getElementById("SixCardParent");
 let description = document.getElementById("description");
-
 let DisplayDataID = sessionStorage.getItem("oneproduct");
+
+//? <!----------------------------------------------- Extra Function ----------------------------------------------->
+// .Check Delivery
+let check = document.getElementById("checkbtnnn");
+check.addEventListener("click", () => {
+  swal("Bingo!", `These products are available in your locations!`, "success");
+  document.getElementById("delievery-input").value = "";
+});
+
+let addtocrt = document.getElementById("addtocrt");
+let buynow = document.getElementById("buynow");
+addtocrt.addEventListener("click", () => {
+  AddToCartFunction(Initiator._id, ProductID);
+});
+buynow.addEventListener("click", () => {
+  AddToCartFunction(Initiator._id, ProductID);
+  window.location.href = "cart.html";
+});
+
 async function FetchProduct(id) {
   try {
     let res = await fetch(`${baseURL}/products?_id=${id}`);
@@ -319,6 +337,120 @@ async function VerifyId(id) {
       return true;
     } else {
       return false;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+//? <!----------------------------------------------- < Add to cart> ----------------------------------------------->
+
+function AddToCartFunction(UserID, productID) {
+  if (!Initiator) {
+    swal("Please Login First", "No user in", "info");
+    return;
+  }
+  FetchProductForCart(productID, UserID);
+}
+async function FetchProductForCart(id, userid) {
+  try {
+    let res = await fetch(`${baseURL}/products?_id=${id}`);
+    let data = await res.json();
+    AddtoCart(data.Products[0], userid);
+  } catch (error) {
+    console.log(error);
+  }
+}
+async function AddtoCart(product, userid) {
+  let obj = {
+    title: product.title,
+    type: product.type,
+    price: product.price,
+    brand: product.brand,
+    rating: product.rating,
+    thumbnail: product.thumbnail,
+    images: [product.images[0], product.images[1]],
+    discount: product.discount,
+    description: product.description,
+    UserID: userid,
+    ProductID: product._id,
+    Quantity: 1,
+    UserName: Initiator.name,
+  };
+
+  try {
+    let res = await fetch(`${baseURL}/carts/post`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: sessionStorage.getItem("token"),
+      },
+      body: JSON.stringify(obj),
+    });
+    let data = await res.json();
+
+    if (data.exist) {
+      swal("Already in cart!", "Product already added in cart!", "info");
+    } else {
+      swal("Added to Cart!", "Product Added Successfully!", "success");
+      FetchCartProducts(user._id);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+//? <!----------------------------------------------- < For Favorites> ----------------------------------------------->
+
+async function FetchProductForFav(id, userid) {
+  try {
+    let res = await fetch(`${baseURL}/products?_id=${id}`);
+    let data = await res.json();
+    AddtoFavorite(data.Products[0], userid);
+  } catch (error) {
+    console.log(error);
+  }
+}
+async function AddtoFavorite(product, userid) {
+  let obj = {
+    title: product.title,
+    type: product.type,
+    price: product.price,
+    brand: product.brand,
+    rating: product.rating,
+    thumbnail: product.thumbnail,
+    images: [product.images[0], product.images[1]],
+    discount: product.discount,
+    description: product.description,
+    UserID: userid,
+    ProductID: product._id,
+    UserName: Initiator.name,
+  };
+
+  try {
+    let res = await fetch(`${baseURL}/favorites/post`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: sessionStorage.getItem("token"),
+      },
+      body: JSON.stringify(obj),
+    });
+    let data = await res.json();
+
+    if (data.exist) {
+      swal(
+        "Already in the Favorites!",
+        "Product already added in the Favorites.",
+        "info"
+      );
+    } else {
+      swal(
+        "Added to Favorites.",
+        "Product Added to Favorites Successfully!",
+        "success"
+      );
+      FetchFavorites(user._id);
     }
   } catch (error) {
     console.log(error);
