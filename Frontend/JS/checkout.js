@@ -47,7 +47,7 @@ paynow.addEventListener("click", () => {
       setTimeout(() => {
         otpalert.style.display = "none";
         otpalert.style.height = "0px";
-      }, 4000);
+      }, 5000);
     } else {
       swal("Payment Unsuccessful");
       setTimeout(() => {
@@ -131,7 +131,7 @@ resend.addEventListener("click", () => {
   setTimeout(() => {
     otpalert.style.display = "none";
     otpalert.style.height = "0px";
-  }, 4000);
+  }, 5000);
 });
 
 //? <!----------------------------------------------- < Order Summary> ----------------------------------------------->

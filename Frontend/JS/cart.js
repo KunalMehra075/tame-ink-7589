@@ -39,7 +39,13 @@ function UpdateTotal(cartitems) {
 
 function RenderCartData(data) {
   let productList = document.querySelector(".showproducts");
-  console.log(data);
+  if (data.length === 0) {
+    productList.innerHTML = ` <label>Your Basket is Empty..</label>
+  <a href="AllProducts.html"
+    ><button class="EmptyCart">Lets look for Products-></button></a
+  >`;
+    return;
+  }
   let newArray = data.map((item) => {
     return `
         <div class="product-card">

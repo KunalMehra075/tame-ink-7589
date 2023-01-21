@@ -1,6 +1,20 @@
 let signform = document.getElementById("SignupForm");
 let userpass = null;
 let useremail = null;
+let initiator = JSON.parse(sessionStorage.getItem("current-user"));
+
+window.addEventListener("load", () => {
+  if (initiator) {
+    swal(
+      "Looks Like you are logged in",
+      "No work here to do....Redirecting",
+      "info"
+    );
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 1200);
+  }
+});
 signform.addEventListener("submit", (e) => {
   e.preventDefault();
   let pass = signform.password.value;
