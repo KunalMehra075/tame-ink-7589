@@ -43,12 +43,14 @@ async function FetchProduct(id) {
   try {
     let res = await fetch(`${baseURL}/products?_id=${id}`);
     let data = await res.json();
+
     RenderData(data.Products[0]);
   } catch (error) {
     console.log(error);
   }
 }
 FetchProduct(DisplayDataID);
+
 function RenderData(obj) {
   mainimg.setAttribute("src", obj.thumbnail);
   img2.setAttribute("src", obj.images[0]);

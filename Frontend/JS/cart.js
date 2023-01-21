@@ -39,8 +39,7 @@ function UpdateTotal(cartitems) {
 
 function RenderCartData(data) {
   let productList = document.querySelector(".showproducts");
-
-  let count = 0;
+  console.log(data);
   let newArray = data.map((item) => {
     return `
         <div class="product-card">
@@ -65,7 +64,7 @@ function RenderCartData(data) {
                 <label for="">Quantity</label>
                 <button data-id="${item._id}" 
                 class="plusminus" id="minus">➖</button>
-                <input class="quantity" data-id=${item.id}
+                <input class="quantity" data-id=${item._id}
                  value="${item.Quantity}">
                 <button data-id="${item._id}" 
                 class="plusminus" id="plus">➕</button>
@@ -73,7 +72,7 @@ function RenderCartData(data) {
                 <div class="cardbuttons">
                   <button class="removeNview" data-id="${item._id}"
                    id="remove">Remove from Cart</button>
-                  <button class="removeNview" data-id="${item._id}"
+                  <button class="removeNview" data-one="${item._id}"
                     id="view">View Product Details</button>
                 </div>
               </div>
@@ -101,6 +100,15 @@ function RenderCartData(data) {
           swal("Item is in the Cart");
         }
       });
+    });
+  }
+
+  let AllView = document.querySelectorAll("#view");
+  for (const view of AllView) {
+    view.addEventListener("click", function (e) {
+      setTimeout(() => {
+        window.location.href = "AllProducts.html";
+      }, 500);
     });
   }
 

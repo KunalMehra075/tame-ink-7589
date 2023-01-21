@@ -5,7 +5,6 @@ const CartRouter = express.Router();
 
 CartRouter.get("/", async (req, res) => {
   let query = req.query;
-  console.log(query);
   try {
     const Items = await CartModel.find(query);
     res.json({ Items });
