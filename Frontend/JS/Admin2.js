@@ -106,7 +106,6 @@ function RenderEditProducts(data) {
           <label class="ratingX">Rating : ${item.rating} ⭐</label><br />
           <button data-id=${item._id} class="EditProductX">Edit</button>
           <button data-id=${item._id} class="DeleteProductX">Delete</button>
-          <img class="heart" data-like="notlike" src="/Images/icons/edit.svg" alt="">
         </div>
       </div>
     

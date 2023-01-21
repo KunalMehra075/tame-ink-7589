@@ -54,7 +54,6 @@ if (closetop1) {
   closetop1.addEventListener("click", () => {
     topfirst.style.opacity = "0.0";
     topfirst.style.transform = "translateX(-50px)";
-
     setTimeout(() => {
       topfirst.style.display = "none";
     }, 300);

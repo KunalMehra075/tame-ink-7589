@@ -1,34 +1,33 @@
+//? <!----------------------------------------------- < User> ----------------------------------------------->
+let user = JSON.parse(sessionStorage.getItem("current-user"));
 let popover = document.getElementById("popover");
 let username = document.getElementById("username");
-let user = JSON.parse(sessionStorage.getItem("current-user"));
+
 let LoginForm = document.getElementById("LoginForm");
 let UserPresent = document.getElementById("UserPresent");
+
 let loginname = document.getElementById("LoginName");
 let canvasname = document.getElementById("canvasname");
 let canvasemail = document.getElementById("canvasemail");
 let canvasid = document.getElementById("canvasid");
 let logout = document.getElementById("logout");
+
 let UserNameX = document.getElementById("UserNameX");
 let UserEmail = document.getElementById("UserEmail");
 let UserMobile = document.getElementById("UserMobile");
 let UserGender = document.getElementById("UserGender");
 let UserRole = document.getElementById("UserRole");
+
 let UserCartDetails = document.getElementById("UserCartDetails");
 let UserFavoriteDivs = document.getElementById("UserFavoriteDivs");
+
 let ADR = document.getElementById("AdminRedirect");
+
 ADR.addEventListener("click", () => {
   window.location.href = "admin.html";
 });
 window.addEventListener("load", () => {
   if (user) {
-    let initial = user.name.split(" ")[0];
-    username.innerText = initial;
-    canvasname.innerHTML = user.name;
-    canvasemail.innerHTML = user.email;
-    canvasid.innerHTML = `ID.- ${user._id}`;
-    loginname.innerHTML = "Welcome User";
-    UserPresent.style.display = "block";
-    LoginForm.style.display = "none";
     RenderOFFCANVAS(user);
   } else {
     username.innerText = "";
@@ -47,6 +46,7 @@ window.addEventListener("load", () => {
   }
 });
 logout.addEventListener("click", () => {
+  spinner.style.display = "block"; //?spinner
   swal({
     title: "Logout?",
     text: "You will be logged out of your account",
@@ -58,13 +58,25 @@ logout.addEventListener("click", () => {
       sessionStorage.clear();
       localStorage.clear;
       window.location.href = "index.html";
+      spinner.style.display = "none"; //?spinner
     } else {
+      spinner.style.display = "none"; //?spinner
       return;
     }
   });
 });
 
 function RenderOFFCANVAS(user) {
+  spinner.style.display = "block"; //?spinner
+
+  let initial = user.name.split(" ")[0];
+  username.innerText = initial;
+  canvasname.innerHTML = user.name;
+  canvasemail.innerHTML = user.email;
+  canvasid.innerHTML = `ID.- ${user._id}`;
+  loginname.innerHTML = "Welcome User";
+  UserPresent.style.display = "block";
+  LoginForm.style.display = "none";
   UserNameX.innerText = user.name;
   UserEmail.innerText = user.email;
   UserMobile.innerText = user.mobile;
@@ -80,6 +92,8 @@ function RenderOFFCANVAS(user) {
 let UserLoginForm = document.getElementById("LoginForm");
 
 UserLoginForm.addEventListener("submit", (e) => {
+  spinner.style.display = "block"; //?spinner
+
   e.preventDefault();
   let creds = {
     email: UserLoginForm.emailX.value,
@@ -100,6 +114,7 @@ async function LoginFunction(creds) {
 
     if (data.exist === false) {
       swal("User Dosen't Exists!", "Please Signup First!", "warning");
+      spinner.style.display = "none"; //?spinner
       return;
     }
     sessionStorage.setItem("token", data.token);
@@ -118,6 +133,7 @@ async function LoginFunction(creds) {
             window.location.href = "Admin.html";
           }, 1000);
         } else {
+          spinner.style.display = "none"; //?spinner
           setTimeout(() => {
             window.location.href = "";
           }, 500);
@@ -125,16 +141,19 @@ async function LoginFunction(creds) {
       });
     } else {
       swal("Login Successful!", "You are logged in, Lets Explore!", "success");
+      spinner.style.display = "none"; //?spinner
       setTimeout(() => {
         window.location.href = "";
       }, 2000);
     }
   } catch (error) {
     swal("Something Went Wrong.", "Server Error 504 ", "error");
+    spinner.style.display = "none"; //?spinner
     console.log(error);
   }
 }
 async function FetchCartProducts(userid) {
+  spinner.style.display = "block"; //?spinner
   try {
     let res = await fetch(`${baseURL}/carts?UserID=${userid}`);
     let data = await res.json();
@@ -144,6 +163,7 @@ async function FetchCartProducts(userid) {
   }
 }
 async function FetchFavorites(userid) {
+  spinner.style.display = "block"; //?spinner
   try {
     let res = await fetch(`${baseURL}/favorites?UserID=${userid}`);
     let data = await res.json();
@@ -171,6 +191,7 @@ function RenderOffCanvasCart(products) {
     Proceed to Cart</button></a>
    </div>
 `;
+    spinner.style.display = "none"; //?spinner
     return;
   }
 
@@ -236,6 +257,7 @@ function RenderOffCanvasCart(products) {
 
     
     `;
+  spinner.style.display = "none"; //?spinner
 }
 function RenderOffCanvasFav(products) {
   if (products.length === 0) {
@@ -243,6 +265,7 @@ function RenderOffCanvasFav(products) {
     <center>No Favorites </center>
     <hr>
 `;
+    spinner.style.display = "none"; //?spinner
     return;
   }
   products = products
@@ -292,6 +315,7 @@ function RenderOffCanvasFav(products) {
   let FavRemovers = document.getElementsByClassName("FavRemovers");
   for (const frvs of FavRemovers) {
     frvs.addEventListener("click", (e) => {
+      spinner.style.display = "block"; //?spinner
       swal({
         title: "Remove From Fav?",
         text: "Item will be removed from Favorites",
@@ -307,6 +331,7 @@ function RenderOffCanvasFav(products) {
       });
     });
   }
+  spinner.style.display = "none"; //?spinner
 }
 async function DeleteFav(id) {
   try {
