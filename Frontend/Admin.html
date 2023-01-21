@@ -7,6 +7,7 @@
     <title>OrangerFry.com</title>
     <link rel="stylesheet" href="./CSS/index.css" />
     <link rel="stylesheet" href="./CSS/commons.css" />
+    <link rel="stylesheet" href="./CSS/commons2.css">
     <link rel="stylesheet" href="CSS/Admin.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -27,8 +28,159 @@
   </head>
   <body>
     <!--!--------------------------------------------- <Essentials> ----------------------------------------------->
-    <!-- Prelaoder,offcanvas -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+   
+    <div id="preloader">
+      <img src="Images/icons/preloader.gif" alt="">
+  </div>
+  <div id="spinner" class="spinner-border text-danger" role="status">
+  </div>
+
+
+ <!--??--------------------------------------------- <Offcanvas> ----------------------------------------------->
+  <div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel"
+  >
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel"><img width="40px" src="Images/Orange.png" alt=""><h3 id="LoginName">Login</h3></h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+   
+  <div id="UserPresent">
+    <div class="offcanvasAvatar">
+      <img id="avatar" src="Images/icons/avatar.png" alt="">
+    </div>
+    <div class="offcanvasUser">
+      <h3 id="canvasname">Some Username</h3>
+      <h6 style="color: grey;" id="canvasemail">demoemail@gmail.com</h6>
+      <p style="font-size: 10px;" id="canvasid">7846513213441</p>
+      <button id="AdminRedirect" class="Redwhitebtn"> Admin's Portal</button>
+      <!--todo-------------------------- < Bootstrap Accordian> --------------------------------->
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              My Account
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <!---------------------------- <User Account Details> --------------------------------->
+                <div id="UserCanvasDetails">
+                  <table>
+                    <tr>
+                      <td>Name:</td>
+                      <td id="UserNameX">User Name</td>
+                    </tr>
+                    <tr>
+                      <td>Email:</td>
+                      <td id="UserEmail">User Email</td>
+                    </tr>
+                    <tr>
+                      <td>Gender :</td>
+                      <td id="UserGender">Male</td>
+                    </tr>
+                    <tr>
+                      <td>Mobile :</td>
+                      <td id="UserMobile">Mobile</td>
+                    </tr>
+                    <tr>
+                      <td>Role :</td>
+                      <td id="UserRole">Explored</td>
+                    </tr>
+                  </table>
+                          
+                </div></div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              My Orders
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div id="axxordianbodyX" class="accordion-body">
+              
+              <!---------------------------- <Users Order Will be here> --------------------------------->
+              <div id="UserCartDetails">
+                
+                    <div id="Fetchcanvascart">
+                      <!-- Canvaschilds -->
+                      <div class="ChildCanvas">
+                        <div><img height="100px" src="Images/Home/best1.jpg" alt=""></div>
+                        <div id="canvas2nd">
+                          <label id="canvasTitle">Title</label><br>
+                          <label id="canvasDescp" for="">Description</label><br>
+                          <label id="canvasRating" for="">Rating</label>
+                        </div>
+                      <div id="canvasPrice">
+                        item price
+                      </div>
+                      <div id="canvasQnty">
+                        item qnty
+                      </div>
+                      </div>
+                    </div>
+
+                  <div>
+                    <div style="display: flex;justify-content:space-between;">
+                      <label><b>Total Items :</b> 5</label>
+                      <span style="color: white;">----------</span>
+                      
+                      <label><b>Total Price :</b> 15687/-</label>
+                  
+                  
+                    </div>
+                    
+                    <a href="Cart.html">  <button id="gotocartX" class="WhiteRedbtn">Proceed to Cart</button></a>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              My Favorites
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div id="UserFavoriteDivs">
+                  <!-- Append Favs Here -->
+                  <center>No Favorites </center></div>
+              </div>
+              <!--??--------------------------------------------- <Users Cart> ----------------------------------------------->
+          </div>
+        </div>
+      </div>
+      <!--todo-------------------------- <Accordian end> --------------------------------->
+    </div>
+    <br>
+    <div class="text-center">
+      <button class="WhiteRedbtn" id="logout"> Logout</button>
+    </div>
+  
+</div>
+  <br>
+  <center style="font-size:12px ;color: grey;">All copyrights reserved®</center>
+  <br>
+</div>
+</div>
+
+
+
     <!--?--------------------------------------------- Header ----------------------------------------------->
     <header>
       <nav id="stickynav">
@@ -113,13 +265,13 @@
     <main>
       <!--*-------------------------- <Navigator> --------------------------------->
       <div id="Navigator">
-        <button id="bxn0">Add Product</button>
-        <button id="bxn1"> Edit Product</button>
-        <button id="bxn2"> Manage Orders</button>
-        <button id="bxn3"> Manage Users</button>
-        <button id="bxn4">Reviews& Feedbacks</button>
-        <button id="bxn5"> Website Management</button>
-        <button id="bxn6"> About</button>
+        <button id="bxn6"> Dashboard <img class="navibtnimgs" src="Images/icons/window.svg" alt=""></button>
+        <button id="bxn0">Add Product <img class="navibtnimgs" src="Images/icons/add.svg" alt=""></button>
+        <button id="bxn1"> Edit Product <img class="navibtnimgs" src="Images/icons/editnote.svg" alt=""></button>
+        <button id="bxn2"> Manage Orders <img class="navibtnimgs" src="Images/icons/order.svg" alt=""></button>
+        <button id="bxn3"> Manage Users <img class="navibtnimgs" src="Images/icons/manageuser.svg" alt=""></button>
+        <button id="bxn4">Reviews& Feedbacks <img class="navibtnimgs" src="Images/icons/review.svg" alt=""></button>
+        <button id="bxn5"> Website Management <img class="navibtnimgs" src="Images/icons/setting.svg" alt=""></button>
       </div>
       <div id="topspace"></div>
       <section id="WelcomeAdmin">
@@ -183,10 +335,10 @@
             </div>
             <div>
               <div>
-                <img id="sxmimg1" src="" alt="Product Thumbnail">
-                <img id="sxmimg2" src="" alt="Product Image1">
-                <img id="sxmimg3" src="" alt="Product Image2">
-                <p>Preview of <br> Images</p>
+                <img id="sxmimg1" src="https://ii1.pepperfry.com/media/catalog/product/o/r/800x880/orange-shade-table-lamp-with-metal-base-by-btr-crafts-orange-shade-table-lamp-with-metal-base-by-btr-m5pgrm.jpg" alt="Product Thumbnail">
+                <img id="sxmimg2" src="https://cdn.shopify.com/s/files/1/1306/4195/products/DoublePipe-MS-BRSM-EmbrdyWhite14-TL1_01.jpg?v=1660896657" alt="Product Image1">
+                <img id="sxmimg3" src="https://rukminim1.flixcart.com/image/416/416/kupuljk0/table-lamp/i/p/p/flower-conical-shade-and-beautiful-metal-base-table-lamp-for-original-imag7rwrkdzqw3fm.jpeg?q=70" alt="Product Image2">
+                <p>Preview of Sample <br> Images</p>
               </div>
             </div>
            </div>
@@ -201,16 +353,26 @@
               <center> <h3 class="AdminHeads"><u>Edit Product</u></h3></center>
               <div id="crumbar">
                 <div>
-                    <nav id="bread" aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                          <li class="breadcrumb-item"><a href="#">Home</a></li>
-                          <li class="breadcrumb-item"><a href="#">Home Decor</a></li>
-                          <li class="breadcrumb-item active" aria-current="page">Home Decor Products</li>  
-                        </ol>
-                    </nav>
+                  <label for="">Select Product Type : </label>
+                    <select name="typeOfProduct" id="EditTypeSelector">
+                      <option value="">Choose Type</option>
+                      <option value="FURNITURE">Furniture</option>
+                      <option value="KITCHEN">Kitchen</option>
+                      <option value="HOME DECOR">Home Decor</option>
+                      <option value="TABLE LAMPS">Lamps & Tables</option>
+                      <option value="PETS">Pets</option>
+                      <option value="HOME DECOR">Furnishing</option>
+                      <option value="HOME DECOR">Matresses</option>
+                      <option value="FURNITURE">Sofaa</option>
+                      <option value="FURNITURE">Tables</option>
+
+
+
+                    </select>
                 </div>
-             
+                Search Any Product :
                     <div class="productsearch">
+                  
                         <input
                         type="text"
                         id="productsearch"
@@ -230,129 +392,26 @@
       
                  <!--todo-------------------------- <Container> --------------------------------->
                   <div id="ThreeCardContainerX">
-                    <!--!-------------------------- <Sample Childbox> --------------------------------->
-                    <div class="ChildBoxes">
-                        <div class="childimage">
-                          <img src="Images/Home/best1.jpg" alt="" />
-                        </div>
-                        <div class="details">
-                          <label class="titleX"
-                            >Monster Ultimate (T) Gaming Chair in Black & Grey Colour</label
-                          ><br />
-                          <label class="brandX">Green Soul</label><br />
-                          <label class="priceX">₹ 19,690</label>
-                          <label class="cutprX">₹ 1350</label><br />
-                          <label class="typeX">Home Decor</label>
-                          <label class="discountX">44% Off</label><br />
-                          <label class="ratingX">Rating : 9.2 ⭐</label><br />
-                          <button class="addtocartX">Edit</button>
-                          <img class="heart" data-like="notlike" src="./Images/icons/blakheart.png" alt="">
-                        </div>
-                      </div>
-                      <!--!--------------------------------------------------------------------------->
                      <!--!-------------------------- <Sample Childbox> --------------------------------->
                       <div class="ChildBoxes">
                         <div class="childimage">
-                          <img src="Images/Home/best1.jpg" alt="" />
+                          <img width="100px" src="Images/Home/best1.jpg" alt="" />
                         </div>
                         <div class="details">
-                          <label class="titleX"
-                            >Monster Ultimate (T) Gaming Chair in Black & Grey Colour</label
-                          ><br />
-                          <label class="brandX">Green Soul</label><br />
-                          <label class="priceX">₹ 19,690</label>
-                          <label class="cutprX">₹ 1350</label><br />
-                          <label class="typeX">Home Decor</label>
-                          <label class="discountX">44% Off</label><br />
-                          <label class="ratingX">Rating : 9.2 ⭐</label><br />
-                          <button class="addtocartX">Edit</button>
-                          <img class="heart" data-like="notlike" src="./Images/icons/blakheart.png" alt="">
+                          <label class="titleX">${item.title.substring(0, 50)}</label><br />
+                          <label class="brandX">${item.brand}</label><br />
+                          <label class="priceX">₹${item.price}</label>
+                          <label class="cutprX">₹${item.price + 1000}</label><br />
+                          <label class="typeX">${item.type}</label>
+                          <label class="discountX">${item.discount}% Off</label><br />
+                          <label class="ratingX">Rating : ${item.rating} ⭐</label><br />
+                          <button data-id=${item._id} class="EditProductX">Edit</button>
+                          <button data-id=${item._id} class="DeleteProductX">Delete</button>
+                          <img class="heart" data-like="notlike" src="/Images/icons/edit.svg" alt="">
                         </div>
                       </div>
                       <!--!--------------------------------------------------------------------------->
-                    
-                       <!--!-------------------------- <Sample Childbox> --------------------------------->
-                    <div class="ChildBoxes">
-                      <div class="childimage">
-                        <img src="Images/Home/best1.jpg" alt="" />
-                      </div>
-                      <div class="details">
-                        <label class="titleX"
-                          >Monster Ultimate (T) Gaming Chair in Black & Grey Colour</label
-                        ><br />
-                        <label class="brandX">Green Soul</label><br />
-                        <label class="priceX">₹ 19,690</label>
-                        <label class="cutprX">₹ 1350</label><br />
-                        <label class="typeX">Home Decor</label>
-                        <label class="discountX">44% Off</label><br />
-                        <label class="ratingX">Rating : 9.2 ⭐</label><br />
-                        <button class="addtocartX">Edit</button>
-                        <img class="heart" data-like="notlike" src="./Images/icons/blakheart.png" alt="">
-                      </div>
-                    </div>
-                    <!--!--------------------------------------------------------------------------->
-                   <!--!-------------------------- <Sample Childbox> --------------------------------->
-                    <div class="ChildBoxes">
-                      <div class="childimage">
-                        <img src="Images/Home/best1.jpg" alt="" />
-                      </div>
-                      <div class="details">
-                        <label class="titleX"
-                          >Monster Ultimate (T) Gaming Chair in Black & Grey Colour</label
-                        ><br />
-                        <label class="brandX">Green Soul</label><br />
-                        <label class="priceX">₹ 19,690</label>
-                        <label class="cutprX">₹ 1350</label><br />
-                        <label class="typeX">Home Decor</label>
-                        <label class="discountX">44% Off</label><br />
-                        <label class="ratingX">Rating : 9.2 ⭐</label><br />
-                        <button class="addtocartX">Edit</button>
-                        <img class="heart" data-like="notlike" src="./Images/icons/blakheart.png" alt="">
-                      </div>
-                    </div>
-                    <!--!--------------------------------------------------------------------------->
-                   <!--!-------------------------- <Sample Childbox> --------------------------------->
-                    <div class="ChildBoxes">
-                      <div class="childimage">
-                        <img src="Images/Home/best1.jpg" alt="" />
-                      </div>
-                      <div class="details">
-                        <label class="titleX"
-                          >Monster Ultimate (T) Gaming Chair in Black & Grey Colour</label
-                        ><br />
-                        <label class="brandX">Green Soul</label><br />
-                        <label class="priceX">₹ 19,690</label>
-                        <label class="cutprX">₹ 1350</label><br />
-                        <label class="typeX">Home Decor</label>
-                        <label class="discountX">44% Off</label><br />
-                        <label class="ratingX">Rating : 9.2 ⭐</label><br />
-                        <button class="addtocartX">Edit</button>
-                        <img class="heart" data-like="notlike" src="./Images/icons/blakheart.png" alt="">
-                      </div>
-                    </div>
-                    <!--!--------------------------------------------------------------------------->
-                   <!--!-------------------------- <Sample Childbox> --------------------------------->
-                    <div class="ChildBoxes">
-                      <div class="childimage">
-                        <img src="Images/Home/best1.jpg" alt="" />
-                      </div>
-                      <div class="details">
-                        <label class="titleX"
-                          >Monster Ultimate (T) Gaming Chair in Black & Grey Colour</label
-                        ><br />
-                        <label class="brandX">Green Soul</label><br />
-                        <label class="priceX">₹ 19,690</label>
-                        <label class="cutprX">₹ 1350</label><br />
-                        <label class="typeX">Home Decor</label>
-                        <label class="discountX">44% Off</label><br />
-                        <label class="ratingX">Rating : 9.2 ⭐</label><br />
-                        <button class="addtocartX">Edit</button>
-                        <img class="heart" data-like="notlike" src="./Images/icons/blakheart.png" alt="">
-                      </div>
-                    </div>
-                    <!--!--------------------------------------------------------------------------->
-                  
-                </div>
+                  </div>
     
             </section>
              <!--todo-------------------------- <Manage Orders> --------------------------------->
@@ -406,9 +465,8 @@
   </body>
 </html>
 <script src="JS/index.js"></script>
-<script src="JS/common.js"></script>
 <script src="JS/Admin.js"></script>
-<script type="module" src="JS/Admin2.js"></script>
+<script src="JS/Admin2.js"></script>
 <script
   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
   integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
