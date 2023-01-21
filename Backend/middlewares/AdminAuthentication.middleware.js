@@ -13,10 +13,13 @@ const AdminAuthenticator = (req, res, next) => {
       if (decoded.user.role == "Admin") {
         next();
       } else {
-        res.json({ Message: "You are not Authorized" });
+        res.json({
+          Message: "You are not authorised, Only admin can perfom this action",
+          Authorization: false,
+        });
       }
     } else {
-      res.json({ Message: "Please Login First" });
+      res.json({ err });
     }
   });
 };

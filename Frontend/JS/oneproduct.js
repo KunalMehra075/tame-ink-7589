@@ -99,6 +99,7 @@ async function PostReviewRoute(review) {
       method: "POST",
       headers: {
         "Content-type": "application/json",
+        Authorization: sessionStorage.getItem("token"),
       },
       body: JSON.stringify(review),
     });
@@ -113,7 +114,11 @@ async function PostReviewRoute(review) {
 }
 async function YouMayAlsoLike(type) {
   try {
-    let res = await fetch(`${baseURL}/products?type=${type}`);
+    let res = await fetch(`${baseURL}/products?type=${type}`, {
+      headers: {
+        Authorization: sessionStorage.getItem("token"),
+      },
+    });
     let data = await res.json();
     RenderYouMayAlso(data.Products);
   } catch (error) {
@@ -277,6 +282,7 @@ async function FetchEditReview(id, payload) {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
+        Authorization: sessionStorage.getItem("token"),
       },
       body: JSON.stringify(payload),
     });
@@ -293,6 +299,9 @@ async function FetchDeleteReview(id) {
   try {
     let res = await fetch(`${baseURL}/reviews/delete/${id}`, {
       method: "DELETE",
+      headers: {
+        Authorization: sessionStorage.getItem("token"),
+      },
     });
     let data = await res.json();
     console.log(data);

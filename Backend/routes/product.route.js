@@ -1,5 +1,7 @@
 const express = require("express");
-const { authenticator } = require("../middlewares/authenticator.middleware");
+const {
+  AdminAuthenticator,
+} = require("../middlewares/AdminAuthentication.middleware");
 
 const { ProductModel } = require("../models/products.model");
 const productRouter = express.Router();
@@ -15,7 +17,7 @@ productRouter.get("/", async (req, res) => {
     res.json({ Error: err });
   }
 });
-productRouter.post("/create", async (req, res) => {
+productRouter.post("/create", AdminAuthenticator, async (req, res) => {
   let data = req.body;
   try {
     const instance = new ProductModel(data);
@@ -26,7 +28,7 @@ productRouter.post("/create", async (req, res) => {
     res.json({ Error: err });
   }
 });
-productRouter.delete("/delete/:id", async (req, res) => {
+productRouter.delete("/delete/:id", AdminAuthenticator, async (req, res) => {
   let id = req.params.id;
   try {
     const deleted = await ProductModel.findByIdAndDelete({ _id: id });
@@ -36,7 +38,7 @@ productRouter.delete("/delete/:id", async (req, res) => {
     res.json({ Error: err });
   }
 });
-productRouter.patch("/update/:id", async (req, res) => {
+productRouter.patch("/update/:id", AdminAuthenticator, async (req, res) => {
   let id = req.params.id;
   let payload = req.body;
   try {

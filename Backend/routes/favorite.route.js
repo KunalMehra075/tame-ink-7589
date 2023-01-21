@@ -15,7 +15,7 @@ FavoriteRouter.get("/", async (req, res) => {
     res.json({ Error: err });
   }
 });
-FavoriteRouter.post("/post", async (req, res) => {
+FavoriteRouter.post("/post", authenticator, async (req, res) => {
   let data = req.body;
   let UserID = req.body.UserID;
   let ProductID = req.body.ProductID;
@@ -40,7 +40,7 @@ FavoriteRouter.post("/post", async (req, res) => {
     res.json({ Error: err });
   }
 });
-FavoriteRouter.delete("/delete/:id", async (req, res) => {
+FavoriteRouter.delete("/delete/:id", authenticator, async (req, res) => {
   let id = req.params.id;
   try {
     const deleted = await FavoritesModel.findByIdAndDelete({ _id: id });

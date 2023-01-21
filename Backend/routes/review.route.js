@@ -1,5 +1,4 @@
 const express = require("express");
-
 const { ReviewModel } = require("../models/reviews.model");
 const { authenticator } = require("../middlewares/authenticator.middleware");
 const ReviewRouter = express.Router();
@@ -26,7 +25,7 @@ ReviewRouter.post("/post", async (req, res) => {
     res.json({ Error: err });
   }
 });
-ReviewRouter.delete("/delete/:id", async (req, res) => {
+ReviewRouter.delete("/delete/:id", authenticator, async (req, res) => {
   let id = req.params.id;
   try {
     const deleted = await ReviewModel.findByIdAndDelete({ _id: id });
@@ -36,7 +35,7 @@ ReviewRouter.delete("/delete/:id", async (req, res) => {
     res.json({ Error: err });
   }
 });
-ReviewRouter.patch("/update/:id", async (req, res) => {
+ReviewRouter.patch("/update/:id", authenticator, async (req, res) => {
   let id = req.params.id;
   let payload = req.body;
   try {

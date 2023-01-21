@@ -309,7 +309,9 @@ async function DeleteFav(id) {
   try {
     let res = await fetch(`${baseURL}/favorites/delete/${id}`, {
       method: "DELETE",
-      Authorization: sessionStorage.getItem("token"),
+      headers: {
+        Authorization: sessionStorage.getItem("token"),
+      },
     });
     let data = await res.json();
     console.log(data);

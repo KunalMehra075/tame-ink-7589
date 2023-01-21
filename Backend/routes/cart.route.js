@@ -36,7 +36,7 @@ CartRouter.post("/post", async (req, res) => {
     res.json({ Error: err });
   }
 });
-CartRouter.delete("/delete/:id", async (req, res) => {
+CartRouter.delete("/delete/:id", authenticator, async (req, res) => {
   let id = req.params.id;
   try {
     const deleted = await CartModel.findByIdAndDelete({ _id: id });
@@ -46,7 +46,7 @@ CartRouter.delete("/delete/:id", async (req, res) => {
     res.json({ Error: err });
   }
 });
-CartRouter.patch("/update/:id", async (req, res) => {
+CartRouter.patch("/update/:id", authenticator, async (req, res) => {
   let id = req.params.id;
   let payload = req.body;
   try {
