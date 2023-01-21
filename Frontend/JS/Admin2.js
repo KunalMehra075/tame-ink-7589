@@ -42,6 +42,7 @@ async function AddProduct(product) {
       method: "POST",
       headers: {
         "Content-type": "application/json",
+        Authorization: sessionStorage.getItem("token"),
       },
       body: JSON.stringify(product),
     });

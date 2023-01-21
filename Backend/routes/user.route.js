@@ -1,7 +1,9 @@
 const express = require("express");
 const { UserModel } = require("../models/users.model");
 const bcrypt = require("bcrypt");
+const { authenticator } = require("../middlewares/authenticator.middleware");
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
 const {
   AdminAuthenticator,
 } = require("../middlewares/AdminAuthentication.middleware");
@@ -55,7 +57,7 @@ userRouter.post("/login", async (req, res) => {
     } else {
       bcrypt.compare(pass, user.pass, (err, result) => {
         if (result) {
-          jwt.sign({ user }, "Yukino", (err, token) => {
+          jwt.sign({ user }, process.env.key, (err, token) => {
             if (token) {
               res.json({ Message: "Login Successful", token, user });
             } else {

@@ -1,5 +1,6 @@
 const express = require("express");
 const { FavoritesModel } = require("../models/favorite.model");
+const { authenticator } = require("../middlewares/authenticator.middleware");
 
 const FavoriteRouter = express.Router();
 

@@ -168,6 +168,7 @@ async function ChangeProductQty(id, qty) {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
+        Authorization: sessionStorage.getItem("token"),
       },
       body: JSON.stringify(payload),
     });
@@ -182,6 +183,9 @@ async function RemoveProductCrt(id) {
   try {
     let res = await fetch(`${baseURL}/carts/delete/${id}`, {
       method: "DELETE",
+      headers: {
+        Authorization: sessionStorage.getItem("token"),
+      },
     });
     let data = await res.json();
     console.log(data);

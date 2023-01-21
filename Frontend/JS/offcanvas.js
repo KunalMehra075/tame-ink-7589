@@ -155,7 +155,7 @@ function RenderOffCanvasCart(products) {
     <div id="Fetchcanvascart">
     <!-- Canvaschilds -->
     <br/>
-    <center>No Favorites </center>
+    <center>No items in Cart </center>
     <div>
     <div style="display: flex;justify-content:space-between;">
       <label><b>Total Items :</b> 0</label>
@@ -238,6 +238,7 @@ function RenderOffCanvasFav(products) {
   if (products.length === 0) {
     UserFavoriteDivs.innerHTML = `
     <center>No Favorites </center>
+    <hr>
 `;
     return;
   }
@@ -308,6 +309,7 @@ async function DeleteFav(id) {
   try {
     let res = await fetch(`${baseURL}/favorites/delete/${id}`, {
       method: "DELETE",
+      Authorization: sessionStorage.getItem("token"),
     });
     let data = await res.json();
     console.log(data);

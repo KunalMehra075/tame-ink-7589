@@ -151,6 +151,7 @@ async function AddtoCart(product, userid) {
       method: "POST",
       headers: {
         "Content-type": "application/json",
+        Authorization: sessionStorage.getItem("token"),
       },
       body: JSON.stringify(obj),
     });
@@ -199,6 +200,7 @@ async function AddtoFavorite(product, userid) {
       method: "POST",
       headers: {
         "Content-type": "application/json",
+        Authorization: sessionStorage.getItem("token"),
       },
       body: JSON.stringify(obj),
     });

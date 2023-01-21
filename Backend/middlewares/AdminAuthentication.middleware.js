@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
 const AdminAuthenticator = (req, res, next) => {
   let token = req.headers.authorization;
@@ -6,7 +7,7 @@ const AdminAuthenticator = (req, res, next) => {
     res.json("Please Login First");
     return;
   }
-  jwt.verify(token, "Yukino", (err, decoded) => {
+  jwt.verify(token, process.env.key, (err, decoded) => {
     if (decoded) {
       console.log(decoded);
       if (decoded.user.role == "Admin") {

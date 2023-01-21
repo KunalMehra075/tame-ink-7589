@@ -13,8 +13,10 @@
 .form {
   background-color: white;
   width: 30%;
-  padding: 20px;
-  border: 1px solid rgb(239, 175, 175);
+  padding: 20px 50px;
+  border: 1px dotted rgb(0, 0, 0);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 form label {
   margin-top: 5px;
@@ -26,11 +28,12 @@ form select {
   width: 100%;
   padding: 7px 10px;
   border: none;
-  background-color: whitesmoke;
+  background-color: rgb(250, 245, 245);
 }
 form input:focus,
 form select:focus {
   outline: none;
+  background-color: rgb(246, 215, 215);
   border-bottom: 1px solid red;
 }
 

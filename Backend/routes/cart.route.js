@@ -1,4 +1,5 @@
 const express = require("express");
+const { authenticator } = require("../middlewares/authenticator.middleware");
 const { CartModel } = require("../models/cart.model");
 const CartRouter = express.Router();
 

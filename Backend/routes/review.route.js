@@ -1,6 +1,7 @@
 const express = require("express");
 
 const { ReviewModel } = require("../models/reviews.model");
+const { authenticator } = require("../middlewares/authenticator.middleware");
 const ReviewRouter = express.Router();
 
 ReviewRouter.get("/", async (req, res) => {
