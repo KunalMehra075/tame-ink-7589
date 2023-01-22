@@ -511,12 +511,28 @@ strong {
   content: "*";
   color: red;
 }
+
+/*? ----------------------------Medium Screen Sizes -------------------------------- */
+@media all and (min-width: 810px) and (max-width: 1079px) {
+  /*-------------------------- Universals-------------------------- */
+  .topfirst {
+    display: none;
+  }
+  /* -------------------------Page Specifcs------------------------- */
+}
 /*? ----------------------------Small Screen Sizes -------------------------------- */
 @media all and (min-width: 320px) and (max-width: 909px) {
   /*-------------------------- Universals-------------------------- */
   * {
     font-size: 13px;
   }
+  #popover {
+    display: block !important;
+  }
+  #username {
+    top: 90%;
+  }
+
   #footerspace {
     height: 1300px !important;
   }

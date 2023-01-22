@@ -15,6 +15,9 @@ section {
   background: rgb(255, 0, 0);
 }
 #BANNER_SECTION {
+  position: relative;
+  z-index: 0;
+
   display: flex;
   justify-content: center;
   margin: auto 5px !important;

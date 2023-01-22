@@ -1,7 +1,7 @@
 const express = require("express");
 const { UserModel } = require("../models/users.model");
 const bcrypt = require("bcrypt");
-const { authenticator } = require("../middlewares/authenticator.middleware");
+
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const {
@@ -53,19 +53,24 @@ userRouter.post("/login", async (req, res) => {
   try {
     let user = await UserModel.findOne({ email });
     if (!user) {
-      res.json({ Message: "User Dosent Exists", exist: false });
+      res.json({ Message: "User Dosent Exists", exist: false, Wrong: true });
     } else {
       bcrypt.compare(pass, user.pass, (err, result) => {
         if (result) {
           jwt.sign({ user }, process.env.key, (err, token) => {
             if (token) {
-              res.json({ Message: "Login Successful", token, user });
+              res.json({
+                Message: "Login Successful",
+                Wrong: false,
+                token,
+                user,
+              });
             } else {
-              res.json({ Message: "Wrong Credentials" });
+              res.json({ Message: "Wrong Credentials", Wrong: true });
             }
           });
         } else {
-          res.json({ Message: "Wrong Credentials" });
+          res.json({ Message: "Wrong Credentials", Wrong: true });
         }
       });
     }

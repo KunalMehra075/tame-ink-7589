@@ -14,15 +14,20 @@ let resend = document.getElementById("resend");
 
 let cont = document.getElementById("continue");
 cont.addEventListener("click", () => {
+  spinner.style.display = "block"; //!Spinner
   collapse1.classList.remove("show");
   collapse2.classList.add("show");
   clbtn1.classList.add("collapsed");
   clbtn2.classList.remove("collapsed");
   clbtn1.ariaExpanded = "false";
   clbtn2.ariaExpanded = "true";
+  spinner.style.display = "none"; //!Spinner
 });
+
 let paynow = document.getElementById("paynow");
 paynow.addEventListener("click", () => {
+  spinner.style.display = "block"; //!Spinner
+
   swal({
     title: "Confirm the Order?",
     text: "Payment Will Be recieved when order will be delivered.",
@@ -38,7 +43,10 @@ paynow.addEventListener("click", () => {
       clbtn3.ariaExpanded = "false";
       clbtn4.ariaExpanded = "true";
 
+      spinner.style.display = "none"; //!Spinner
+
       timerfn();
+
       let otpalert = document.getElementById("otpalert");
       otpalert.style.display = "block";
       setTimeout(() => {
@@ -47,9 +55,11 @@ paynow.addEventListener("click", () => {
       setTimeout(() => {
         otpalert.style.display = "none";
         otpalert.style.height = "0px";
-      }, 4000);
+      }, 5000);
     } else {
       swal("Payment Unsuccessful");
+      spinner.style.display = "none"; //!Spinner
+
       setTimeout(() => {
         window.location.href = "cart.html";
       }, 1000);
@@ -58,8 +68,10 @@ paynow.addEventListener("click", () => {
 });
 
 pre1.addEventListener("click", () => {
+  spinner.style.display = "block"; //!Spinner
   pre1.classList.add("activeadd");
   pre2.classList.remove("activeadd");
+  spinner.style.display = "none"; //!Spinner
   swal({
     title: "Choose this Address?",
     text: "H.no 70 New Basti Ranjhi Jabalpur",
@@ -68,18 +80,22 @@ pre1.addEventListener("click", () => {
     dangerMode: true,
   }).then((willDelete) => {
     if (willDelete) {
+      spinner.style.display = "block"; //!Spinner
       collapse2.classList.remove("show");
       collapse3.classList.add("show");
       clbtn2.classList.add("collapsed");
       clbtn3.classList.remove("collapsed");
       clbtn2.ariaExpanded = "false";
       clbtn3.ariaExpanded = "true";
+      spinner.style.display = "none"; //!Spinner
     }
   });
 });
 pre2.addEventListener("click", () => {
+  spinner.style.display = "block"; //!Spinner
   pre2.classList.add("activeadd");
   pre1.classList.remove("activeadd");
+  spinner.style.display = "none"; //!Spinner
   swal({
     title: "Choose this Address?",
     text: "Sec 2/3 Near CB Mall, Ashok Nagar Indore",
@@ -88,12 +104,14 @@ pre2.addEventListener("click", () => {
     dangerMode: true,
   }).then((willDelete) => {
     if (willDelete) {
+      spinner.style.display = "block"; //!Spinner
       collapse2.classList.remove("show");
       collapse3.classList.add("show");
       clbtn2.classList.add("collapsed");
       clbtn3.classList.remove("collapsed");
       clbtn2.ariaExpanded = "false";
       clbtn3.ariaExpanded = "true";
+      spinner.style.display = "none"; //!Spinner
     }
   });
 });
@@ -121,8 +139,11 @@ function timerfn() {
 }
 
 resend.addEventListener("click", () => {
-  // "warning","success","error","info"
+  spinner.style.display = "block"; //!Spinner
   swal("OTP Sent!", "OTP sent to your registered mobile no.!", "info");
+
+  spinner.style.display = "none"; //!Spinner
+
   let otpalert = document.getElementById("otpalert");
   otpalert.style.display = "block";
   setTimeout(() => {
@@ -131,7 +152,7 @@ resend.addEventListener("click", () => {
   setTimeout(() => {
     otpalert.style.display = "none";
     otpalert.style.height = "0px";
-  }, 4000);
+  }, 5000);
 });
 
 //? <!----------------------------------------------- < Order Summary> ----------------------------------------------->
@@ -140,6 +161,7 @@ let Initiator = JSON.parse(sessionStorage.getItem("current-user"));
 let CartItems = [];
 GetCartItems(Initiator._id);
 async function GetCartItems(id) {
+  spinner.style.display = "block"; //!Spinner
   try {
     let res = await fetch(`${BaseURL}/carts?UserID=${id}`);
     let data = await res.json();
@@ -147,15 +169,16 @@ async function GetCartItems(id) {
     CartItems = [...data.Items];
     UpdateTotal(CartItems);
   } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     console.log(error);
   }
 }
-localStorage.setItem("TotalPrice", 0);
 UpdateTotal(CartItems);
 
 //? <!----------------------------------- <Updating Total Function> ----------------------------------------------->
 
 function UpdateTotal(cartitems) {
+  spinner.style.display = "block"; //!Spinner
   let total = 0;
   let totalitems = 0;
   for (const item of cartitems) {
@@ -168,13 +191,16 @@ function UpdateTotal(cartitems) {
   tmtl1.innerText = `₹${total}`;
   tmtl2.innerText = `₹${total}`;
   tmtli.innerText = totalitems;
+  spinner.style.display = "none"; //!Spinner
 }
 
 function RenderCartData(data) {
+  spinner.style.display = "block"; //!Spinner
   if (data.length === 0) {
     // "warning","success","error","info"
     swal("Looks like your cart is empty..", "Redirecting you..", "info");
     setTimeout(() => {
+      spinner.style.display = "none"; //!Spinner
       window.location.href = "AllProducts.html";
     }, 1200);
   }
@@ -212,11 +238,14 @@ function RenderCartData(data) {
         `;
   });
   productList.innerHTML = newArray.join(" ");
+  spinner.style.display = "none"; //!Spinner
 }
 let finish = document.getElementById("finish");
 finish.addEventListener("click", (e) => {
+  spinner.style.display = "none"; //!Spinner
   let otpbox = document.getElementById("sessionNo");
   if (otpbox.value !== "9573") {
+    spinner.style.display = "none"; //!Spinner
     swal("Incorrect OTP", "Please enter correct OTP", "error");
     return;
   }
@@ -224,6 +253,7 @@ finish.addEventListener("click", (e) => {
 });
 
 async function DeleteCartMany(id) {
+  spinner.style.display = "block"; //!Spinner
   try {
     let res = await fetch(`${BaseURL}/carts/deleteAll/${id}`, {
       method: "DELETE",
@@ -233,7 +263,7 @@ async function DeleteCartMany(id) {
     });
     let data = await res.json();
     if (data.done) {
-      // "warning","success","error","info"
+      spinner.style.display = "none"; //!Spinner
       swal(
         "Order Confirmed!",
         "Thankyou! Your Order will be delivered in few days",
@@ -246,6 +276,7 @@ async function DeleteCartMany(id) {
       swal("Something Went Wrong", "", "error");
     }
   } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     console.log(error);
   }
 }

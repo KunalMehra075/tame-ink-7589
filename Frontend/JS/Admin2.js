@@ -1,7 +1,11 @@
 let baseURL = "http://localhost:4500";
 let Initiator = JSON.parse(sessionStorage.getItem("current-user"));
+window.addEventListener("load", () => {
+  preloader.style.display = "none";
+});
+
 if (!Initiator || Initiator.role !== "Admin") {
-  // "warning","success","error","info"
+  spinner.style.display = "block"; //!Spinner
   swal("Admin's ID not found", "Please Login Again", "info");
   setTimeout(() => {
     window.location.href = "index.html";
@@ -10,6 +14,7 @@ if (!Initiator || Initiator.role !== "Admin") {
 
 let AddProductForm = document.getElementById("addproductform");
 AddProductForm.addEventListener("submit", (e) => {
+  spinner.style.display = "none"; //!Spinner
   e.preventDefault();
   let prp = +AddProductForm.price.value;
   let dis = +AddProductForm.discount.value;
@@ -45,6 +50,7 @@ AddProductForm.addEventListener("submit", (e) => {
   AddProduct(product);
 });
 async function AddProduct(product) {
+  spinner.style.display = "block"; //!Spinner
   try {
     let res = await fetch(`${baseURL}/products/create`, {
       method: "POST",
@@ -56,10 +62,104 @@ async function AddProduct(product) {
     });
     let data = await res.json();
     console.log(data);
-    // "warning","success","error","info"
+    spinner.style.display = "none"; //!Spinner
     swal("Added Product", "Product Added Successfully!", "success");
   } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     swal("Something Went Wrong", "", "warning");
+    console.log(error);
+  }
+}
+
+AllEditProducts();
+async function AllEditProducts() {
+  spinner.style.display = "block"; //!Spinner
+  try {
+    let res = await fetch(`${baseURL}/products/`);
+    let data = await res.json();
+    RenderEditProducts(data.Products);
+  } catch (error) {
+    spinner.style.display = "none"; //!Spinner
+    console.log(error);
+  }
+}
+function RenderEditProducts(data) {
+  spinner.style.display = "block"; //!Spinner
+  let Editscontainer = document.getElementById("ThreeCardContainerX");
+  if (data.length == 0) {
+    Editscontainer.innerHTML = `
+    <p style="color: red;font-weight:600px;font-size:20px">No Products Found...</p>`;
+
+    spinner.style.display = "none";
+    return;
+  }
+  data = data
+    .map((item) => {
+      return `
+ 
+    <div class="ChildBoxes">
+        <div class="childimage">
+          <img width="100px" src="${item.thumbnail}" alt="" />
+        </div>
+        <div class="details">
+          <label class="titleX">${item.title.substring(0, 50)}</label><br />
+          <label class="brandX">${item.brand}</label><br />
+          <label class="priceX">₹${item.price}</label>
+          <label class="cutprX">₹${item.price + 1000}</label><br />
+          <label class="typeX">${item.type}</label>
+          <label class="discountX">${item.discount}% Off</label><br />
+          <label class="ratingX">Rating : ${item.rating} ⭐</label><br />
+          <button data-id=${item._id} class="EditProductX">Edit</button>
+          <button data-id=${item._id} class="DeleteProductX">Delete</button>
+        </div>
+      </div>
+    
+    `;
+    })
+    .join("");
+  Editscontainer.innerHTML = data;
+  let AllEditors = document.getElementsByClassName("EditProductX");
+  let AllDeletors = document.getElementsByClassName("DeleteProductX");
+  for (const editt of AllEditors) {
+    editt.addEventListener("click", (e) => {
+      spinner.style.display = "block"; //!Spinner
+      console.log("Edit", e.target.dataset.id);
+    });
+  }
+  for (const deletet of AllDeletors) {
+    deletet.addEventListener("click", (e) => {
+      spinner.style.display = "block"; //!Spinner
+      console.log("Delete", e.target.dataset.id);
+    });
+  }
+
+  spinner.style.display = "none"; //!Spinner
+}
+
+let productsearch = document.getElementById("productsearch");
+let EditTypeSelector = document.getElementById("EditTypeSelector");
+let regexx = productsearch.value;
+let typee = EditTypeSelector.value || "FURNITURE";
+productsearch.addEventListener("input", () => {
+  spinner.style.display = "block"; //!Spinner
+  let regexx = productsearch.value;
+  let typee = EditTypeSelector.value || "HOME DECOR";
+  FetchQueryProducts(typee, regexx);
+});
+EditTypeSelector.addEventListener("change", () => {
+  spinner.style.display = "block"; //!Spinner
+  let typee = EditTypeSelector.value || "FURNITURE";
+  FetchQueryProducts(typee);
+});
+async function FetchQueryProducts(query, title = "", sort = 1, discount = 0) {
+  try {
+    let res = await fetch(
+      `${baseURL}/products/query?type=${query}&search=${title}&sort=${sort}&discount=${discount}`
+    );
+    let data = await res.json();
+    RenderEditProducts(data.Products);
+  } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     console.log(error);
   }
 }

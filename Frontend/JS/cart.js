@@ -1,7 +1,9 @@
 let Initiator = JSON.parse(sessionStorage.getItem("current-user"));
 let CartItems = [];
 GetCartItems(Initiator._id);
+
 async function GetCartItems(id) {
+  spinner.style.display = "block"; //!Spinner
   try {
     let res = await fetch(`${baseURL}/carts?UserID=${id}`);
     let data = await res.json();
@@ -9,15 +11,16 @@ async function GetCartItems(id) {
     CartItems = [...data.Items];
     UpdateTotal(CartItems);
   } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     console.log(error);
   }
 }
-localStorage.setItem("TotalPrice", 0);
 UpdateTotal(CartItems);
 
 //? <!----------------------------------- <Updating Total Function> ----------------------------------------------->
 
 function UpdateTotal(cartitems) {
+  spinner.style.display = "block"; //!Spinner
   let total = 0;
   let totalitems = 0;
   for (const item of cartitems) {
@@ -32,14 +35,23 @@ function UpdateTotal(cartitems) {
   total1.innerText = `₹${total}`;
   Total.innerText = `₹${total}`;
   totalitms.innerText = totalitems;
+  spinner.style.display = "none"; //!Spinner
 }
 
 // }
 //? <!-------------------------------------<ShowData on Checkout Page> ----------------------------------------------->
 
 function RenderCartData(data) {
+  spinner.style.display = "block"; //!Spinner
   let productList = document.querySelector(".showproducts");
-  console.log(data);
+  if (data.length === 0) {
+    productList.innerHTML = ` <label>Your Basket is Empty..</label>
+  <a href="AllProducts.html"
+    ><button class="EmptyCart">Lets look for Products-></button></a
+  >`;
+    spinner.style.display = "none"; //!Spinner
+    return;
+  }
   let newArray = data.map((item) => {
     return `
         <div class="product-card">
@@ -86,6 +98,7 @@ function RenderCartData(data) {
   let allremove = document.querySelectorAll("#remove");
   for (const remove of allremove) {
     remove.addEventListener("click", function (event) {
+      spinner.style.display = "block"; //!Spinner
       let id = event.target.dataset.id;
       swal({
         title: "Remove Item from cart?",
@@ -95,8 +108,10 @@ function RenderCartData(data) {
         dangerMode: true,
       }).then((willDelete) => {
         if (willDelete) {
+          spinner.style.display = "none"; //!Spinner
           RemoveProductCrt(id);
         } else {
+          spinner.style.display = "none"; //!Spinner
           swal("Item is in the Cart");
         }
       });
@@ -106,6 +121,7 @@ function RenderCartData(data) {
   let AllView = document.querySelectorAll("#view");
   for (const view of AllView) {
     view.addEventListener("click", function (e) {
+      spinner.style.display = "block"; //!Spinner
       setTimeout(() => {
         window.location.href = "AllProducts.html";
       }, 500);
@@ -117,8 +133,11 @@ function RenderCartData(data) {
   let Allminus = document.querySelectorAll("#minus");
   for (const minus of Allminus) {
     minus.addEventListener("click", (event) => {
-      if (event.target.nextElementSibling.value == 1) return;
-      else {
+      spinner.style.display = "block"; //!Spinner
+      if (event.target.nextElementSibling.value == 1) {
+        spinner.style.display = "none"; //!Spinner
+        return;
+      } else {
         let id = event.target.dataset.id;
         event.target.nextElementSibling.value--;
         let qty = +event.target.nextElementSibling.value;
@@ -131,13 +150,14 @@ function RenderCartData(data) {
   let Allplus = document.querySelectorAll("#plus");
   for (const plus of Allplus) {
     plus.addEventListener("click", (event) => {
-      // console.log(event);
+      spinner.style.display = "block"; //!Spinner
       if (event.target.previousElementSibling.value > 10) {
         swal(
           "Cannot add more products!",
           "Please order in bulk to add more products!",
           "error"
         );
+        spinner.style.display = "none"; //!Spinner
         return;
       }
       let id = event.target.dataset.id;
@@ -150,24 +170,29 @@ function RenderCartData(data) {
   // .Check Delivery
   let check = document.getElementById("checkbutton");
   check.addEventListener("click", () => {
+    spinner.style.display = "block"; //!Spinner
     let pincode = document.getElementById("delievery-input").value;
     swal(
       "Bingo!",
       `These products are available in your locations! \n Pincode :${pincode}`,
       "success"
     );
+    spinner.style.display = "none"; //!Spinner
     document.getElementById("delievery-input").value = "";
   });
 
   //? <!----------------------------------------------- < extra> ----------------------------------------------->
 
   let checkout = document.getElementById("Checkout");
+
   checkout.addEventListener("click", () => {
     window.location.href = "checkout.html";
   });
+  spinner.style.display = "none"; //!Spinner
 }
 
 async function ChangeProductQty(id, qty) {
+  spinner.style.display = "block"; //!Spinner
   let payload = {
     Quantity: +qty,
   };
@@ -184,10 +209,12 @@ async function ChangeProductQty(id, qty) {
     console.log(data);
     GetCartItems(Initiator._id);
   } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     console.log(error);
   }
 }
 async function RemoveProductCrt(id) {
+  spinner.style.display = "block"; //!Spinner
   try {
     let res = await fetch(`${baseURL}/carts/delete/${id}`, {
       method: "DELETE",
@@ -197,11 +224,10 @@ async function RemoveProductCrt(id) {
     });
     let data = await res.json();
     console.log(data);
-    // "warning","success","error","info"
     swal("Deleted!", "Product Removed From Cart", "info");
-
     GetCartItems(Initiator._id);
   } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     console.log(error);
   }
 }
