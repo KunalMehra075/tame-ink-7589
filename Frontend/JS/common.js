@@ -490,6 +490,7 @@ function autocomplete(inp, arr) {
   var currentFocus;
   if (!inp) return;
   inp.addEventListener("input", function (e) {
+    spinner.style.display = "block"; //?Spinner
     var a,
       b,
       i,
@@ -518,24 +519,24 @@ function autocomplete(inp, arr) {
         b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
         b.addEventListener("click", function (e) {
           inp.value = this.getElementsByTagName("input")[0].value;
-
           closeAllLists();
         });
+
         a.appendChild(b);
+        spinner.style.display = "none"; //?Spinner
       }
     }
   });
 
   inp.addEventListener("keydown", function (e) {
+    spinner.style.display = "block"; //?Spinner
     var x = document.getElementById(this.id + "autocomplete-list");
     if (x) x = x.getElementsByTagName("div");
     if (e.keyCode == 40) {
       currentFocus++;
-
       addActive(x);
     } else if (e.keyCode == 38) {
       currentFocus--;
-
       addActive(x);
     } else if (e.keyCode == 13) {
       e.preventDefault();
@@ -545,33 +546,33 @@ function autocomplete(inp, arr) {
     }
   });
   function addActive(x) {
-    /*a function to classify an item as "active":*/
-    if (!x) return false;
-    /*start by removing the "active" class on all items:*/
+    if (!x) {
+      spinner.style.display = "none"; //?Spinner
+      return false;
+    }
     removeActive(x);
     if (currentFocus >= x.length) currentFocus = 0;
     if (currentFocus < 0) currentFocus = x.length - 1;
-    /*add class "autocomplete-active":*/
     x[currentFocus].classList.add("autocomplete-active");
+    spinner.style.display = "none"; //?Spinner
   }
   function removeActive(x) {
-    /*a function to remove the "active" class from all autocomplete items:*/
     for (var i = 0; i < x.length; i++) {
       x[i].classList.remove("autocomplete-active");
     }
+    spinner.style.display = "none"; //?Spinner
   }
   function closeAllLists(elmnt) {
-    /*close all autocomplete lists in the document,
-  except the one passed as an argument:*/
     var x = document.getElementsByClassName("autocomplete-items");
     for (var i = 0; i < x.length; i++) {
       if (elmnt != x[i] && elmnt != inp) {
         x[i].parentNode.removeChild(x[i]);
       }
     }
+    spinner.style.display = "none"; //?Spinner
   }
-  /*execute a function when someone clicks in the document:*/
   document.addEventListener("click", function (e) {
+    spinner.style.display = "block"; //?Spinner
     closeAllLists(e.target);
   });
 }

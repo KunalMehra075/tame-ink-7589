@@ -29,6 +29,7 @@ window.addEventListener("load", () => {
 });
 
 async function fetchproducts(query) {
+  spinner.style.display = "block";
   try {
     let res = await fetch(`${baseURL}/products?type=${query}`);
     let data = await res.json();
@@ -38,6 +39,7 @@ async function fetchproducts(query) {
   }
 }
 function RenderData(products) {
+  spinner.style.display = "block"; //!Spinner
   Container.innerHTML = "";
   products = products
     .map((item) => {
@@ -90,6 +92,8 @@ function RenderData(products) {
   let addtocartbtns = document.getElementsByClassName("addtocartX");
   for (const button of addtocartbtns) {
     button.addEventListener("click", (e) => {
+      spinner.style.display = "block"; //!Spinner
+
       if (!initiator) {
         swal("Please Login First!", "No user currently logged in", "warning");
         return;
@@ -101,6 +105,8 @@ function RenderData(products) {
 
   for (const box of ChildBoxes) {
     box.addEventListener("click", (e) => {
+      spinner.style.display = "block"; //!Spinner
+
       sessionStorage.setItem("oneproduct", e.target.dataset.id);
       if (e.target.matches("[Add-To-Favorite]")) {
         if (!initiator) {
@@ -117,18 +123,22 @@ function RenderData(products) {
       }
     });
   }
+  spinner.style.display = "none"; //!Spinner
 }
 
 //? <!----------------------------------------------- < For Cart> ----------------------------------------------->
 
 function AddToCartFunction(UserID, productID) {
+  spinner.style.display = "block"; //!Spinner
   if (!initiator) {
     swal("Please Login First", "No user in", "info");
+    spinner.style.display = "block"; //!Spinner
     return;
   }
   FetchProductForCart(productID, UserID);
 }
 async function FetchProductForCart(id, userid) {
+  spinner.style.display = "block"; //!Spinner
   try {
     let res = await fetch(`${baseURL}/products?_id=${id}`);
     let data = await res.json();
@@ -138,6 +148,7 @@ async function FetchProductForCart(id, userid) {
   }
 }
 async function AddtoCart(product, userid) {
+  spinner.style.display = "block"; //!Spinner
   let obj = {
     title: product.title,
     type: product.type,
@@ -167,18 +178,20 @@ async function AddtoCart(product, userid) {
 
     if (data.exist) {
       swal("Already in cart!", "Product already added in cart!", "info");
+      spinner.style.display = "none"; //!Spinner
     } else {
       swal("Added to Cart!", "Product Added Successfully!", "success");
+      spinner.style.display = "none"; //!Spinner
       FetchCartProducts(user._id);
     }
   } catch (error) {
     console.log(error);
   }
 }
-
 //? <!----------------------------------------------- < For Favorites> ----------------------------------------------->
 
 async function FetchProductForFav(id, userid) {
+  spinner.style.display = "block"; //!Spinner
   try {
     let res = await fetch(`${baseURL}/products?_id=${id}`);
     let data = await res.json();
@@ -220,6 +233,7 @@ async function AddtoFavorite(product, userid) {
         "Product already added in the Favorites.",
         "info"
       );
+      spinner.style.display = "none"; //!Spinner
     } else {
       swal(
         "Added to Favorites.",
@@ -229,27 +243,32 @@ async function AddtoFavorite(product, userid) {
       FetchFavorites(user._id);
     }
   } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     console.log(error);
   }
 }
 
 htl.addEventListener("click", () => {
+  spinner.style.display = "block"; //!Spinner
   htl.classList.add("htlid");
   lth.classList.remove("htlid");
   let title = productsearch.value;
   FetchProductRegex(query, title, -1);
 });
 lth.addEventListener("click", () => {
+  spinner.style.display = "block"; //!Spinner
   htl.classList.remove("htlid");
   lth.classList.add("htlid");
   let title = productsearch.value;
   FetchProductRegex(query, title, 1);
 });
 productsearch.addEventListener("input", () => {
+  spinner.style.display = "block"; //!Spinner
   let title = productsearch.value;
   FetchProductRegex(query, title, 1);
 });
 discountfield.addEventListener("change", () => {
+  spinner.style.display = "block"; //!Spinner
   let fields = document.getElementsByName("DISCOUNT");
   fields.forEach((item) => {
     if (item.checked) {
@@ -259,6 +278,7 @@ discountfield.addEventListener("change", () => {
 });
 
 async function FetchProductRegex(query, title = "", sort = 1, discount = 0) {
+  spinner.style.display = "block"; //!Spinner
   try {
     let res = await fetch(
       `${baseURL}/products/query?type=${query}&search=${title}&sort=${sort}&discount=${discount}`
@@ -266,6 +286,7 @@ async function FetchProductRegex(query, title = "", sort = 1, discount = 0) {
     let data = await res.json();
     RenderData(data.Products);
   } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     console.log(error);
   }
 }

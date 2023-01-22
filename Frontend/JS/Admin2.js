@@ -5,6 +5,7 @@ window.addEventListener("load", () => {
 });
 
 if (!Initiator || Initiator.role !== "Admin") {
+  spinner.style.display = "block"; //!Spinner
   swal("Admin's ID not found", "Please Login Again", "info");
   setTimeout(() => {
     window.location.href = "index.html";
@@ -13,7 +14,7 @@ if (!Initiator || Initiator.role !== "Admin") {
 
 let AddProductForm = document.getElementById("addproductform");
 AddProductForm.addEventListener("submit", (e) => {
-  spinner.style.display = "block";
+  spinner.style.display = "none"; //!Spinner
   e.preventDefault();
   let prp = +AddProductForm.price.value;
   let dis = +AddProductForm.discount.value;
@@ -49,6 +50,7 @@ AddProductForm.addEventListener("submit", (e) => {
   AddProduct(product);
 });
 async function AddProduct(product) {
+  spinner.style.display = "block"; //!Spinner
   try {
     let res = await fetch(`${baseURL}/products/create`, {
       method: "POST",
@@ -60,9 +62,10 @@ async function AddProduct(product) {
     });
     let data = await res.json();
     console.log(data);
-    spinner.style.display = "none";
+    spinner.style.display = "none"; //!Spinner
     swal("Added Product", "Product Added Successfully!", "success");
   } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     swal("Something Went Wrong", "", "warning");
     console.log(error);
   }
@@ -70,16 +73,18 @@ async function AddProduct(product) {
 
 AllEditProducts();
 async function AllEditProducts() {
-  spinner.style.display = "block";
+  spinner.style.display = "block"; //!Spinner
   try {
     let res = await fetch(`${baseURL}/products/`);
     let data = await res.json();
     RenderEditProducts(data.Products);
   } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     console.log(error);
   }
 }
 function RenderEditProducts(data) {
+  spinner.style.display = "block"; //!Spinner
   let Editscontainer = document.getElementById("ThreeCardContainerX");
   if (data.length == 0) {
     Editscontainer.innerHTML = `
@@ -117,16 +122,18 @@ function RenderEditProducts(data) {
   let AllDeletors = document.getElementsByClassName("DeleteProductX");
   for (const editt of AllEditors) {
     editt.addEventListener("click", (e) => {
+      spinner.style.display = "block"; //!Spinner
       console.log("Edit", e.target.dataset.id);
     });
   }
   for (const deletet of AllDeletors) {
     deletet.addEventListener("click", (e) => {
+      spinner.style.display = "block"; //!Spinner
       console.log("Delete", e.target.dataset.id);
     });
   }
 
-  spinner.style.display = "none";
+  spinner.style.display = "none"; //!Spinner
 }
 
 let productsearch = document.getElementById("productsearch");
@@ -134,13 +141,13 @@ let EditTypeSelector = document.getElementById("EditTypeSelector");
 let regexx = productsearch.value;
 let typee = EditTypeSelector.value || "FURNITURE";
 productsearch.addEventListener("input", () => {
-  spinner.style.display = "block";
+  spinner.style.display = "block"; //!Spinner
   let regexx = productsearch.value;
   let typee = EditTypeSelector.value || "HOME DECOR";
   FetchQueryProducts(typee, regexx);
 });
 EditTypeSelector.addEventListener("change", () => {
-  spinner.style.display = "block";
+  spinner.style.display = "block"; //!Spinner
   let typee = EditTypeSelector.value || "FURNITURE";
   FetchQueryProducts(typee);
 });
@@ -152,6 +159,7 @@ async function FetchQueryProducts(query, title = "", sort = 1, discount = 0) {
     let data = await res.json();
     RenderEditProducts(data.Products);
   } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     console.log(error);
   }
 }

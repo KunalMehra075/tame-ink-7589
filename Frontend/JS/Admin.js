@@ -19,104 +19,10 @@ let img3 = document.getElementById("img2");
 let sxm1 = document.getElementById("sxmimg1");
 let sxm2 = document.getElementById("sxmimg2");
 let sxm3 = document.getElementById("sxmimg3");
-
-window.addEventListener("load", () => {
-  spinner.style.display = "block";
-  removefn();
-  btn6.classList.add("activenav");
-  setTimeout(() => {
-    hex1.style.opacity = "0.4";
-    hex2.style.opacity = "0.4";
-  }, 500);
-  setTimeout(() => {
-    adminimg.style.opacity = "1";
-  }, 700);
-  setTimeout(() => {
-    welcomehead.style.opacity = "1";
-  }, 900);
-  setTimeout(() => {
-    welcomesubhead.style.opacity = "1";
-  }, 1000);
-  spinner.style.display = "none";
-});
-
-img1.addEventListener("input", () => {
-  sxm1.setAttribute("src", img1.value);
-});
-img2.addEventListener("input", () => {
-  sxm2.setAttribute("src", img2.value);
-});
-
-img3.addEventListener("input", () => {
-  sxm3.setAttribute("src", img3.value);
-});
-
-function removefn() {
-  for (let i = 0; i < allnavs.length; i++) {
-    allnavs[i].classList.remove("activenav");
-  }
-  for (let i = 0; i < allsects.length; i++) {
-    allsects[i].style.display = "none";
-  }
-}
-btn0.addEventListener("click", () => {
-  removefn();
-  btn0.classList.add("activenav");
-  welcome.style.display = "none";
-  allsects[0].style.display = "block";
-});
-btn1.addEventListener("click", () => {
-  removefn();
-  btn1.classList.add("activenav");
-  welcome.style.display = "none";
-  allsects[1].style.display = "block";
-});
-btn2.addEventListener("click", () => {
-  removefn();
-  btn2.classList.add("activenav");
-  welcome.style.display = "none";
-  allsects[2].style.display = "block";
-});
-btn3.addEventListener("click", () => {
-  removefn();
-  btn3.classList.add("activenav");
-  welcome.style.display = "none";
-  allsects[3].style.display = "block";
-});
-btn4.addEventListener("click", () => {
-  removefn();
-  btn4.classList.add("activenav");
-  welcome.style.display = "none";
-  allsects[4].style.display = "block";
-});
-btn5.addEventListener("click", () => {
-  removefn();
-  btn5.classList.add("activenav");
-  welcome.style.display = "none";
-  allsects[5].style.display = "block";
-});
-btn6.addEventListener("click", () => {
-  removefn();
-  welcome.style.display = "flex";
-  btn6.classList.add("activenav");
-});
-
-//? <!----------------------------------------------- < Common.js> ----------------------------------------------->
-
 let spinner = document.getElementById("spinner");
 var navbar = document.getElementById("stickynav");
 var sticky = navbar.offsetTop;
-
-function navbarstick() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky");
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-
 //? <!----------------------------------------------- < offcanvas.js> ----------------------------------------------->
-
 let user = JSON.parse(sessionStorage.getItem("current-user"));
 let UserPresent = document.getElementById("UserPresent");
 let canvasname = document.getElementById("canvasname");
@@ -132,17 +38,132 @@ let UserCartDetails = document.getElementById("UserCartDetails");
 let UserFavoriteDivs = document.getElementById("UserFavoriteDivs");
 let ADR = document.getElementById("AdminRedirect");
 ADR.addEventListener("click", () => {
+  window.addEventListener("load", () => {
+    spinner.style.display = "block"; //!Spinner
+    removefn();
+    btn6.classList.add("activenav");
+    setTimeout(() => {
+      hex1.style.opacity = "0.4";
+      hex2.style.opacity = "0.4";
+    }, 500);
+    setTimeout(() => {
+      adminimg.style.opacity = "1";
+    }, 700);
+    setTimeout(() => {
+      welcomehead.style.opacity = "1";
+    }, 900);
+    setTimeout(() => {
+      welcomesubhead.style.opacity = "1";
+    }, 1000);
+    spinner.style.display = "none"; //!Spinner
+  });
+
+  img1.addEventListener("input", () => {
+    spinner.style.display = "block"; //!Spinner
+    sxm1.setAttribute("src", img1.value);
+    spinner.style.display = "none"; //!Spinner
+  });
+  img2.addEventListener("input", () => {
+    spinner.style.display = "block"; //!Spinner
+    sxm2.setAttribute("src", img2.value);
+    spinner.style.display = "none"; //!Spinner
+  });
+
+  img3.addEventListener("input", () => {
+    spinner.style.display = "block"; //!Spinner
+    sxm3.setAttribute("src", img3.value);
+    spinner.style.display = "none"; //!Spinner
+  });
+
+  function removefn() {
+    spinner.style.display = "block"; //!Spinner
+    for (let i = 0; i < allnavs.length; i++) {
+      allnavs[i].classList.remove("activenav");
+    }
+    for (let i = 0; i < allsects.length; i++) {
+      allsects[i].style.display = "none";
+    }
+    spinner.style.display = "none"; //!Spinner
+  }
+  btn0.addEventListener("click", () => {
+    spinner.style.display = "block"; //!Spinner
+    removefn();
+    btn0.classList.add("activenav");
+    welcome.style.display = "none";
+    allsects[0].style.display = "block";
+    spinner.style.display = "none"; //!Spinner
+  });
+  btn1.addEventListener("click", () => {
+    spinner.style.display = "block"; //!Spinner
+    removefn();
+    btn1.classList.add("activenav");
+    welcome.style.display = "none";
+    allsects[1].style.display = "block";
+    spinner.style.display = "none"; //!Spinner
+  });
+  btn2.addEventListener("click", () => {
+    spinner.style.display = "block"; //!Spinner
+    removefn();
+    btn2.classList.add("activenav");
+    welcome.style.display = "none";
+    allsects[2].style.display = "block";
+    spinner.style.display = "none"; //!Spinner
+  });
+  btn3.addEventListener("click", () => {
+    spinner.style.display = "block"; //!Spinner
+    removefn();
+    btn3.classList.add("activenav");
+    welcome.style.display = "none";
+    allsects[3].style.display = "block";
+    spinner.style.display = "none"; //!Spinner
+  });
+  btn4.addEventListener("click", () => {
+    spinner.style.display = "block"; //!Spinner
+    removefn();
+    btn4.classList.add("activenav");
+    welcome.style.display = "none";
+    allsects[4].style.display = "block";
+    spinner.style.display = "none"; //!Spinner
+  });
+  btn5.addEventListener("click", () => {
+    spinner.style.display = "block"; //!Spinner
+    removefn();
+    btn5.classList.add("activenav");
+    welcome.style.display = "none";
+    allsects[5].style.display = "block";
+    spinner.style.display = "none"; //!Spinner
+  });
+  btn6.addEventListener("click", () => {
+    spinner.style.display = "block"; //!Spinner
+    removefn();
+    welcome.style.display = "flex";
+    btn6.classList.add("activenav");
+    spinner.style.display = "none"; //!Spinner
+  });
+
+  //? <!----------------------------------------------- < Common.js> ----------------------------------------------->
+
+  function navbarstick() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+
   window.location.href = "admin.html";
 });
 window.addEventListener("load", () => {
+  spinner.style.display = "block"; //!Spinner
   canvasname.innerHTML = user.name;
   canvasemail.innerHTML = user.email;
   canvasid.innerHTML = `ID.- ${user._id}`;
   UserPresent.style.display = "block";
+  spinner.style.display = "none"; //!Spinner
   RenderOFFCANVAS(user);
 });
 logout.addEventListener("click", () => {
-  spinner.style.display = "block";
+  spinner.style.display = "block"; //!Spinner
   swal({
     title: "Logout?",
     text: "You will be logged out of your account",
@@ -153,15 +174,17 @@ logout.addEventListener("click", () => {
     if (willDelete) {
       sessionStorage.clear();
       localStorage.clear();
-      spinner.style.display = "none";
+      spinner.style.display = "none"; //!Spinner
       window.location.href = "index.html";
     } else {
+      spinner.style.display = "none"; //!Spinner
       return;
     }
   });
 });
 
 function RenderOFFCANVAS(user) {
+  spinner.style.display = "block"; //!Spinner
   spinner.style.display = "block";
   UserNameX.innerText = user.name;
   UserEmail.innerText = user.email;
@@ -171,33 +194,36 @@ function RenderOFFCANVAS(user) {
   if (user.role === "Admin") {
     ADR.style.display = "block";
   }
+  spinner.style.display = "none"; //!Spinner
   FetchCartProducts(user._id);
   FetchFavorites(user._id);
 }
 //! <!----------------------------------------------- < Login Section> ----------------------------------------------->
 
 async function FetchCartProducts(userid) {
-  spinner.style.display = "block";
+  spinner.style.display = "block"; //!Spinner
   try {
     let res = await fetch(`${baseURL}/carts?UserID=${userid}`);
     let data = await res.json();
     RenderOffCanvasCart(data.Items);
   } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     console.log(error);
   }
 }
 async function FetchFavorites(userid) {
-  spinner.style.display = "block";
+  spinner.style.display = "block"; //!Spinner
   try {
     let res = await fetch(`${baseURL}/favorites?UserID=${userid}`);
     let data = await res.json();
     RenderOffCanvasFav(data.Items);
   } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     console.log(error);
   }
 }
 function RenderOffCanvasCart(products) {
-  spinner.style.display = "block";
+  spinner.style.display = "block"; //!Spinner
   if (products.length === 0) {
     UserCartDetails.innerHTML = `
     <div id="Fetchcanvascart">
@@ -216,7 +242,7 @@ function RenderOffCanvasCart(products) {
     Proceed to Cart</button></a>
    </div>
 `;
-    spinner.style.display = "none";
+    spinner.style.display = "none"; //!Spinner
     return;
   }
 
@@ -282,16 +308,16 @@ function RenderOffCanvasCart(products) {
 
     
     `;
-  spinner.style.display = "none";
+  spinner.style.display = "none"; //!Spinner
 }
 function RenderOffCanvasFav(products) {
-  spinner.style.display = "block";
+  spinner.style.display = "block"; //!Spinner
   if (products.length === 0) {
     UserFavoriteDivs.innerHTML = `
     <center>No Favorites </center>
     <hr>
 `;
-    spinner.style.display = "none";
+    spinner.style.display = "none"; //!Spinner
     return;
   }
   products = products
@@ -341,6 +367,8 @@ function RenderOffCanvasFav(products) {
   let FavRemovers = document.getElementsByClassName("FavRemovers");
   for (const frvs of FavRemovers) {
     frvs.addEventListener("click", (e) => {
+      spinner.style.display = "block"; //!Spinner
+      spinner.style.display = "none"; //!Spinner
       swal({
         title: "Remove From Fav?",
         text: "Item will be removed from Favorites",
@@ -351,15 +379,16 @@ function RenderOffCanvasFav(products) {
         if (willDelete) {
           DeleteFav(e.target.dataset.id);
         } else {
+          spinner.style.display = "none"; //!Spinner
           swal("Item is in favorites");
         }
       });
     });
   }
-  spinner.style.display = "none";
+  spinner.style.display = "none"; //!Spinner
 }
 async function DeleteFav(id) {
-  spinner.style.display = "block";
+  spinner.style.display = "block"; //!Spinner
   try {
     let res = await fetch(`${baseURL}/favorites/delete/${id}`, {
       method: "DELETE",
@@ -369,9 +398,11 @@ async function DeleteFav(id) {
     });
     let data = await res.json();
     console.log(data);
+    spinner.style.display = "none"; //!Spinner
     swal("Removed from Favorites", "", "success");
     FetchFavorites(user._id);
   } catch (error) {
+    spinner.style.display = "none"; //!Spinner
     console.log(error);
   }
 }
