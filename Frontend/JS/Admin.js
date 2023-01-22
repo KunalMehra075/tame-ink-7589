@@ -37,122 +37,124 @@ let UserRole = document.getElementById("UserRole");
 let UserCartDetails = document.getElementById("UserCartDetails");
 let UserFavoriteDivs = document.getElementById("UserFavoriteDivs");
 let ADR = document.getElementById("AdminRedirect");
+
 ADR.addEventListener("click", () => {
-  window.addEventListener("load", () => {
-    spinner.style.display = "block"; //!Spinner
-    removefn();
-    btn6.classList.add("activenav");
-    setTimeout(() => {
-      hex1.style.opacity = "0.4";
-      hex2.style.opacity = "0.4";
-    }, 500);
-    setTimeout(() => {
-      adminimg.style.opacity = "1";
-    }, 700);
-    setTimeout(() => {
-      welcomehead.style.opacity = "1";
-    }, 900);
-    setTimeout(() => {
-      welcomesubhead.style.opacity = "1";
-    }, 1000);
-    spinner.style.display = "none"; //!Spinner
-  });
-
-  img1.addEventListener("input", () => {
-    spinner.style.display = "block"; //!Spinner
-    sxm1.setAttribute("src", img1.value);
-    spinner.style.display = "none"; //!Spinner
-  });
-  img2.addEventListener("input", () => {
-    spinner.style.display = "block"; //!Spinner
-    sxm2.setAttribute("src", img2.value);
-    spinner.style.display = "none"; //!Spinner
-  });
-
-  img3.addEventListener("input", () => {
-    spinner.style.display = "block"; //!Spinner
-    sxm3.setAttribute("src", img3.value);
-    spinner.style.display = "none"; //!Spinner
-  });
-
-  function removefn() {
-    spinner.style.display = "block"; //!Spinner
-    for (let i = 0; i < allnavs.length; i++) {
-      allnavs[i].classList.remove("activenav");
-    }
-    for (let i = 0; i < allsects.length; i++) {
-      allsects[i].style.display = "none";
-    }
-    spinner.style.display = "none"; //!Spinner
-  }
-  btn0.addEventListener("click", () => {
-    spinner.style.display = "block"; //!Spinner
-    removefn();
-    btn0.classList.add("activenav");
-    welcome.style.display = "none";
-    allsects[0].style.display = "block";
-    spinner.style.display = "none"; //!Spinner
-  });
-  btn1.addEventListener("click", () => {
-    spinner.style.display = "block"; //!Spinner
-    removefn();
-    btn1.classList.add("activenav");
-    welcome.style.display = "none";
-    allsects[1].style.display = "block";
-    spinner.style.display = "none"; //!Spinner
-  });
-  btn2.addEventListener("click", () => {
-    spinner.style.display = "block"; //!Spinner
-    removefn();
-    btn2.classList.add("activenav");
-    welcome.style.display = "none";
-    allsects[2].style.display = "block";
-    spinner.style.display = "none"; //!Spinner
-  });
-  btn3.addEventListener("click", () => {
-    spinner.style.display = "block"; //!Spinner
-    removefn();
-    btn3.classList.add("activenav");
-    welcome.style.display = "none";
-    allsects[3].style.display = "block";
-    spinner.style.display = "none"; //!Spinner
-  });
-  btn4.addEventListener("click", () => {
-    spinner.style.display = "block"; //!Spinner
-    removefn();
-    btn4.classList.add("activenav");
-    welcome.style.display = "none";
-    allsects[4].style.display = "block";
-    spinner.style.display = "none"; //!Spinner
-  });
-  btn5.addEventListener("click", () => {
-    spinner.style.display = "block"; //!Spinner
-    removefn();
-    btn5.classList.add("activenav");
-    welcome.style.display = "none";
-    allsects[5].style.display = "block";
-    spinner.style.display = "none"; //!Spinner
-  });
-  btn6.addEventListener("click", () => {
-    spinner.style.display = "block"; //!Spinner
-    removefn();
-    welcome.style.display = "flex";
-    btn6.classList.add("activenav");
-    spinner.style.display = "none"; //!Spinner
-  });
-
-  //? <!----------------------------------------------- < Common.js> ----------------------------------------------->
-
-  function navbarstick() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky");
-    } else {
-      navbar.classList.remove("sticky");
-    }
-  }
-
   window.location.href = "admin.html";
 });
+
+window.addEventListener("load", () => {
+  spinner.style.display = "block"; //!Spinner
+  removefn();
+  btn6.classList.add("activenav");
+  setTimeout(() => {
+    hex1.style.opacity = "0.4";
+    hex2.style.opacity = "0.4";
+  }, 500);
+  setTimeout(() => {
+    adminimg.style.opacity = "1";
+  }, 700);
+  setTimeout(() => {
+    welcomehead.style.opacity = "1";
+  }, 900);
+  setTimeout(() => {
+    welcomesubhead.style.opacity = "1";
+  }, 1000);
+  spinner.style.display = "none"; //!Spinner
+});
+
+img1.addEventListener("input", () => {
+  spinner.style.display = "block"; //!Spinner
+  sxm1.setAttribute("src", img1.value);
+  spinner.style.display = "none"; //!Spinner
+});
+img2.addEventListener("input", () => {
+  spinner.style.display = "block"; //!Spinner
+  sxm2.setAttribute("src", img2.value);
+  spinner.style.display = "none"; //!Spinner
+});
+
+img3.addEventListener("input", () => {
+  spinner.style.display = "block"; //!Spinner
+  sxm3.setAttribute("src", img3.value);
+  spinner.style.display = "none"; //!Spinner
+});
+
+function removefn() {
+  spinner.style.display = "block"; //!Spinner
+  for (let i = 0; i < allnavs.length; i++) {
+    allnavs[i].classList.remove("activenav");
+  }
+  for (let i = 0; i < allsects.length; i++) {
+    allsects[i].style.display = "none";
+  }
+  spinner.style.display = "none"; //!Spinner
+}
+btn0.addEventListener("click", () => {
+  spinner.style.display = "block"; //!Spinner
+  removefn();
+  btn0.classList.add("activenav");
+  welcome.style.display = "none";
+  allsects[0].style.display = "block";
+  spinner.style.display = "none"; //!Spinner
+});
+btn1.addEventListener("click", () => {
+  spinner.style.display = "block"; //!Spinner
+  removefn();
+  btn1.classList.add("activenav");
+  welcome.style.display = "none";
+  allsects[1].style.display = "block";
+  spinner.style.display = "none"; //!Spinner
+});
+btn2.addEventListener("click", () => {
+  spinner.style.display = "block"; //!Spinner
+  removefn();
+  btn2.classList.add("activenav");
+  welcome.style.display = "none";
+  allsects[2].style.display = "block";
+  spinner.style.display = "none"; //!Spinner
+});
+btn3.addEventListener("click", () => {
+  spinner.style.display = "block"; //!Spinner
+  removefn();
+  btn3.classList.add("activenav");
+  welcome.style.display = "none";
+  allsects[3].style.display = "block";
+  spinner.style.display = "none"; //!Spinner
+});
+btn4.addEventListener("click", () => {
+  spinner.style.display = "block"; //!Spinner
+  removefn();
+  btn4.classList.add("activenav");
+  welcome.style.display = "none";
+  allsects[4].style.display = "block";
+  spinner.style.display = "none"; //!Spinner
+});
+btn5.addEventListener("click", () => {
+  spinner.style.display = "block"; //!Spinner
+  removefn();
+  btn5.classList.add("activenav");
+  welcome.style.display = "none";
+  allsects[5].style.display = "block";
+  spinner.style.display = "none"; //!Spinner
+});
+btn6.addEventListener("click", () => {
+  spinner.style.display = "block"; //!Spinner
+  removefn();
+  welcome.style.display = "flex";
+  btn6.classList.add("activenav");
+  spinner.style.display = "none"; //!Spinner
+});
+
+//? <!----------------------------------------------- < Common.js> ----------------------------------------------->
+
+function navbarstick() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
 window.addEventListener("load", () => {
   spinner.style.display = "block"; //!Spinner
   canvasname.innerHTML = user.name;

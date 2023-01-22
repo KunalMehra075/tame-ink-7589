@@ -186,6 +186,7 @@ function RenderCartData(data) {
   let checkout = document.getElementById("Checkout");
 
   checkout.addEventListener("click", () => {
+    spinner.style.display = "block"; //!Spinner
     window.location.href = "checkout.html";
   });
   spinner.style.display = "none"; //!Spinner

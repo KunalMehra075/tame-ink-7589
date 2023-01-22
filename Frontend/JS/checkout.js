@@ -242,7 +242,7 @@ function RenderCartData(data) {
 }
 let finish = document.getElementById("finish");
 finish.addEventListener("click", (e) => {
-  spinner.style.display = "none"; //!Spinner
+  spinner.style.display = "block"; //!Spinner
   let otpbox = document.getElementById("sessionNo");
   if (otpbox.value !== "9573") {
     spinner.style.display = "none"; //!Spinner
@@ -263,13 +263,13 @@ async function DeleteCartMany(id) {
     });
     let data = await res.json();
     if (data.done) {
-      spinner.style.display = "none"; //!Spinner
       swal(
         "Order Confirmed!",
         "Thankyou! Your Order will be delivered in few days",
         "success"
       );
       setTimeout(() => {
+        spinner.style.display = "none"; //!Spinner
         window.location.href = "index.html";
       }, 3000);
     } else {

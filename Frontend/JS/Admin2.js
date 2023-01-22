@@ -129,11 +129,39 @@ function RenderEditProducts(data) {
   for (const deletet of AllDeletors) {
     deletet.addEventListener("click", (e) => {
       spinner.style.display = "block"; //!Spinner
-      console.log("Delete", e.target.dataset.id);
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, This product will be removed Forever!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          console.log("Delete", e.target.dataset.id);
+        } else {
+          swal("Item is still in the Database.", "", "info");
+        }
+      });
     });
   }
 
   spinner.style.display = "none"; //!Spinner
+}
+
+async function DeletaProduct(ProductID) {
+  try {
+    let res = await fetch(`${baseURL}/products/delete/${ProductID}`, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: sessionStorage.getItem("token"),
+      },
+    });
+    let data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 let productsearch = document.getElementById("productsearch");
