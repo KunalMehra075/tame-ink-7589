@@ -348,6 +348,12 @@ function EditProductBlockDisplay(obj) {
 
   EditSecitonBlock.innerHTML = Content;
   let SaveProduct = document.getElementById("changeDataForm");
+  let CancelEdite = document.getElementById("cancelbutton");
+  CancelEdite.addEventListener("click", (e) => {
+    e.preventDefault();
+    AllEditProducts();
+    return;
+  });
   SaveProduct.addEventListener("submit", (e) => {
     spinner.style.display = "block"; //!Spinner
     e.preventDefault();

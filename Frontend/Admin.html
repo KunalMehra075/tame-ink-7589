@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./CSS/index.css" />
     <link rel="stylesheet" href="./CSS/commons.css" />
     <link rel="stylesheet" href="./CSS/commons2.css">
-    <link rel="stylesheet" href="CSS/Admin.css" />
+    <link rel="stylesheet" href="./CSS/Admin.css" />
+    <link rel="stylesheet" href="./CSS/Admin2.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -269,7 +270,7 @@
         <button id="bxn0">Add Product <img class="navibtnimgs" src="Images/icons/add.svg" alt=""></button>
         <button id="bxn1"> Edit Product <img class="navibtnimgs" src="Images/icons/editnote.svg" alt=""></button>
         <button id="bxn2"> Manage Orders <img class="navibtnimgs" src="Images/icons/order.svg" alt=""></button>
-        <button id="bxn3"> Manage Users <img class="navibtnimgs" src="Images/icons/manageuser.svg" alt=""></button>
+        <button id="bxn3"> All Users <img class="navibtnimgs" src="Images/icons/manageuser.svg" alt=""></button>
         <button id="bxn4">Reviews& Feedbacks <img class="navibtnimgs" src="Images/icons/review.svg" alt=""></button>
         <button id="bxn5"> Website Management <img class="navibtnimgs" src="Images/icons/setting.svg" alt=""></button>
       </div>
@@ -403,24 +404,136 @@
              <!--todo-------------------------- <Manage Orders> --------------------------------->
           <section id="ManageOrders">
             <center> <h3 class="AdminHeads"><u>Manage Orders</u></h3></center>
-           
+              <div id="ManageOrderBlock">
+
+              <div id="ChildOrder">
+                <label id="customername"> (1) Chunnu </label>
+                <label>Ordered For</label>
+
+                
+                <div class="DeleteProductCard">
+                  <div id="delete-product-id" data-id="${item.id}">
+                  <h1>🍊</h1></div>
+                  <div id="delete-product-label">
+                  <h5>Green Contemporary Glass Table Vase by Samara Home</h5>
+                  <label id="x">Product-ID : </label><label id="y">
+                   #jf9f34y49te9uhuvh2034</label>
+                  <label id="x">Quantity :</label><label id="y">4</label>
+                  <label id="x">Price :</label> <label id="y">3749/-</label>
+                  <label id="x">Brand : </label><label id="y">WoodsWorth</label>
+                 </div>
+                 <div><img src="https://ii1.pepperfry.com/media/catalog/product/g/r/800x880/green-contemporary-glass-table-vase-by-samara-home-green-contemporary-glass-table-vase-by-samara-hom-m7jtj1.jpg" alt=""></div>
+                 <div><img src="https://ii1.pepperfry.com/media/catalog/product/g/r/800x880/green-contemporary-glass-table-vase-by-samara-home-green-contemporary-glass-table-vase-by-samara-hom-harh8c.jpg" alt=""></div>
+                 <div><img src="https://ii1.pepperfry.com/media/catalog/product/g/r/800x880/green-contemporary-glass-table-vase-by-samara-home-green-contemporary-glass-table-vase-by-samara-hom-m7jtj1.jpg" alt=""></div>
+                </div>
+                <div class="DeleteProductCard">
+                  <div id="delete-product-id" data-id="${item.id}">
+                  <h1>🍊</h1></div>
+                  <div id="delete-product-label">
+                  <h5>Crystalia Curvy Plastic & Iron Table Vase by @home</h5>
+                  <label id="x">Product-ID : </label><label id="y">
+                   #jf9f34y49te9uhuvh2034</label>
+                  <label id="x">Quantity :</label><label id="y">4</label>
+                  <label id="x">Price :</label> <label id="y">10349/-</label>
+                  <label id="x">Brand : </label><label id="y">WoodsWorth</label>
+                 </div>
+                 <div><img src="https://ii1.pepperfry.com/media/catalog/product/f/l/800x880/floral-green-contemporary-glass-table-vase-by-samara-home-floral-green-contemporary-glass-table-vase-v6rimp.jpg" alt=""></div>
+                 <div><img src="https://ii1.pepperfry.com/media/catalog/product/f/l/800x880/floral-green-contemporary-glass-table-vase-by-samara-home-floral-green-contemporary-glass-table-vase-b7unti.jpg" alt=""></div>
+                 <div><img src="https://ii1.pepperfry.com/media/catalog/product/f/l/800x880/floral-green-contemporary-glass-table-vase-by-samara-home-floral-green-contemporary-glass-table-vase-b7unti.jpg" alt=""></div>
+                </div>
+
+                <div class="DeleteProductCard">
+                  <div id="delete-product-id" data-id="${item.id}">
+                  <h1>🍊</h1></div>
+                  <div id="delete-product-label">
+                  <h5>Iron Abeer Vase By Vedas</h5>
+                  <label id="x">Product-ID : </label><label id="y">
+                   #asdjf9f34y49huvh2034</label>
+                  <label id="x">Quantity :</label><label id="y">4</label>
+                  <label id="x">Price :</label> <label id="y">5876/-</label>
+                  <label id="x">Brand : </label><label id="y">WoodsWorth</label>
+                 </div>
+                 <div><img src="https://ii1.pepperfry.com/media/catalog/product/i/r/800x880/iron-abeer-vase-by-vedas-iron-abeer-vase-by-vedas-su8eae.jpg" alt=""></div>
+                 <div><img src="https://ii1.pepperfry.com/media/catalog/product/i/r/800x880/iron-abeer-vase-by-vedas-iron-abeer-vase-by-vedas-rmypoo.jpg" alt=""></div>
+                 <div><img src="https://ii1.pepperfry.com/media/catalog/product/i/r/800x880/iron-abeer-vase-by-vedas-iron-abeer-vase-by-vedas-rmypoo.jpg" alt=""></div>
+                </div>
+
+
+                <div id="buttonsDiv">
+                <div><h4 id="totalpricesmaenage">Total Price: 31571</h4><label style="color:grey; font-size: 15px;">including all discounts and taxes*</label></div>
+                <div><button id="ClearCart">Verify</button><button id="ClearCart2">Reject</button></div>
+                </div>
+              </div>
+                  
+              </div>
     
           </section>
            <!--todo-------------------------- <Manage Users> --------------------------------->
             <section id="MangeUsers">
-              <center> <h3 class="AdminHeads"><u>Manage Users</u></h3></center>
-    
+              <center> <h3 class="AdminHeads"><u>All Users</u></h3></center>
+              <!--??--------------------------------------------- <All Users> ----------------------------------------------->
+                <div id="AllUsers">
+          
+                 
+                  
+                  <!-- All Users To Append -->
+                </div>
+
             </section>
              <!--todo-------------------------- <Reviews and feedbacks> --------------------------------->
           <section id="RevNfeed">
             <center> <h3 class="AdminHeads"><u>Reviews & Feedbacks</u></h3></center>
-           
+            
+            <div id="AllReviews">
+          
+                 
+                  
+              <!-- All Users To Append -->
+            </div>
     
           </section>
            <!--todo-------------------------- <Website Management> --------------------------------->
             <section id="WebsiteManage">
               <center> <h3 class="AdminHeads"><u>Website Details</u></h3></center>
-    
+              <div id="WebsiteChild">
+                <h1>About this Project :</h1>
+                <table>
+                  <tr>
+                    <td><b>Credated by:</b></td>
+                    <td>Kunal Mehra</td>
+                  </tr>
+                 
+                    <tr>
+                      <td><b>Date Created</b></td>
+                      <td>22 January 2022</td>
+                    </tr>
+                    <tr>
+                      <td><b>Type</b></td>
+                      <td>Individual Project</td>
+                    </tr>
+                    <tr>
+                      <td><b>Duration</b></td>
+                      <td>Five Days</td>
+                    </tr>
+                    <tr>
+                      <td><b>Description</b></td>
+                      <td>Orangefry is an Indian online marketplace for furniture and home décor.A really good company when it comes to benefits, culture, office amenities. The management is very helpful and always available to talk. We have variety of furniture products from all over the world. </td>
+                    </tr>
+                    <tr>
+                      <td><b>Tech Stack Used</b></td>
+                      <td id="teckstak">
+                        <img src="Images/icons/html.png" alt="">
+                        <img src="Images/icons/css.png" alt="">
+                        <img src="Images/icons/js.png" alt="">
+                        <img src="Images/icons/mongo.png" alt="">
+                        <img src="Images/icons/Express.png" alt="">
+                        <img src="Images/icons/node.png" alt="">
+            
+                      </td>
+                    </tr>
+                </table>
+              </div>
+                
             </section>
               <!--todo-------------------------- <end> --------------------------------->
            
@@ -437,6 +550,7 @@
 <script src="JS/index.js"></script>
 <script src="JS/Admin.js"></script>
 <script src="JS/Admin2.js"></script>
+<script src="JS/Admin3.js"></script>
 <script
   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
   integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
