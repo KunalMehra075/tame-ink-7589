@@ -50,10 +50,14 @@ productRouter.delete("/delete/:id", AdminAuthenticator, async (req, res) => {
   let id = req.params.id;
   try {
     const deleted = await ProductModel.findByIdAndDelete({ _id: id });
-    res.json({ Message: "Deleted product Successfully", Deleted: deleted });
+    res.json({
+      Message: "Deleted product Successfully",
+      deleted: true,
+      Product: deleted,
+    });
   } catch (err) {
     console.log(err);
-    res.json({ Error: err });
+    res.json({ Error: err, deleted: false });
   }
 });
 productRouter.patch("/update/:id", AdminAuthenticator, async (req, res) => {
@@ -61,10 +65,14 @@ productRouter.patch("/update/:id", AdminAuthenticator, async (req, res) => {
   let payload = req.body;
   try {
     const updated = await ProductModel.findByIdAndUpdate({ _id: id }, payload);
-    res.json({ Message: "Updated product Successfully", Updated: updated });
+    res.json({
+      Message: "Updated product Successfully",
+      updated: true,
+      Product: updated,
+    });
   } catch (err) {
     console.log(err);
-    res.json({ Error: err });
+    res.json({ Error: err, updated: false });
   }
 });
 module.exports = { productRouter };

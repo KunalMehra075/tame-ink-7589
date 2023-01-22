@@ -247,11 +247,8 @@ function RenderReviewsAndQuestions(data) {
                   <label class="deletecomment revbtns" data-id=${item._id} >Delete</label> 
                   <label class="donecomment revbtns" data-id=${item._id} >Done</label> 
                   </div>
-                  
-                  </div>
-
-    `;
-  });
+                  </div>`;
+  }).join("");
 
   revcontainer.innerHTML = Reviews;
   quecontainer.innerHTML = Questions;

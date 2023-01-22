@@ -1,0 +1,250 @@
+#AllUsers {
+  display: grid;
+  padding: 10px 50px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  border-radius: 10px;
+  background-color: rgb(240, 236, 230);
+}
+#ChildUsers {
+  cursor: pointer;
+  text-align: left;
+  padding: 14px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  margin: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#ChildUsers > label {
+  font-size: 12px !important;
+}
+#manageuserbtn {
+  cursor: pointer;
+  margin: 0px 2px !important;
+  padding: 0px 19px;
+  border: none;
+  font-size: 18px;
+  width: 100%;
+  color: white;
+  background-color: rgb(243, 137, 137);
+}
+#manageuserbtn:hover {
+  background-color: red;
+}
+#childuserremove {
+  cursor: pointer;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+#AllReviews {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(250, 237, 237);
+}
+#ChildReview {
+  text-align: left;
+  padding: 14px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  margin: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#ChildReview > label {
+  font-size: 15px;
+}
+#revUserN {
+  font-size: 20px !important;
+  font-weight: 700;
+}
+#revbuttons > button {
+  margin: 0px 2px !important;
+  padding: 0px 19px;
+  border: none;
+
+  background-color: rgb(251, 251, 183);
+}
+#revbuttons > button:hover {
+  filter: invert();
+}
+#contentRev {
+  font-size: 18px !important;
+  margin: 5px 0px;
+
+  background-color: rgb(255, 255, 255);
+}
+#revbuttons {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+#WebsiteChild {
+  margin: 10px 20px;
+  padding: 5px 10px;
+}
+#WebsiteChild > h1 {
+  font-weight: 800;
+  color: red;
+}
+#WebsiteChild > table {
+  border: 1px solid grey;
+  width: 100%;
+}
+#WebsiteChild th {
+  font-size: 20px;
+  border: 1px solid grey;
+  font-weight: 700;
+  background-color: rgb(244, 244, 211);
+}
+#WebsiteChild td {
+  padding: 10px;
+  font-weight: 500;
+  border: 1px solid grey;
+}
+#WebsiteChild td:nth-child(2n) {
+  width: 70%;
+  background-color: rgb(237, 237, 237);
+}
+#teckstak > img {
+  width: 100px;
+  background-color: white;
+  padding: 5px;
+}
+
+/*? <!----------------------------------------------- < Orders > -----------------------------------------------> */
+#adminspagebutton {
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  top: 0px;
+  right: -170px;
+  border: 0px;
+  background-color: rgb(234, 105, 24);
+  padding: 10px;
+  transition: all 350ms ease;
+}
+#adminspagebutton:hover {
+  transform: scale(1.05);
+  border-bottom: 2px solid rgb(130, 31, 16);
+}
+#tophead {
+  text-align: left;
+  width: 87%;
+  margin: auto;
+}
+#tophead > img {
+  width: 150px;
+  height: auto;
+}
+.showproducttop {
+  position: absolute;
+  right: 200px;
+  top: 92px;
+}
+.manage-order {
+  font-size: 40px;
+  font-weight: bolder;
+}
+.allproducts {
+  display: none;
+}
+#tophead > div {
+  margin: 15px;
+  padding: 15px;
+  height: auto;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#product-databse-name,
+#delete-products-list {
+  background-color: rgb(234, 234, 236);
+}
+#ManageOrderBlock {
+  border: 1px solid rgb(220, 215, 215);
+  padding: 10px;
+}
+.DeleteProductCard {
+  background-color: rgb(255, 255, 255);
+  border: 0.2px solid rgb(203, 201, 201);
+  position: relative;
+  margin: 3px;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  place-items: center;
+  transition: all 200ms ease;
+}
+.DeleteProductCard:hover {
+  border: 0.2px solid rgb(0, 0, 0);
+  cursor: pointer;
+}
+.DeleteProductCard > div {
+  height: 70px;
+  width: 80px;
+  margin: 5px;
+  overflow: hidden;
+}
+.DeleteProductCard > div > img {
+  width: 100%;
+}
+#customername {
+  font-size: 25px;
+  font-weight: 700;
+}
+#x {
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 2px;
+}
+#delete-product-label {
+  width: 950px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+#delete-product-id {
+  width: 60px;
+  text-align: center;
+}
+#delete-product-id > h1 {
+  padding-top: 10px;
+}
+
+#y {
+  font-weight: normal;
+  font-size: 14px;
+}
+#totalpricesmaenage {
+  font-weight: 700;
+}
+#product-name {
+  font-size: 19px;
+  font-weight: bold;
+}
+#delete-description {
+  font-weight: normal;
+  font-size: 14px;
+}
+#buttonsDiv {
+  display: flex;
+  justify-content: space-between;
+}
+#ClearCart,
+#ClearCart2 {
+  background-color: white;
+  font-size: 17px;
+  font-weight: 900;
+  padding: 10px 60px;
+}
+#ClearCart {
+  border: 2px solid rgb(8, 210, 8);
+  color: rgb(10, 209, 10);
+  margin: 5px;
+}
+#ClearCart2 {
+  border: 2px solid red;
+  color: red;
+}

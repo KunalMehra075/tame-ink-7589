@@ -336,7 +336,7 @@ p {
   width: 100%;
 }
 .ReviewSect {
-  background-color: rgb(251, 250, 250);
+  background-color: rgb(252, 245, 245);
   padding: 10px 0px;
   width: 70%;
 }
@@ -344,6 +344,7 @@ p {
   margin: 20px;
 }
 .ChildReviews {
+  background-color: rgb(255, 255, 255);
   padding: 4px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;

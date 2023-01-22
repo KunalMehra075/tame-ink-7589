@@ -125,7 +125,13 @@ async function LoginFunction(creds) {
     sessionStorage.setItem("token", data.token);
     sessionStorage.setItem("current-user", JSON.stringify(data.user));
     console.log(data);
-    if (data.user.role == "Admin") {
+    if (data.Wrong) {
+      swal("Wrong credentials!", "Please give correct credentials!", "warning");
+      spinner.style.display = "none"; //!Spinner
+      return;
+    }
+
+    if (data.user && data.user.role == "Admin") {
       swal({
         title: "Welcome Back Admin! ",
         text: "Do you want to redirect to Admin's Portal?",
