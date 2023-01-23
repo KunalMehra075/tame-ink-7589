@@ -5,7 +5,9 @@ section {
 #cartsect {
   width: 100%;
 }
-
+#megalistheads {
+  display: none !important;
+}
 .yourproducts {
   margin: 10px;
   margin-left: 100px;
