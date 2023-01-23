@@ -1,8 +1,8 @@
 # Introducing Orangefry.com
 
-ProjectCode - tame-ink-7589
+### ProjectCode - tame-ink-7589
 
-Orangefry.com ==> Clone of pepperfry.com
+Orangefry.com  --> Clone of pepperfry.com
 
 ![Orangefrylogo](https://user-images.githubusercontent.com/112753481/213991299-a2c6fe60-d6e2-4238-b8e2-552d61519352.png)
 
@@ -20,27 +20,35 @@ The CRUD operations on products can only be done by admin because Admin Authenti
 ## Here are some screenshots of website.
 
 ### 🍊 Home Page :-
+
 ![home1](https://user-images.githubusercontent.com/112753481/213990182-6f5288f8-30e3-472f-a453-a271c138334e.jpg)
 
 ### 🍊 Home Page MegaMenu :-
+
 ![home2](https://user-images.githubusercontent.com/112753481/213990270-1494ad27-18a0-4cf0-bca6-28942ff2b9e8.jpg)
 
 ### 🍊 Home Page Offcanvas :-
+
 ![home3](https://user-images.githubusercontent.com/112753481/213990333-f401dc57-b91f-47f3-97b8-f104091af258.jpg)
 
 ### 🍊 AllProducts Page :-
+
 ![Allproducts](https://user-images.githubusercontent.com/112753481/213990370-26550da6-ce63-412a-b629-14fd4ed870d5.jpg)
 
 ### 🍊 OneProduct Page :-
+
 ![oneproduct](https://user-images.githubusercontent.com/112753481/213990414-ce1b7a1f-349c-4a96-9f97-3d53bf429763.jpg)
 
 ### 🍊 Review & Questions Section :-
+
 ![Review and feedback](https://user-images.githubusercontent.com/112753481/213990478-29c481d9-51c3-447c-ac94-b1e2b5708b9d.jpg)
 
 ### 🍊 Checkout Page :-
+
 ![checkout](https://user-images.githubusercontent.com/112753481/213990509-38ddfede-59c1-411b-884b-dfb83473ce04.jpg)
 
 ### 🍊 Order Summary Page :-
+
 ![order summary](https://user-images.githubusercontent.com/112753481/213990553-87debb1c-9fd8-4e0e-b6dd-2fdb4e533c11.jpg)
 
 ### 🍊 Admin Page :-
