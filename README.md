@@ -33,11 +33,11 @@ The CRUD operations on products can only be done by admin because Admin Authenti
 
 ### 🍊 AllProducts Page :-
 
-![Allproducts](https://user-images.githubusercontent.com/112753481/213990370-26550da6-ce63-412a-b629-14fd4ed870d5.jpg)
+![Allproducts2](https://user-images.githubusercontent.com/112753481/213993221-766f7f69-e258-4074-9114-5bdc476bc411.jpg)
 
 ### 🍊 OneProduct Page :-
 
-![oneproduct](https://user-images.githubusercontent.com/112753481/213990414-ce1b7a1f-349c-4a96-9f97-3d53bf429763.jpg)
+![Oneproduct2](https://user-images.githubusercontent.com/112753481/213993265-6bb7a67f-ae6e-4cab-842e-14531cbbabda.jpg)
 
 ### 🍊 Review & Questions Section :-
 
