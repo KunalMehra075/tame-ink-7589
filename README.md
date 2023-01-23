@@ -4,10 +4,17 @@ ProjectCode - tame-ink-7589
 
 Orangefry.com ==> Clone of pepperfry.com
 
+![Orangefrylogo](https://user-images.githubusercontent.com/112753481/213991299-a2c6fe60-d6e2-4238-b8e2-552d61519352.png)
+
 
 ## What is OrangeFry.com??
-![Orangefrylogo](https://user-images.githubusercontent.com/112753481/213990872-b54d5d98-cc45-4a27-b375-9cf2158b5c95.jpg)
 Orangefry is an Indian online marketplace for furniture and home décor.A really good company when it comes to benefits, culture, office amenities. The management is very helpful and always available to talk. We have variety of furniture products from all over the world.
+
+This website is fully functional website with all CRUD operations by user .
+They need to go through User Authentication middleware, to perform any interactions
+
+And for Admin site there is a special middleware called Admin Authenticator.
+The CRUD operations on products can only be done by admin because Admin Authenticator sees it the user who is making request role is Admin or not.
 
 
 ### Here are some screenshots of website.
