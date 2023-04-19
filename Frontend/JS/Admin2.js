@@ -1,8 +1,5 @@
 let baseURL = "http://localhost:4500";
 let Initiator = JSON.parse(sessionStorage.getItem("current-user"));
-window.addEventListener("load", () => {
-  preloader.style.display = "none";
-});
 let Editscontainer = document.getElementById("ThreeCardContainerX");
 let EditSecitonBlock = document.getElementById("EditSecitonBlock");
 if (!Initiator || Initiator.role !== "Admin") {

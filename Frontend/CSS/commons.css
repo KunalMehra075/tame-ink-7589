@@ -4,20 +4,7 @@
   font-family: Manrope, sans-serif;
   scroll-behavior: smooth;
 }
-/* div,
-section {
-  border: 1px solid black;
-} */
-#preloader {
-  z-index: 99999999999999999999;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 #AdminRedirect {
   display: none;
   padding: 5px !important;
