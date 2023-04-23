@@ -1,4 +1,4 @@
-let baseURL = "http://localhost:4500";
+let baseURL = "https://orange-fry-backend.vercel.app";
 let Initiator = JSON.parse(sessionStorage.getItem("current-user"));
 let Editscontainer = document.getElementById("ThreeCardContainerX");
 let EditSecitonBlock = document.getElementById("EditSecitonBlock");

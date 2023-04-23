@@ -4,6 +4,7 @@ let popover = document.getElementById("popover");
 let username = document.getElementById("username");
 
 let LoginForm = document.getElementById("LoginForm");
+let OAuthButtons = document.getElementById("OAuthButtons");
 let UserPresent = document.getElementById("UserPresent");
 
 let loginname = document.getElementById("LoginName");
@@ -12,6 +13,7 @@ let canvasemail = document.getElementById("canvasemail");
 let canvasid = document.getElementById("canvasid");
 let logout = document.getElementById("logout");
 
+let avatar = document.getElementById("avatar")
 let UserNameX = document.getElementById("UserNameX");
 let UserEmail = document.getElementById("UserEmail");
 let UserMobile = document.getElementById("UserMobile");
@@ -23,11 +25,31 @@ let UserFavoriteDivs = document.getElementById("UserFavoriteDivs");
 
 let ADR = document.getElementById("AdminRedirect");
 
+//? <!----------------------------------------------- < Google Auth Buttons> ----------------------------------------------->
+
+let GoogleAuthButton = document.getElementById("GoogleAuthButton")
+if (GoogleAuthButton) {
+  GoogleAuthButton.addEventListener("click", () => {
+    console.log("Google Auth Requested");
+    window.location.href = `${baseURL}/google`
+  })
+}
+let FacebookAuthButton = document.getElementById("FacebookAuthButton")
+if (FacebookAuthButton) {
+  FacebookAuthButton.addEventListener("click", () => {
+    console.log("Facebook Auth Requested");
+  })
+}
+
+
+//? <!----------------------------------------------- < Changing OFFCANVAS DATA> ----------------------------------------------->
+// ! Admin Portal Button
 ADR.addEventListener("click", () => {
   spinner.style.display = "block"; //!Spinner
   window.location.href = "admin.html";
   spinner.style.display = "none"; //!Spinner
 });
+
 window.addEventListener("load", () => {
   spinner.style.display = "block"; //!Spinner
   if (user) {
@@ -36,6 +58,7 @@ window.addEventListener("load", () => {
     username.innerText = "";
     UserPresent.style.display = "none";
     LoginForm.style.display = "block";
+    if (OAuthButtons) OAuthButtons.style.display = "block";
     spinner.style.display = "none"; //!Spinner
   }
   if (!user && popover) {
@@ -49,31 +72,13 @@ window.addEventListener("load", () => {
     }, 7000);
   }
 });
-logout.addEventListener("click", () => {
-  spinner.style.display = "block"; //!Spinner
-  swal({
-    title: "Logout?",
-    text: "You will be logged out of your account",
-    icon: "info",
-    buttons: true,
-    dangerMode: true,
-  }).then((willDelete) => {
-    if (willDelete) {
-      sessionStorage.clear();
-      localStorage.clear;
-      window.location.href = "index.html";
-      spinner.style.display = "none"; //!Spinner
-    } else {
-      spinner.style.display = "none"; //!Spinner
-      return;
-    }
-  });
-});
 
 function RenderOFFCANVAS(user) {
   spinner.style.display = "block"; //!Spinner
 
   let initial = user.name.split(" ")[0];
+  avatar.src = user.image || "Images/icons/avatar.png"
+  avatar.style.border = "7px double rgb(173, 163, 163)"
   username.innerText = initial;
   canvasname.innerHTML = user.name;
   canvasemail.innerHTML = user.email;
@@ -86,6 +91,7 @@ function RenderOFFCANVAS(user) {
   UserMobile.innerText = user.mobile;
   UserGender.innerText = user.gender;
   UserRole.innerText = user.role;
+  if (OAuthButtons) OAuthButtons.style.display = "none";
   if (user.role === "Admin") {
     ADR.style.display = "block";
   }
@@ -105,6 +111,7 @@ UserLoginForm.addEventListener("submit", (e) => {
   };
   LoginFunction(creds);
 });
+
 async function LoginFunction(creds) {
   spinner.style.display = "block"; //!Spinner
   try {
@@ -164,6 +171,8 @@ async function LoginFunction(creds) {
     console.log(error);
   }
 }
+
+
 async function FetchCartProducts(userid) {
   spinner.style.display = "block"; //!Spinner
   try {
@@ -365,6 +374,49 @@ async function DeleteFav(id) {
     FetchFavorites(user._id);
   } catch (error) {
     spinner.style.display = "none"; //!Spinner
+    console.log(error);
+  }
+}
+
+//! <!----------------------------------------------- < Logout Function> ----------------------------------------------->
+
+logout.addEventListener("click", () => {
+  spinner.style.display = "block"; //!Spinner
+  swal({
+    title: "Logout?",
+    text: "You will be logged out of your account",
+    icon: "info",
+    buttons: true,
+    dangerMode: true,
+  }).then((willDelete) => {
+    if (willDelete) {
+      Googlelogout()
+    } else {
+      spinner.style.display = "none"; //!Spinner
+      return;
+    }
+  });
+});
+async function Googlelogout() {
+  spinner.style.display = "block"; //!Spinner
+  sessionStorage.clear();
+  localStorage.clear();
+  let baseURL = "https://orange-fry-backend.vercel.app";
+  try {
+    await fetch(`${baseURL}/google/logout`, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "https://orange-fry-backend.vercel.app",
+      },
+    });
+    spinner.style.display = "none"; //!Spinner
+    window.location.href = "index.html";
+  } catch (error) {
+    window.location.href = "index.html";
     console.log(error);
   }
 }

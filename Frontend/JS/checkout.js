@@ -1,4 +1,4 @@
-let BaseURL = "http://localhost:4500";
+let BaseURL = "https://orange-fry-backend.vercel.app";
 
 let pre1 = document.getElementById("pre1");
 let pre2 = document.getElementById("pre2");

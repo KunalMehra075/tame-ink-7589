@@ -64,3 +64,68 @@ section {
 .FavRemovers:hover {
   filter: grayscale();
 }
+#orangegoogle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* div,
+section,
+img {
+  border: 1px solid red;
+} */
+#SuccessPage {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.SuccessPageButtonsHolder {
+  text-align: center;
+}
+.SuccessPageButtonsHolder h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#LetsGoButtonFailed,
+#LetsGoButton {
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  background-color: red;
+}
+#LetsGoButton {
+  background-color: rgb(13, 64, 215);
+}
+#LetsGoButton:hover {
+  background-color: rgb(33, 233, 26);
+}
+#LetsGoButtonFailed:hover {
+  background-color: rgb(250, 89, 60);
+}
+#greentickholder {
+  width: 400px;
+  height: 270px;
+  /* overflow: hidden; */
+  background-image: url("../Images/greentick2.gif");
+  object-position: center;
+  object-fit: cover;
+}
+#crossholder {
+  width: 230px;
+  height: 230px;
+  /* overflow: hidden; */
+  background-image: url("../Images/redcross.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+}

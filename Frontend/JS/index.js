@@ -25,3 +25,4 @@ AllProductButtons.forEach((item) => {
     window.location.href = "AllProducts.html";
   });
 });
+

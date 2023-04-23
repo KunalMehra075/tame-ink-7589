@@ -4,7 +4,22 @@
   font-family: Manrope, sans-serif;
   scroll-behavior: smooth;
 }
-
+.swal-modal * {
+  filter: saturate(2) !important;
+}
+.swal-icon {
+  filter: saturate(2.5) !important;
+}
+.swal-title {
+  color: black !important;
+  font-weight: 700 !important;
+}
+.swal-button {
+  border-radius: 0 !important;
+}
+.swal-button--confirm {
+  background-color: red !important;
+}
 #AdminRedirect {
   display: none;
   padding: 5px !important;
@@ -20,7 +35,11 @@ li {
 ::-webkit-scrollbar-thumb {
   background-color: rgb(250, 73, 73);
 }
-img {
+img,
+button,
+select,
+input,
+a {
   cursor: pointer;
 }
 input {
@@ -470,6 +489,8 @@ strong {
 }
 #avatar {
   width: 30%;
+  object-fit: cover;
+  object-position: center;
   border-radius: 50%;
 }
 
